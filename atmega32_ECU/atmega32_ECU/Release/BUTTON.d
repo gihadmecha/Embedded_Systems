@@ -1,14 +1,14 @@
-main.d main.o: .././main.c .././SEGMENTS.h .././StdTypes.h .././MemMap.h \
- .././UTILS.h \
+BUTTON.d BUTTON.o: .././BUTTON.c .././BUTTON.h .././StdTypes.h \
+ .././MemMap.h .././UTILS.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdint.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdint.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
- .././SEGMENTS_Lcfg.h
+ .././BUTTON_Lcfg.h
 
-.././SEGMENTS.h:
+.././BUTTON.h:
 
 .././StdTypes.h:
 
@@ -28,4 +28,4 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h:
 
-.././SEGMENTS_Lcfg.h:
+.././BUTTON_Lcfg.h:
