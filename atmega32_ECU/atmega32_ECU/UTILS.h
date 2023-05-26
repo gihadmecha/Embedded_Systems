@@ -11,6 +11,7 @@
 #define		CLR_BIT(reg, bit)				(reg = reg & (~(1<<bit)))
 #define		READ_BIT(reg, bit)				(reg & (1<<bit))
 #define		WRITE_BIT(reg, bit, value)		(reg = (reg & (~(1<<bit))) | (1<<bit))	
+#define		TOG_BIT(reg, bit)				(reg = reg^(1<<bit))
 
 
 

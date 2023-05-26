@@ -1,4 +1,4 @@
-main.d main.o: .././main.c ../HAL/LED.h ../HAL/LED_Lcfg.h \
+MCAL/DIO_Lcfg.d MCAL/DIO_Lcfg.o: ../MCAL/DIO_Lcfg.c \
  ../MCAL/DIO_interface.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
@@ -7,10 +7,6 @@ main.d main.o: .././main.c ../HAL/LED.h ../HAL/LED_Lcfg.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
  ../StdTypes.h ../MemMap.h ../UTILS.h
-
-../HAL/LED.h:
-
-../HAL/LED_Lcfg.h:
 
 ../MCAL/DIO_interface.h:
 
