@@ -1,0 +1,15 @@
+
+
+
+#ifndef BUTTON_H_
+#define BUTTON_H_
+
+#include "BUTTON_Lcfg.h"
+#include "DIO_interface.h"
+#include "StdTypes.h"
+
+void BUTTON1_IfPressed_PeriodicCheck (void(*FUNC_PTR)(void));
+
+
+
+#endif /* BUTTON_H_ */

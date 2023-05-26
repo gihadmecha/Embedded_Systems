@@ -18,6 +18,7 @@ void BUTTON1 (void (*fun_ptr)(void))
 	{
 		if (pressedCounter == 0)
 		{
+			pressedCounter = 1;
 			fun_ptr();
 		}
 	}
