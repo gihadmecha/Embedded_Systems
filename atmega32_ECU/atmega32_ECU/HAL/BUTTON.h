@@ -8,6 +8,7 @@
 #include "DIO_interface.h"
 #include "StdTypes.h"
 
+//needed to check periodically
 void BUTTON1_IfPressed_PeriodicCheck (void(*FUNC_PTR)(void));
 
 
