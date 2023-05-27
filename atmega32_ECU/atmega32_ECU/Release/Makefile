@@ -41,6 +41,7 @@ SUBDIRS :=  \
 C_SRCS +=  \
 ../HAL/BUTTON.c \
 ../HAL/LED.c \
+../HAL/MOTOR.c \
 ../HAL/SEGMENTS.c \
 ../main.c \
 ../MCAL/DIO.c \
@@ -56,6 +57,7 @@ ASM_SRCS +=
 OBJS +=  \
 HAL/BUTTON.o \
 HAL/LED.o \
+HAL/MOTOR.o \
 HAL/SEGMENTS.o \
 main.o \
 MCAL/DIO.o \
@@ -64,6 +66,7 @@ MCAL/DIO_Lcfg.o
 OBJS_AS_ARGS +=  \
 HAL/BUTTON.o \
 HAL/LED.o \
+HAL/MOTOR.o \
 HAL/SEGMENTS.o \
 main.o \
 MCAL/DIO.o \
@@ -72,6 +75,7 @@ MCAL/DIO_Lcfg.o
 C_DEPS +=  \
 HAL/BUTTON.d \
 HAL/LED.d \
+HAL/MOTOR.d \
 HAL/SEGMENTS.d \
 main.d \
 MCAL/DIO.d \
@@ -80,6 +84,7 @@ MCAL/DIO_Lcfg.d
 C_DEPS_AS_ARGS +=  \
 HAL/BUTTON.d \
 HAL/LED.d \
+HAL/MOTOR.d \
 HAL/SEGMENTS.d \
 main.d \
 MCAL/DIO.d \
@@ -107,6 +112,13 @@ HAL/BUTTON.o: ../HAL/BUTTON.c
 	
 
 HAL/LED.o: ../HAL/LED.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DNDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../MCAL" -I".." -I"../HAL"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+HAL/MOTOR.o: ../HAL/MOTOR.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DNDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../MCAL" -I".." -I"../HAL"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

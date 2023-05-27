@@ -6,6 +6,8 @@ HAL\BUTTON.c
 
 HAL\LED.c
 
+HAL\MOTOR.c
+
 HAL\SEGMENTS.c
 
 main.c

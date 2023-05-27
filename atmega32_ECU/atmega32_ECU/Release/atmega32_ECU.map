@@ -32,17 +32,31 @@ Discarded input sections
  .text.LED1_Read
                 0x00000000        0x6 HAL/LED.o
  .comment       0x00000000       0x31 HAL/LED.o
+ .text          0x00000000        0x0 HAL/MOTOR.o
+ .data          0x00000000        0x0 HAL/MOTOR.o
+ .bss           0x00000000        0x0 HAL/MOTOR.o
  .text          0x00000000        0x0 HAL/SEGMENTS.o
  .data          0x00000000        0x0 HAL/SEGMENTS.o
  .bss           0x00000000        0x0 HAL/SEGMENTS.o
+ .text.SEGMENTS_EachPin_Of7Pins
+                0x00000000       0x74 HAL/SEGMENTS.o
+ .text.SEGMENTS1
+                0x00000000       0x50 HAL/SEGMENTS.o
+ .text.SEGMENTS2
+                0x00000000       0x52 HAL/SEGMENTS.o
+ .text.SEGMENTS3
+                0x00000000       0x56 HAL/SEGMENTS.o
+ .text.SEGMENTS4
+                0x00000000       0xe0 HAL/SEGMENTS.o
+ .rodata.SEGMENTS_Pixels
+                0x00000000       0x10 HAL/SEGMENTS.o
+ .comment       0x00000000       0x31 HAL/SEGMENTS.o
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
  .text          0x00000000        0x0 MCAL/DIO.o
  .data          0x00000000        0x0 MCAL/DIO.o
  .bss           0x00000000        0x0 MCAL/DIO.o
- .text.DIO_TogglePin
-                0x00000000       0x76 MCAL/DIO.o
  .text.DIO_ReadPin
                 0x00000000       0x50 MCAL/DIO.o
  .text.DIO_ReadPortRegister
@@ -59,6 +73,8 @@ Discarded input sections
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
  .text.libgcc.mul
                 0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
+ .text.libgcc.div
+                0x00000000       0x18 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
  .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
  .text.libgcc.prologue
                 0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
@@ -134,6 +150,7 @@ Linker script and memory map
 LOAD C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
 LOAD HAL/BUTTON.o
 LOAD HAL/LED.o
+LOAD HAL/MOTOR.o
 LOAD HAL/SEGMENTS.o
 LOAD main.o
 LOAD MCAL/DIO.o
@@ -247,7 +264,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x626
+.text           0x00000000      0x498
  *(.vectors)
  .vectors       0x00000000       0x54 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
                 0x00000000                __vector_default
@@ -329,39 +346,32 @@ END GROUP
                 0x0000008e                __vector_20
                 0x00000092                . = ALIGN (0x2)
  *(.text.*)
- .text.SEGMENTS_EachPin_Of7Pins
-                0x00000092       0x92 HAL/SEGMENTS.o
- .text.SEGMENTS_EachPin_Of4Pins.constprop.0
-                0x00000124       0x46 HAL/SEGMENTS.o
- .text.SEGMENTS1
-                0x0000016a       0x50 HAL/SEGMENTS.o
-                0x0000016a                SEGMENTS1
- .text.SEGMENTS2
-                0x000001ba       0x52 HAL/SEGMENTS.o
-                0x000001ba                SEGMENTS2
- .text.SEGMENTS3
-                0x0000020c        0xa HAL/SEGMENTS.o
-                0x0000020c                SEGMENTS3
- .text.SEGMENTS4
-                0x00000216       0xe0 HAL/SEGMENTS.o
-                0x00000216                SEGMENTS4
+ .text.MOTOR1_Forward
+                0x00000092       0x18 HAL/MOTOR.o
+                0x00000092                MOTOR1_Forward
+ .text.MOTOR1_backward
+                0x000000aa       0x18 HAL/MOTOR.o
+                0x000000aa                MOTOR1_backward
+ .text.MOTOR_Stop
+                0x000000c2       0x18 HAL/MOTOR.o
+                0x000000c2                MOTOR_Stop
  .text.startup.main
-                0x000002f6       0x60 main.o
-                0x000002f6                main
+                0x000000da       0x90 main.o
+                0x000000da                main
  .text.DIO_Init
-                0x00000356      0x1be MCAL/DIO.o
-                0x00000356                DIO_Init
+                0x0000016a      0x1be MCAL/DIO.o
+                0x0000016a                DIO_Init
  .text.DIO_WritePin
-                0x00000514       0xf6 MCAL/DIO.o
-                0x00000514                DIO_WritePin
- .text.libgcc.div
-                0x0000060a       0x18 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
-                0x0000060a                __udivmodqi4
-                0x00000622                . = ALIGN (0x2)
+                0x00000328       0xf6 MCAL/DIO.o
+                0x00000328                DIO_WritePin
+ .text.DIO_TogglePin
+                0x0000041e       0x76 MCAL/DIO.o
+                0x0000041e                DIO_TogglePin
+                0x00000494                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000622        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x00000622                _exit
-                0x00000622                exit
+ .fini9         0x00000494        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x00000494                _exit
+                0x00000494                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -380,41 +390,39 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000622        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000494        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000626                _etext = .
+                0x00000498                _etext = .
 
-.data           0x00800060       0x30 load address 0x00000626
+.data           0x00800060       0x20 load address 0x00000498
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
  *(.gnu.linkonce.d*)
  *(.rodata)
  *(.rodata*)
- .rodata.SEGMENTS_Pixels
-                0x00800060       0x10 HAL/SEGMENTS.o
  .rodata.PinsStatusArray
-                0x00800070       0x20 MCAL/DIO_Lcfg.o
-                0x00800070                PinsStatusArray
+                0x00800060       0x20 MCAL/DIO_Lcfg.o
+                0x00800060                PinsStatusArray
  *(.gnu.linkonce.r*)
-                0x00800090                . = ALIGN (0x2)
-                0x00800090                _edata = .
-                0x00800090                PROVIDE (__data_end, .)
+                0x00800080                . = ALIGN (0x2)
+                0x00800080                _edata = .
+                0x00800080                PROVIDE (__data_end, .)
 
-.bss            0x00800090        0x0
-                0x00800090                PROVIDE (__bss_start, .)
+.bss            0x00800080        0x0
+                0x00800080                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
  *(COMMON)
-                0x00800090                PROVIDE (__bss_end, .)
-                0x00000626                __data_load_start = LOADADDR (.data)
-                0x00000656                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00800080                PROVIDE (__bss_end, .)
+                0x00000498                __data_load_start = LOADADDR (.data)
+                0x000004b8                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800090        0x0
+.noinit         0x00800080        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x00800090                _end = .
+                0x00800080                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -456,7 +464,7 @@ END GROUP
 
 .comment        0x00000000       0x30
  *(.comment)
- .comment       0x00000000       0x30 HAL/SEGMENTS.o
+ .comment       0x00000000       0x30 HAL/MOTOR.o
                                  0x31 (size before relaxing)
  .comment       0x00000030       0x31 main.o
  .comment       0x00000030       0x31 MCAL/DIO.o

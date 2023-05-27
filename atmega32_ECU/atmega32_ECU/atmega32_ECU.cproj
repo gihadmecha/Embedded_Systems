@@ -141,6 +141,15 @@
     <Compile Include="HAL\LED_Lcfg.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="HAL\MOTOR.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\MOTOR.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\MOTOR_Lcfg.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="HAL\SEGMENTS.c">
       <SubType>compile</SubType>
     </Compile>
