@@ -132,6 +132,15 @@
     <Compile Include="HAL\BUTTON_Lcfg.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="HAL\LCD.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\LCD.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\LCD_Lcfg.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="HAL\LED.c">
       <SubType>compile</SubType>
     </Compile>
@@ -160,6 +169,15 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="HAL\SEGMENTS_Private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\STEPPER_MOTOR.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\STEPPER_MOTOR.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\STEPPER_MOTOR_Lcfg.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="main.c">

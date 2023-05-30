@@ -4,11 +4,15 @@
 
 HAL\BUTTON.c
 
+HAL\LCD.c
+
 HAL\LED.c
 
 HAL\MOTOR.c
 
 HAL\SEGMENTS.c
+
+HAL\STEPPER_MOTOR.c
 
 main.c
 
