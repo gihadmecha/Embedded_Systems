@@ -16,11 +16,6 @@
 #define		RS		PINB1
 #define		EN		PINB0
 
-//#define		LCD_RS		PINB1
-//#define		LCD_EN		PINB0
-//
-//#define		LCD_PORT	PA
-
 
 #define		MODE_8_BIT		8		
 #define		MODE_4_BIT		4
