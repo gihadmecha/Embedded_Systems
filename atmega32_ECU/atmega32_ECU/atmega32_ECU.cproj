@@ -132,6 +132,15 @@
     <Compile Include="HAL\BUTTON_Lcfg.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="HAL\KEYPAD.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\KEYPAD.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\KEYPAD_Lcfg.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="HAL\LCD.c">
       <SubType>compile</SubType>
     </Compile>

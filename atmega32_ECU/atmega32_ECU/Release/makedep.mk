@@ -4,6 +4,8 @@
 
 HAL\BUTTON.c
 
+HAL\KEYPAD.c
+
 HAL\LCD.c
 
 HAL\LED.c
