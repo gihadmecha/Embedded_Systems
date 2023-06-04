@@ -1,0 +1,11 @@
+
+
+
+#ifndef POTONTIOMETER_LCFG_H_
+#define POTONTIOMETER_LCFG_H_
+
+
+#define		POT_CHANNEL		CHANNEL_7
+
+
+#endif /* POTONTIOMETER_LCFG_H_ */

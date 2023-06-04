@@ -168,6 +168,15 @@
     <Compile Include="HAL\MOTOR_Lcfg.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="HAL\POTONTIOMETER.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\POTONTIOMETER.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\POTONTIOMETER_Lcfg.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="HAL\SEGMENTS.c">
       <SubType>compile</SubType>
     </Compile>
@@ -190,6 +199,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\ADC.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\ADC.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="MCAL\DIO.c">
