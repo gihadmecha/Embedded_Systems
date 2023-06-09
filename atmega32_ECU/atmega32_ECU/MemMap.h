@@ -26,6 +26,7 @@
 #define		ADMUX	( *(volatile unsigned char*)0x27 )
 #define		REFS1	7
 #define		REFS0	6
+#define		ADLAR	5
 #define		MUX4	4
 #define		MUX3	3
 #define		MUX2	2

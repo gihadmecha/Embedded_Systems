@@ -5,7 +5,7 @@ MCAL/ADC.d MCAL/ADC.o: ../MCAL/ADC.c ../MCAL/ADC.h ../MemMap.h ../UTILS.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdint.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
- ../StdTypes.h
+ ../StdTypes.h ../MCAL/ADC_Lcfg.h
 
 ../MCAL/ADC.h:
 
@@ -26,3 +26,5 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h:
 
 ../StdTypes.h:
+
+../MCAL/ADC_Lcfg.h:

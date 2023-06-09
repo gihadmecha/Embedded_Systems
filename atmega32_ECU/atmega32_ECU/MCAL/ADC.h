@@ -6,22 +6,23 @@
 #include "MemMap.h"
 #include "UTILS.h"
 #include "StdTypes.h"
+#include "ADC_Lcfg.h"
 
 typedef enum {
-	V_AREF,
-	V_AVCC,
-	V_INTERNAL = 3   //2.56v with external capacitor at AREF pin
-	}voltage_reference_type;
+	ADC_AREF,
+	ADC_VCC,
+	ADC_V256 = 3   //2.56v with external capacitor at AREF pin
+	}ADC_Vref_type;
 	
 typedef enum{
-	PRESCALER_2 = 1,
-	PRESCALER_4,
-	PRESCALER_8,
-	PRESCALER_16,
-	PRESCALER_32,
-	PRESCALER_64,
-	PRESCALER_128
-	}adc_prescaler_type;
+	ADC_PRESCALER_2 = 1,
+	ADC_PRESCALER_4,
+	ADC_PRESCALER_8,
+	ADC_PRESCALER_16,
+	ADC_PRESCALER_32,
+	ADC_PRESCALER_64,
+	ADC_PRESCALER_128
+	}ADC_prescaler_type;
 	
 typedef enum{
 	CHANNEL_0,
@@ -32,14 +33,17 @@ typedef enum{
 	CHANNEL_5,
 	CHANNEL_6,
 	CHANNEL_7
-	}channel_type;
+	}ADC_channel_type;
 
-void ADC_Init (voltage_reference_type Vref, adc_prescaler_type prescaler);
+void ADC_Init (ADC_Vref_type Vref, ADC_prescaler_type prescaler);
 void ADC_Enable ();
-void ADC_StartConversion (channel_type channel);
-u16 ADC_Read_Polling (channel_type channel);
+void ADC_StartConversion (ADC_channel_type channel);
+u16 ADC_Read_Polling (ADC_channel_type channel);
 u8 ADC_Read (u16* data);
 void ADC_Disable ();
+
+
+u16 ADC_GetVolt (ADC_channel_type channel);
 
 
 #endif /* ADC_H_ */

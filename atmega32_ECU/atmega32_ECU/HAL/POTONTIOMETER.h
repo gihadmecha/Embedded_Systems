@@ -8,7 +8,7 @@
 #include "POTONTIOMETER_Lcfg.h"
 #include "ADC.h"
 
-u8 POTONTIOMETER_Read ();
+u8 POTONTIOMETER ();
 
 
 

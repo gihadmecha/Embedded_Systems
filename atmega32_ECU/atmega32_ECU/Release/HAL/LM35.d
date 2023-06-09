@@ -1,5 +1,4 @@
-HAL/POTONTIOMETER.d HAL/POTONTIOMETER.o: ../HAL/POTONTIOMETER.c \
- ../HAL/POTONTIOMETER.h ../StdTypes.h ../HAL/POTONTIOMETER_Lcfg.h \
+HAL/LM35.d HAL/LM35.o: ../HAL/LM35.c ../HAL/LM35.h ../HAL/LM35_Lcfg.h \
  ../MCAL/ADC.h ../MemMap.h ../UTILS.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
@@ -7,13 +6,11 @@ HAL/POTONTIOMETER.d HAL/POTONTIOMETER.o: ../HAL/POTONTIOMETER.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdint.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
- ../MCAL/ADC_Lcfg.h
+ ../StdTypes.h ../MCAL/ADC_Lcfg.h
 
-../HAL/POTONTIOMETER.h:
+../HAL/LM35.h:
 
-../StdTypes.h:
-
-../HAL/POTONTIOMETER_Lcfg.h:
+../HAL/LM35_Lcfg.h:
 
 ../MCAL/ADC.h:
 
@@ -32,5 +29,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h:
+
+../StdTypes.h:
 
 ../MCAL/ADC_Lcfg.h:

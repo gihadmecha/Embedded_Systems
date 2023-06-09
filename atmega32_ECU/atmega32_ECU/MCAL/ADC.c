@@ -3,66 +3,68 @@
 
 static u8 readFlag = 1;
 
-void ADC_Init (voltage_reference_type Vref, adc_prescaler_type prescaler)
+void ADC_Init (ADC_Vref_type Vref, ADC_prescaler_type prescaler)
 {
 	// Vref
 	switch (Vref)
 	{
-		case V_AREF:
+		case ADC_AREF:
 		CLR_BIT(ADMUX, REFS1);
 		CLR_BIT(ADMUX, REFS0);
 		break;
-		case V_AVCC:
+		case ADC_VCC:
 		CLR_BIT(ADMUX, REFS1);
 		SET_BIT(ADMUX, REFS0);
 		break;
-		case V_INTERNAL:
+		case ADC_V256:
 		SET_BIT(ADMUX, REFS1);
 		SET_BIT(ADMUX, REFS0);
 		break;
 	}
 	
 	//prescaler
+	// ADCSRA = (ADCSRA & 0b11111000) | prescaler;
 	switch (prescaler)
 	{
-		case PRESCALER_2:
+		case ADC_PRESCALER_2:
 		CLR_BIT(ADCSRA, ADPS2);
 		CLR_BIT(ADCSRA, ADPS1);
 		SET_BIT(ADCSRA, ADPS0);
 		break;
-		case PRESCALER_4:
+		case ADC_PRESCALER_4:
 		CLR_BIT(ADCSRA, ADPS2);
 		SET_BIT(ADCSRA, ADPS1);
 		CLR_BIT(ADCSRA, ADPS0);
 		break;
-		case PRESCALER_8:
+		case ADC_PRESCALER_8:
 		CLR_BIT(ADCSRA, ADPS2);
 		SET_BIT(ADCSRA, ADPS1);
 		SET_BIT(ADCSRA, ADPS0);
 		break;
-		case PRESCALER_16:
+		case ADC_PRESCALER_16:
 		SET_BIT(ADCSRA, ADPS2);
 		CLR_BIT(ADCSRA, ADPS1);
 		CLR_BIT(ADCSRA, ADPS0);
 		break;
-		case PRESCALER_32:
+		case ADC_PRESCALER_32:
 		SET_BIT(ADCSRA, ADPS2);
 		CLR_BIT(ADCSRA, ADPS1);
 		SET_BIT(ADCSRA, ADPS0);
 		break;
-		case PRESCALER_64:
+		case ADC_PRESCALER_64:
 		SET_BIT(ADCSRA, ADPS2);
 		SET_BIT(ADCSRA, ADPS1);
 		CLR_BIT(ADCSRA, ADPS0);
 		break;
-		case PRESCALER_128:
+		case ADC_PRESCALER_128:
 		SET_BIT(ADCSRA, ADPS2);
 		SET_BIT(ADCSRA, ADPS1);
 		SET_BIT(ADCSRA, ADPS0);
 		break;
 	}
 	
-	// adjust result
+	// adjust result from left to right
+	CLR_BIT(ADMUX, ADLAR);
 	
 	//single or running conversion mode
 
@@ -73,7 +75,7 @@ void ADC_Enable ()
 	SET_BIT(ADCSRA, ADEN);
 }
 
-void ADC_StartConversion (channel_type channel)
+void ADC_StartConversion (ADC_channel_type channel)
 {
 	if (readFlag == 1)
 	{
@@ -145,10 +147,11 @@ void ADC_StartConversion (channel_type channel)
 	}
 }
 
-u16 ADC_Read_Polling (channel_type channel)
+u16 ADC_Read_Polling (ADC_channel_type channel)
 {
 	
 	// select channel
+	//ADMUX = (ADMUX&0b11100000)|channel;
 	switch (channel)
 	{
 		case CHANNEL_0:
@@ -214,7 +217,8 @@ u16 ADC_Read_Polling (channel_type channel)
 	
 	//read
 	//_delay_us (300);
-	while (READ_BIT(ADCSRA, ADSC));
+	while (READ_BIT(ADCSRA, ADSC));  //busy wait
+	//return (((u16)ADCH)<<8)|ADCL;
 	return ADC;
 }
 
@@ -222,6 +226,7 @@ u8 ADC_Read (u16* data)
 {
 	if (READ_BIT(ADCSRA, ADSC))
 	{
+		//*data = (((u16)ADCH)<<8)|ADCL;
 		*data = ADC;
 		readFlag = 1;
 		return 1;
@@ -235,4 +240,10 @@ u8 ADC_Read (u16* data)
 void ADC_Disable ()
 {
 	CLR_BIT(ADCSRA, ADEN);
+}
+
+
+u16 ADC_GetVolt (ADC_channel_type channel)
+{
+	return	((u32)ADC_Read_Polling(channel) * V_REF)/1024;
 }
