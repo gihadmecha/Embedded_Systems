@@ -10,7 +10,7 @@ void TIMER0_Init (timer0_prescaler_type prescaler, timer0_mode_type timerMode, t
 		CLR_BIT(TCCR0, CS01);
 		CLR_BIT(TCCR0, CS00);
 		break;
-		case TIMER0_PRESCALER_NO_PRESCALER:
+		case TIMER0_PRESCALER_1:
 		CLR_BIT(TCCR0, CS02);
 		CLR_BIT(TCCR0, CS01);
 		SET_BIT(TCCR0, CS00);
@@ -99,8 +99,8 @@ void TIMER0_overflow_interruptDisable ()
 }
 
 
-void (*funcPtrCompareMatch)(void) = NULL; 
-void (*funcPtrOverflow)(void) = NULL;
+static void (*funcPtrCompareMatch)(void) = NULL; 
+static void (*funcPtrOverflow)(void) = NULL;
 
 void TIMER0_compareMatchInterruptSet (void (*func)(void))
 {
