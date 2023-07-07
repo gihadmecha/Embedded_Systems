@@ -240,6 +240,12 @@
     <Compile Include="MCAL\EXI.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MCAL\TIMER0.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\TIMER0.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="MemMap.h">
       <SubType>compile</SubType>
     </Compile>
