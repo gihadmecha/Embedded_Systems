@@ -234,6 +234,12 @@
     <Compile Include="MCAL\DIO_Private.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MCAL\EXI.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\EXI.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="MemMap.h">
       <SubType>compile</SubType>
     </Compile>

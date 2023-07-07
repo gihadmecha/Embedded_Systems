@@ -75,6 +75,16 @@ void ADC_Enable ()
 	SET_BIT(ADCSRA, ADEN);
 }
 
+void ADC_InterruptEnable ()
+{
+	SET_BIT(ADCSRA, ADIE);
+}
+
+void ADC_InterruptDisable ()
+{
+	CLR_BIT(ADCSRA, ADIE);
+}
+
 void ADC_StartConversion (ADC_channel_type channel)
 {
 	if (readFlag == 1)
@@ -222,7 +232,7 @@ u16 ADC_Read_Polling (ADC_channel_type channel)
 	return ADC;
 }
 
-u8 ADC_Read (u16* data)
+u8 ADC_Read_periodicCheck (u16* data)
 {
 	if (READ_BIT(ADCSRA, ADSC))
 	{
@@ -237,6 +247,12 @@ u8 ADC_Read (u16* data)
 	}
 }
 
+u16 ADC_Read ()
+{
+	readFlag = 1;
+	return	ADC;
+}
+
 void ADC_Disable ()
 {
 	CLR_BIT(ADCSRA, ADEN);
@@ -246,4 +262,16 @@ void ADC_Disable ()
 u16 ADC_GetVolt (ADC_channel_type channel)
 {
 	return	((u32)ADC_Read_Polling(channel) * V_REF)/1024;
+}
+
+static void (*funcptr)(void) = NULL;
+
+ISR(ADC_vect)
+{
+	funcptr();
+}
+
+void ADC_Interrupt (void (*func)(void))
+{
+	funcptr = func;
 }

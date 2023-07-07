@@ -35,11 +35,40 @@
 #define		ADCSRA	( *(volatile unsigned char*)0x26 )
 #define		ADEN	7
 #define		ADSC	6
+#define		ADIE	3
 #define		ADPS2	2
 #define		ADPS1	1
 #define		ADPS0	0
 #define		ADCH	( *(volatile unsigned char*) 0x25)
 #define		ADCL	( *(volatile unsigned char*) 0x24)
 #define		ADC	    ( *(volatile unsigned short*) 0x24)
+
+/***********************************************EXI******************************************/
+#define		GICR	(*(unsigned volatile char*)0x5B)
+#define     INT0	6
+#define     INT1	7
+#define     INT2	5
+
+#define		MCUCR	(*(unsigned volatile char*)0x55)
+#define		ISC00	0
+#define		ISC01	1
+
+#define		MCUCSR	(*(unsigned volatile char*)0x54)
+#define		ISC2	6
+
+/******************************INTERRUPPT_ATTRRIBUTES****************************************/
+#define		SEI()		    __asm__ __volatile__("SEI"::)
+#define		CLI()		    __asm__ __volatile__("CLI"::)
+
+#define		ADC_vect	    __vector_16
+#define		INT0_vect	    __vector_1
+#define		INT1_vect	    __vector_2
+#define		INT2_vect	    __vector_3
+#define		ISR(vector)		void vector(void)__attribute__((signal));\
+						    void vector(void)
+
+/*********************************STATUS REGISTER*******************************************/
+#define		SREG	(*(unsigned volatile char*)0x5F)
+#define		I		7
 
 #endif /* MEMMAP_H_ */

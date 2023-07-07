@@ -37,11 +37,15 @@ typedef enum{
 
 void ADC_Init (ADC_Vref_type Vref, ADC_prescaler_type prescaler);
 void ADC_Enable ();
+void ADC_InterruptEnable ();
+void ADC_InterruptDisable ();
 void ADC_StartConversion (ADC_channel_type channel);
 u16 ADC_Read_Polling (ADC_channel_type channel);
-u8 ADC_Read (u16* data);
+u8 ADC_Read_periodicCheck (u16* data);
+u16 ADC_Read ();
 void ADC_Disable ();
 
+void ADC_Interrupt (void (*funcptr)(void));
 
 u16 ADC_GetVolt (ADC_channel_type channel);
 

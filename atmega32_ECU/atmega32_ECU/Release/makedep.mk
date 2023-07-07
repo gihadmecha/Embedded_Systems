@@ -28,3 +28,5 @@ MCAL\DIO.c
 
 MCAL\DIO_Lcfg.c
 
+MCAL\EXI.c
+
