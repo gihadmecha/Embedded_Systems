@@ -2,9 +2,9 @@
 #include "DIO_interface.h"
 
 const DIO_PinStatus_type PinsStatusArray[] = {
-	INFREE, //PINA0
-	INFREE, //PINA1
-	INFREE, //PINA2
+	OUTPUT, //PINA0
+	OUTPUT, //PINA1
+	OUTPUT, //PINA2
 	INFREE, //PINA3
 	INFREE, //PINA4
 	INFREE, //PINA5

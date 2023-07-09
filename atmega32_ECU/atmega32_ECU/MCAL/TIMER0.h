@@ -7,11 +7,12 @@
 #include "MemMap.h"
 #include "StdTypes.h"
 #include "UTILS.h"
+#include "TIMER0_Lcfg.h"
 
-#define		TCNT0_READ()	    TCNT0
-#define		TCNT0_WRITE(data)	TCNT0 = data
-#define		OCR0_READ()		    OCR0
-#define		OCR0_WRITE(data)	OCR0 = data
+#define		TIMER0_TCNT0_READ()				 TCNT0
+#define		TIMER0_TCNT0_WRITE(data)		 TCNT0 = data
+#define		TIMER0_OCR0_READ()				 OCR0
+#define		TIMER0_OCR0_WRITE(data)			 OCR0 = data
 
 
 typedef enum {
@@ -42,5 +43,7 @@ void TIMER0_OCM_interruptEnable ();
 void TIMER0_OCM_interruptDisable ();
 void TIMER0_overflow_interruptEnable ();
 void TIMER0_overflow_interruptDisable ();
+void TIMER0_compareMatchInterruptSet (void (*func)(void));
+void TIMER0_overflowInterruptSet (void (*func)(void));
 
 #endif 

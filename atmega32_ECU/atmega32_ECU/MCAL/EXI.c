@@ -5,7 +5,7 @@
 void INT0_Init (INT0_Event_type event)
 {
 	MCUCR = MCUCR & 0b11111100;
-	MCUCR = MCUCR & event;
+	MCUCR = MCUCR | event;
 }
 
 void INT0_Enable ()

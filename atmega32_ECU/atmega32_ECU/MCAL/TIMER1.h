@@ -62,6 +62,10 @@ void TIMER1_overflow_interruptEnable ();
 void TIMER1_overflow_interruptDisable ();
 void TIMER1_timeStamp_interruptEnable ();
 void TIMER1_timeStamp_interruptDisable ();
+void TIMER1_compareMatch1AInterruptSet (void (*func)(void));
+void TIMER1_compareMatch1BInterruptSet (void (*func)(void));
+void TIMER1_overflowInterruptSet (void (*func)(void));
+void TIMER1_timeStampInterruptSet (void (*func)(void));
 
 
 
