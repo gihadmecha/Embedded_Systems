@@ -4,13 +4,13 @@
 #define SEGMENTS_LCFG_H_
 
 //cathode
-#define		SEGMENT1_A	PINC0
-#define		SEGMENT1_B	PINC1
-#define		SEGMENT1_C	PINC2
-#define		SEGMENT1_D	PINC3
-#define		SEGMENT1_E	PINC4
-#define		SEGMENT1_F	PINC5
-#define		SEGMENT1_G	PINC6
+#define		SEGMENT1_A	PINB0
+#define		SEGMENT1_B	PINB1
+#define		SEGMENT1_C	PINB2
+#define		SEGMENT1_D	PINB3
+#define		SEGMENT1_E	PINB4
+#define		SEGMENT1_F	PINB5
+#define		SEGMENT1_G	PINB6
 
 //anode
 #define		SEGMENT2_A	PIND0

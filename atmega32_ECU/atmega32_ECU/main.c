@@ -3,6 +3,7 @@
 #include "EXI.h"
 #include "TIMER0.h"
 #include "LCD.h"
+#include "SEGMENTS.h"
 
 static void INT0Function();
 static void timer0OverflowFunction();
@@ -34,10 +35,11 @@ int main()
 		noOfTicks = TCNT0Value + overflowCounterValue * TIMER0_OVERFLOW_TICKS;
 		time = noOfTicks * TIMER0_TICK_TIME * 1000.0;                                    //msec
 		LCD_GoTo(0, 0);
-		LCD_WriteNumber(time);
+		LCD_WriteNumber((s32)time);
 		
 		LCD_GoTo(1,0);
-		LCD_WriteNumber(counter);
+		LCD_WriteNumber((s32)counter);
+		SEGMENTS1 (counter);
 		_delay_ms(200);
 		counter++;
 		if (counter == 10)
