@@ -9,10 +9,10 @@
 #include "UTILS.h"
 #include "TIMER0_Lcfg.h"
 
-#define		TIMER0_TCNT0_READ()				 TCNT0
+#define		TIMER0_TCNT0_READ()				 (TCNT0)
 #define		TIMER0_TCNT0_WRITE(data)		 TCNT0 = data
-#define		TIMER0_OCR0_READ()				 OCR0
-#define		TIMER0_OCR0_WRITE(data)			 OCR0 = data
+#define		TIMER0_OCR0_READ()				 (OCR0)
+#define		TIMER0_OCR0_WRITE(data)			 (OCR0 = (data))
 
 
 typedef enum {

@@ -6,6 +6,8 @@
 
 #define		NULL			0
 
+#define		NULLPTR			(void*)0
+
 typedef		unsigned char	u8;
 
 typedef		signed char		s8;

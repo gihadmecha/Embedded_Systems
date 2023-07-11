@@ -13,7 +13,7 @@ int main ()
 	LCD_Init();
 	TIMER0_Init(TIMER0_PRESCALER_8, TIMER0_NORMAL, TIMER0_OC0_DISCONNECTED);
 	
-	TCNT0_WRITE (112);
+	TIMER0_TCNT0_WRITE (112);
 	
 	SEI();
 	TIMER0_overflow_interruptEnable();
@@ -58,6 +58,6 @@ void timer0OverflowInterrupt()
 		}
 		
 		timer0OverflowCounter = 0;
-		TCNT0_WRITE (112);
+		TIMER0_TCNT0_WRITE (112);
 	}
 }

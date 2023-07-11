@@ -5,7 +5,7 @@
 #define POTONTIOMETER_LCFG_H_
 
 
-#define		POT_CHANNEL		CHANNEL_7
+#define		POT_CHANNEL		CHANNEL_0
 
 
 #endif /* POTONTIOMETER_LCFG_H_ */

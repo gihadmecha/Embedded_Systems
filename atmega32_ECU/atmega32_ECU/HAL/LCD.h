@@ -1,27 +1,20 @@
 
 
-
 #ifndef LCD_H_
 #define LCD_H_
 
-#include "LCD_Lcfg.h"
 #include "DIO_interface.h"
+#include "LCD_Lcfg.h"
 
-
-void LCD_Init();
-void LCD_GoTo(u8 line, u8 digit);
-void LCD_setCGRAM_Address(u8 pattarnCGRAM_location);
-void LCD_createCharacter (const u8* pattarn, u8 pattarnCGRAM_location);
-void LCD_Clear();
-void LCD_WriteChar(char character);
-void LCD_WriteString (char* string);
-void LCD_WriteNumber (s32 number);
-void LCD_WriteNumber_4Digit (u16 number);
-void LCD_WriteBinary (u8 number);
-void LCD_WriteHex(u8 number);
-void LCD_GoToClear(u8 line, u8 digit, u8 noOfDigits);
-void LCD_GoToWritString (u8 line, u8 digit, char* string);
-
-
+extern void LCD_Init ();
+extern void LCD_Clear ();
+extern void LCD_WriteChar ( u8 character);
+extern void LCD_WriteString ( u8* str);
+extern void LCD_WriteNumber ( double number);
+extern void LCD_WriteNumber_4Digit ( int number);
+extern void LCD_WriteBinary (u8 number);
+extern void LCD_WriteHex1 (u8 number);
+extern void LCD_WriteHex2 (u8 number);
+extern void LCD_GoTo ( u8 line, u8 digit);
 
 #endif /* LCD_H_ */
