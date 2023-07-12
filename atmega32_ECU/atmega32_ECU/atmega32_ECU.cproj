@@ -199,6 +199,15 @@
     <Compile Include="HAL\SEGMENTS_Private.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="HAL\SERVO.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\SERVO.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\SERVO_Lcfg.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="HAL\STEPPER_MOTOR.c">
       <SubType>compile</SubType>
     </Compile>

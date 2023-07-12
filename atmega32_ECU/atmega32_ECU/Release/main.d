@@ -5,9 +5,9 @@ main.d main.o: .././main.c ../MCAL/DIO_interface.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdint.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
- ../StdTypes.h ../MemMap.h ../UTILS.h ../MCAL/TIMER1.h ../HAL/MOTOR.h \
- ../HAL/MOTOR_Lcfg.h ../HAL/POTONTIOMETER.h ../HAL/POTONTIOMETER_Lcfg.h \
- ../MCAL/ADC.h ../MCAL/ADC_Lcfg.h ../HAL/LCD.h ../HAL/LCD_Lcfg.h
+ ../StdTypes.h ../MemMap.h ../UTILS.h ../MCAL/TIMER1.h ../MCAL/ADC.h \
+ ../MCAL/ADC_Lcfg.h ../HAL/LCD.h ../HAL/LCD_Lcfg.h ../HAL/POTONTIOMETER.h \
+ ../HAL/POTONTIOMETER_Lcfg.h ../HAL/SERVO.h
 
 ../MCAL/DIO_interface.h:
 
@@ -31,14 +31,6 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 ../MCAL/TIMER1.h:
 
-../HAL/MOTOR.h:
-
-../HAL/MOTOR_Lcfg.h:
-
-../HAL/POTONTIOMETER.h:
-
-../HAL/POTONTIOMETER_Lcfg.h:
-
 ../MCAL/ADC.h:
 
 ../MCAL/ADC_Lcfg.h:
@@ -46,3 +38,9 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../HAL/LCD.h:
 
 ../HAL/LCD_Lcfg.h:
+
+../HAL/POTONTIOMETER.h:
+
+../HAL/POTONTIOMETER_Lcfg.h:
+
+../HAL/SERVO.h:
