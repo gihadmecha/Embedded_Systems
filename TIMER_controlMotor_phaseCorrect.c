@@ -30,6 +30,7 @@ int main ()
 		LCD_GoTo(1, 6);
 		LCD_WriteNumber(top);
 		
+		// 50 HZ
 		top = 1.0/(2*frequency*0.000001);
 		
 		pot_read = POTONTIOMETER1();

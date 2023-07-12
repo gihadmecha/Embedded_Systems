@@ -9,6 +9,10 @@
 #include "UTILS.h"
 #include "TIMER0_Lcfg.h"
 
+#define		TIMER0_TIMER_F				(CPU_F/TIMER0_PRESCALAR)		//HZ
+#define		TIMER0_TICK_TIME			(1.0/TIMER0_TIMER_F)			//sec
+#define		TIMER0_NO_OF_TICKS			256
+
 #define		TIMER0_TCNT0_READ()				 (TCNT0)
 #define		TIMER0_TCNT0_WRITE(data)		 TCNT0 = data
 #define		TIMER0_OCR0_READ()				 (OCR0)

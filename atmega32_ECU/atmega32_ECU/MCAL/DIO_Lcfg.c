@@ -2,8 +2,8 @@
 #include "DIO_interface.h"
 
 const DIO_PinStatus_type PinsStatusArray[] = {
-	OUTPUT, //PINA0
-	OUTPUT, //PINA1
+	INFREE, //PINA0
+	INFREE, //PINA1
 	OUTPUT, //PINA2
 	INFREE, //PINA3
 	INFREE, //PINA4
@@ -30,8 +30,8 @@ const DIO_PinStatus_type PinsStatusArray[] = {
 	OUTPUT, //PIND1
 	INPULL, //PIND2//INT0
 	INPULL, //PIND3//INT1
-	OUTPUT, //PIND4
-	OUTPUT, //PIND5
+	OUTPUT, //PIND4//OC1B
+	OUTPUT, //PIND5//OC1A
 	OUTPUT, //PIND6
 	OUTPUT  //PIND7
 };

@@ -9,14 +9,16 @@
 #include "StdTypes.h"
 #include "UTILS.h"
 
-#define		TCNT1_READ()	        TCNT1
-#define		TCNT1_WRITE(data)	    TCNT1 = data
-#define		OCR1A_READ()		    OCR1A
-#define		OCR1A_WRITE(data)	    OCR1A = data
-#define		OCR1B_READ()		    OCR1B
-#define		OCR1B_WRITE(data)	    OCR1B = data
-#define		ICR1_READ()				ICR1
-#define		ICR1_WRITE(data)	    ICR1 = data
+#define		TIMER1_NO_OF_TICKS			65535
+
+#define		TIMER1_TCNT1_READ()				TCNT1
+#define		TIMER1_TCNT1_WRITE(data)	    TCNT1 = data
+#define		TIMER1_OCR1A_READ()				OCR1A
+#define		TIMER1_OCR1A_WRITE(data)	    OCR1A = data
+#define		TIMER1_OCR1B_READ()				OCR1B
+#define		TIMER1_OCR1B_WRITE(data)	    OCR1B = data
+#define		TIMER1_ICR1_READ()				ICR1
+#define		TIMER1_ICR1_WRITE(data)			ICR1 = data
 
 
 typedef enum {

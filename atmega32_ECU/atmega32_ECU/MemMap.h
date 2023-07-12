@@ -80,17 +80,17 @@
 #define		TCNT1L	(*(unsigned volatile char*)0x4C)
 #define		TCNT1	(*(unsigned volatile short*)0x4C)
 
-#define		OCRAH	(*(unsigned volatile char*)0x4B)
-#define		OCRAL	(*(unsigned volatile char*)0x4A)
-#define		OCRA	(*(unsigned volatile short*)0x4A)
+#define		OCR1AH	(*(unsigned volatile char*)0x4B)
+#define		OCR1AL	(*(unsigned volatile char*)0x4A)
+#define		OCR1A	(*(unsigned volatile short*)0x4A)
 
-#define		OCRBH	(*(unsigned volatile char*)0x49)
-#define		OCRBL	(*(unsigned volatile char*)0x48)
-#define		OCRB	(*(unsigned volatile short*)0x48)
+#define		OCR1BH	(*(unsigned volatile char*)0x49)
+#define		OCR1BL	(*(unsigned volatile char*)0x48)
+#define		OCR1B	(*(unsigned volatile short*)0x48)
 
 #define		ICR1H	(*(unsigned volatile char*)0x47)
-#define		ICR1BL	(*(unsigned volatile char*)0x46)
-#define		ICR1B	(*(unsigned volatile short*)0x46)
+#define		ICR1L	(*(unsigned volatile char*)0x46)
+#define		ICR1	(*(unsigned volatile short*)0x46)
 
 #define		TIMSK	(*(unsigned volatile char*)0x59)
 #define		TICIE1	5
