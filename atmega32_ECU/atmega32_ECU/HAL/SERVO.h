@@ -6,6 +6,7 @@
 
 #include "StdTypes.h"
 #include "TIMER1.h"
+#include "SERVO_Lcfg.h"
 
 
 void SERVO_setAngle (double angle);

@@ -227,7 +227,7 @@ static void LCD_numberToSring (double number, u8* numberString)
 	numberString[index] = NULL;
 }
 
-static void LCD_intToSring ( int number, u8* numberString)
+static void LCD_intToSring ( u32 number, u8* numberString)
 {
 	u8 index = 0;
 	u8 digit;

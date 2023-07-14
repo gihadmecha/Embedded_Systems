@@ -8,7 +8,10 @@
 #include "MemMap.h"
 #include "StdTypes.h"
 #include "UTILS.h"
+#include "TIMER1_Lcfg.h"
 
+#define		TIMER1_F				    (CPU_F/TIMER1_PRESCALAR)		//HZ
+#define		TIMER1_TICK_TIME			(1.0/TIMER1_F)			        //sec
 #define		TIMER1_NO_OF_TICKS			65535
 
 #define		TIMER1_TCNT1_READ()				TCNT1

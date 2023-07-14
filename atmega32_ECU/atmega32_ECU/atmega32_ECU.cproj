@@ -265,6 +265,9 @@
     <Compile Include="MCAL\TIMER1.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MCAL\TIMER1_Lcfg.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="MemMap.h">
       <SubType>compile</SubType>
     </Compile>

@@ -4,11 +4,21 @@
 
 void SERVO_setAngle (double angle)
 {
-	u16 top = 1.0/(50*0.000001);
+	// 50 HZ
+	u16 top = 1.0/(50*TIMER1_TICK_TIME);
+	u16 compareMatch = 999 + (1000 * ((90 + angle) / 180));
 	
-	TIMER1_ICR1_WRITE (top);
+	switch (TOP)
+	{
+		case TIMER1_ICR:
+		TIMER1_ICR1_WRITE (top);
+		break;
+	}
 	
-	u16 compareMatch = 1000 + (1000 * ((90 + angle) / 180));
-	
-	TIMER1_OCR1B_WRITE (compareMatch);
+	switch (SERVO_PIN)
+	{
+		case OC1B_pin:
+		TIMER1_OCR1B_WRITE (compareMatch);
+		break;
+	}
 }
