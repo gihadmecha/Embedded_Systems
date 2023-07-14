@@ -271,10 +271,10 @@
     <Compile Include="MemMap.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="SERVICES\TIMER0_SERVICES.c">
+    <Compile Include="SERVICES\TIMER_SERVICES.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="SERVICES\TIMER0_SERVICES.h">
+    <Compile Include="SERVICES\TIMER_SERVICES.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="StdTypes.h">

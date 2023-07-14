@@ -32,7 +32,7 @@ const DIO_PinStatus_type PinsStatusArray[] = {
 	INPULL, //PIND3//INT1
 	OUTPUT, //PIND4//OC1B
 	OUTPUT, //PIND5//OC1A
-	OUTPUT, //PIND6
+	INFREE, //PIND6
 	OUTPUT  //PIND7
 };
 

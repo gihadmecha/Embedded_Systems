@@ -99,6 +99,7 @@
 #define		TOIE1	2
 
 #define		TCCR1B	(*(unsigned volatile char*)0x4E)
+#define		ICES1	6
 #define		WGM13	4
 #define		WGM12	3
 #define		CS12	2

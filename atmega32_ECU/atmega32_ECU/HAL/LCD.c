@@ -274,6 +274,38 @@ extern void LCD_WriteNumber ( double number)
 	LCD_WriteString ( numberString);
 }
 
+//void LCD_WriteNumber (s32 number)
+//{
+	//double numberCopy = number;
+	//s8 digitCounter = 0;
+//
+	//if(number == 0)
+	//{
+		//LCD_WriteChar('0');
+	//}
+	//else
+	//{
+		//if (number < 0)
+		//{
+			//LCD_WriteChar('-');
+			//numberCopy = -number;
+		//}
+//
+		//while (numberCopy >= 1)
+		//{
+			//numberCopy /= 10;
+			//digitCounter++;
+		//}
+//
+		//while (digitCounter)
+		//{
+			//numberCopy *= 10;
+			//LCD_WriteChar('0' + (u32)numberCopy % 10);
+			//digitCounter--;
+		//}
+	//}
+//}
+
 extern void LCD_WriteNumber_4Digit ( int number)
 {
 	LCD_WriteChar('0' + (number / 1000)%10);

@@ -58,7 +58,13 @@ typedef enum {
 	TIMER1_OC1_SET_ON_COMPARE_MATCH
 }timer1_OC1_mode_type;
 
+typedef enum {
+	TIMER1_ICU_FALLING_EDGE,
+	TIMER1_ICU_RAISING_EDGE
+	}timer1_ICP_EDGE_type;
+
 void TIMER1_Init (timer1_prescaler_type prescaler, timer1_mode_type timerMode, timer1_OC1_mode_type OC1AMode, timer1_OC1_mode_type OC1BMode);
+void TIMER1_ICPedgeMode (timer1_ICP_EDGE_type edgeType);
 void TIMER1_OCM1A_interruptEnable ();
 void TIMER1_OCM1A_interruptDisable ();
 void TIMER1_OCM1B_interruptEnable ();

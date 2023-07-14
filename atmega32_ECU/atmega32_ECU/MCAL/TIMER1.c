@@ -172,6 +172,19 @@ void TIMER1_Init (timer1_prescaler_type prescaler, timer1_mode_type timerMode, t
 	}
 }
 
+void TIMER1_ICPedgeMode (timer1_ICP_EDGE_type edgeType)
+{
+	switch (edgeType)
+	{
+		case TIMER1_ICU_FALLING_EDGE:
+		CLR_BIT (TCCR1B, ICES1);
+		break;
+		case TIMER1_ICU_RAISING_EDGE:
+		SET_BIT (TCCR1B, ICES1);
+		break;
+	}
+}
+
 void TIMER1_OCM1A_interruptEnable ()
 {
 	SET_BIT (TIMSK, OCIE1A);
