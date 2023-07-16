@@ -22,6 +22,8 @@ HAL\SERVO.c
 
 HAL\STEPPER_MOTOR.c
 
+HAL\ultrasonic.c
+
 main.c
 
 MCAL\ADC.c

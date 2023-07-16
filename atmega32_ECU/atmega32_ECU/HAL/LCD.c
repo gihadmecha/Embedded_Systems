@@ -265,46 +265,46 @@ static void LCD_intToSring ( u32 number, u8* numberString)
 	numberString[index] = NULL;
 }
 
-extern void LCD_WriteNumber ( double number)
-{
-	u8 numberString[20];
-	//LCD_numberToSring ( number, numberString);
-	LCD_intToSring ( number, numberString);
-	LCD_stringReverse(numberString);
-	LCD_WriteString ( numberString);
-}
-
-//void LCD_WriteNumber (s32 number)
+//extern void LCD_WriteNumber ( double number)
 //{
-	//double numberCopy = number;
-	//s8 digitCounter = 0;
-//
-	//if(number == 0)
-	//{
-		//LCD_WriteChar('0');
-	//}
-	//else
-	//{
-		//if (number < 0)
-		//{
-			//LCD_WriteChar('-');
-			//numberCopy = -number;
-		//}
-//
-		//while (numberCopy >= 1)
-		//{
-			//numberCopy /= 10;
-			//digitCounter++;
-		//}
-//
-		//while (digitCounter)
-		//{
-			//numberCopy *= 10;
-			//LCD_WriteChar('0' + (u32)numberCopy % 10);
-			//digitCounter--;
-		//}
-	//}
+	//u8 numberString[20];
+	////LCD_numberToSring ( number, numberString);
+	//LCD_intToSring ( number, numberString);
+	//LCD_stringReverse(numberString);
+	//LCD_WriteString ( numberString);
 //}
+
+void LCD_WriteNumber (s32 number)
+{
+	double numberCopy = number;
+	s8 digitCounter = 0;
+
+	if(number == 0)
+	{
+		LCD_WriteChar('0');
+	}
+	else
+	{
+		if (number < 0)
+		{
+			LCD_WriteChar('-');
+			numberCopy = -number;
+		}
+
+		while (numberCopy >= 1)
+		{
+			numberCopy /= 10;
+			digitCounter++;
+		}
+
+		while (digitCounter)
+		{
+			numberCopy *= 10;
+			LCD_WriteChar('0' + (u32)numberCopy % 10);
+			digitCounter--;
+		}
+	}
+}
 
 extern void LCD_WriteNumber_4Digit ( int number)
 {

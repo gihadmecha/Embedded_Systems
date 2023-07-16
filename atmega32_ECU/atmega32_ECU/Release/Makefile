@@ -50,6 +50,7 @@ C_SRCS +=  \
 ../HAL/SEGMENTS.c \
 ../HAL/SERVO.c \
 ../HAL/STEPPER_MOTOR.c \
+../HAL/ultrasonic.c \
 ../main.c \
 ../MCAL/ADC.c \
 ../MCAL/DIO.c \
@@ -77,6 +78,7 @@ HAL/POTONTIOMETER.o \
 HAL/SEGMENTS.o \
 HAL/SERVO.o \
 HAL/STEPPER_MOTOR.o \
+HAL/ultrasonic.o \
 main.o \
 MCAL/ADC.o \
 MCAL/DIO.o \
@@ -97,6 +99,7 @@ HAL/POTONTIOMETER.o \
 HAL/SEGMENTS.o \
 HAL/SERVO.o \
 HAL/STEPPER_MOTOR.o \
+HAL/ultrasonic.o \
 main.o \
 MCAL/ADC.o \
 MCAL/DIO.o \
@@ -117,6 +120,7 @@ HAL/POTONTIOMETER.d \
 HAL/SEGMENTS.d \
 HAL/SERVO.d \
 HAL/STEPPER_MOTOR.d \
+HAL/ultrasonic.d \
 main.d \
 MCAL/ADC.d \
 MCAL/DIO.d \
@@ -137,6 +141,7 @@ HAL/POTONTIOMETER.d \
 HAL/SEGMENTS.d \
 HAL/SERVO.d \
 HAL/STEPPER_MOTOR.d \
+HAL/ultrasonic.d \
 main.d \
 MCAL/ADC.d \
 MCAL/DIO.d \
@@ -224,6 +229,13 @@ HAL/SERVO.o: ../HAL/SERVO.c
 	
 
 HAL/STEPPER_MOTOR.o: ../HAL/STEPPER_MOTOR.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DNDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../MCAL" -I".." -I"../HAL" -I"../SERVICES"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+HAL/ultrasonic.o: ../HAL/ultrasonic.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DNDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../MCAL" -I".." -I"../HAL" -I"../SERVICES"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

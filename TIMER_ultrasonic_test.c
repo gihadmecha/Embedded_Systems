@@ -11,8 +11,6 @@ static u32 overflowCounter = 0;
 static u8 edgeCounter = 1;
 static u32 overflowCounterValue = 0;
 static u16 TIMER1_TCNT1_value = 0;
-static u16 ICUvalue1 = 0;
-static u16 ICUvalue2 = 0;
 
 int main ()
 {
@@ -40,21 +38,16 @@ int main ()
 	
 	while (1)
 	{
-		TIMER1_TCNT1_WRITE (0);
 		DIO_WritePin(PINB0, HIGH);
 		_delay_us(10);
 		DIO_WritePin(PINB0, LOW);
 		
-		//_delay_us(8.0 * ( (1.0 / (40.0 * 1000)) * 1000000.0 ));
-		
-		while (edgeCounter < 3);
+		_delay_us(8.0 * ( (1.0 / (40.0 * 1000)) * 1000000.0 ));
 		
 		noOfTicks = TIMER1_TCNT1_value + TIMER1_NO_OF_TICKS * overflowCounterValue;
 		
 		// in usec
-		//pulseDuration = TIMER1_TICK_TIME * 1000000.0 * noOfTicks;
-		
-		pulseDuration = ICUvalue2 - ICUvalue1;
+		pulseDuration = TIMER1_TICK_TIME * 1000000.0 * noOfTicks;
 		
 		//LCD_GoTo(0, 0);
 		//LCD_WriteNumber(pulseDuration);
@@ -69,9 +62,6 @@ int main ()
 		//LCD_WriteNumber (distance);
 		LCD_WriteString(" ");
 		LCD_WriteString("cm");
-		edgeCounter = 1;
-		TIMER1_timeStamp_interruptEnable();
-		TIMER1_ICPedgeMode(TIMER1_ICU_RAISING_EDGE);
 	}
 }
 
@@ -80,19 +70,16 @@ void ICUFunction ()
 	if (edgeCounter == 1)
 	{
 		edgeCounter = 2;
-		//TIMER1_TCNT1_WRITE (0);
-		//overflowCounter = 0;
-		ICUvalue1 = TIMER1_ICR1_READ();
+		TIMER1_TCNT1_WRITE (0);
+		overflowCounter = 0;
 		TIMER1_ICPedgeMode(TIMER1_ICU_FALLING_EDGE);
 	}
 	else if (edgeCounter == 2)
 	{
-		edgeCounter = 3;
-		//TIMER1_TCNT1_value = TIMER1_TCNT1_READ ();
-		//overflowCounterValue = overflowCounter;
-		ICUvalue2 = TIMER1_ICR1_READ();
-		//TIMER1_ICPedgeMode(TIMER1_ICU_RAISING_EDGE);
-		TIMER1_timeStamp_interruptDisable();
+		edgeCounter = 1;
+		TIMER1_TCNT1_value = TIMER1_TCNT1_READ ();
+		overflowCounterValue = overflowCounter;
+		TIMER1_ICPedgeMode(TIMER1_ICU_RAISING_EDGE);
 	}
 }
 
