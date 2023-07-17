@@ -114,6 +114,37 @@
 #define		WGM11	1
 #define		WGM10	0
 
+/***********************************************UDR******************************************/
+#define		UDR		(*(unsigned volatile char*)0x2C)
+
+#define		UCSRA	(*(unsigned volatile char*)0x2B)
+#define		RXC		7
+#define		TXC		6
+#define		UDRE	5
+#define		U2X		1
+
+#define		UCSRB	(*(unsigned volatile char*)0x2A)
+#define		RXCIE	7
+#define		TXCIE	6
+#define		UDRIE	5
+#define		RXEN	4
+#define		TXEN	3
+#define		UCSZ2	2
+
+#define		UCSRC	(*(unsigned volatile char*)0x40)
+#define		URSEL	7
+#define		UMSEL	6
+#define		UPM1	5
+#define		UPM0	4
+#define		USBS	3
+#define		UCSZ1	2
+#define		UCSZ0	1
+#define		UCPOL	0
+
+#define		UBRRH	(*(unsigned volatile char*)0x40)
+
+#define		UBRRL	(*(unsigned volatile char*)0x29)
+
 /******************************INTERRUPPT_ATTRRIBUTES****************************************/
 #define		SEI()		    __asm__ __volatile__("SEI"::)
 #define		CLI()		    __asm__ __volatile__("CLI"::)
@@ -128,6 +159,9 @@
 #define		TIMER1_compareMatch1B_vect  __vector_8
 #define		TIMER1_timeStamp_vect		__vector_6
 #define		TIMER1_overflow_vect		__vector_9
+#define		UART_RXC_vect				__vector_13
+#define		UART_UDRempty_vect			__vector_14
+#define		UART_TXC_vect				__vector_15
 #define		ISR(vector)		void vector(void)__attribute__((signal));\
 						    void vector(void)
 

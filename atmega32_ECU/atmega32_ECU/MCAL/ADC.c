@@ -268,7 +268,10 @@ static void (*funcptr)(void) = NULL;
 
 ISR(ADC_vect)
 {
-	funcptr();
+	if (funcptr != NULLPTR)
+	{
+		funcptr();
+	}
 }
 
 void ADC_Interrupt (void (*func)(void))

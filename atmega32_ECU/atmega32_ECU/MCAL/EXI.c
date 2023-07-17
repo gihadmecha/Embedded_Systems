@@ -26,7 +26,10 @@ void INT0_Interrupt (void (*func)(void))
 
 ISR(INT0_vect)
 {
-	FUNC_PTR0();
+	if (FUNC_PTR0 != NULLPTR)
+	{
+		FUNC_PTR0();
+	}
 }
 //////////////////////////////////////////////////////////////////////////
 
@@ -55,7 +58,10 @@ void INT1_Interrupt (void (*func)(void))
 
 ISR(INT1_vect)
 {
-	FUNC_PTR1();
+	if (FUNC_PTR1 != NULLPTR)
+	{
+		FUNC_PTR1();
+	}
 }
 /////////////////////////////////////////////////////////////
 
@@ -89,5 +95,8 @@ void INT2_Interrupt (void (*func)(void))
 
 ISR(INT2_vect)
 {
-	FUNC_PTR2();
+	if (FUNC_PTR2 != NULLPTR)
+	{
+		FUNC_PTR2();
+	}
 }

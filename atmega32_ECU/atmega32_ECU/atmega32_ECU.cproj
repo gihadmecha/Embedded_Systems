@@ -277,6 +277,12 @@
     <Compile Include="MCAL\TIMER1_Lcfg.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MCAL\UART.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\UART.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="MemMap.h">
       <SubType>compile</SubType>
     </Compile>

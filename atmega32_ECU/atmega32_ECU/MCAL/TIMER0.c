@@ -114,11 +114,17 @@ void TIMER0_overflowInterruptSet (void (*func)(void))
 
 ISR (TIMER0_compareMatch_vect)
 {
-	funcPtrCompareMatch();
+	if (funcPtrCompareMatch != NULLPTR)
+	{
+		funcPtrCompareMatch();
+	}
 }
 
 ISR (TIMER0_overflow_vect)
 {
-	funcPtrOverflow();
+	if (funcPtrOverflow != NULLPTR)
+	{
+		funcPtrOverflow();
+	}
 }
 

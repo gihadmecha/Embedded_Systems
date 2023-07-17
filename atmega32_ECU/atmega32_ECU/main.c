@@ -1,102 +1,19 @@
 
-#include "ultrasonic.h"
-#include "DIO_interface.h"
-#include "TIMER1.h"
-#include "LCD.h"
-
-static void ICUFunction ();
-static void overflowFunction ();
-
-static u32 overflowCounter = 0;
-static u8 edgeCounter = 1;
-static u32 overflowCounterValue = 0;
-static u16 TIMER1_TCNT1_value = 0;
-static u16 ICUvalue1 = 0;
-static u16 ICUvalue2 = 0;
+#include "UART.h"
 
 int main ()
 {
-	DIO_Init();
-	TIMER1_Init(TIMER1_PRESCALER_8, TIMER1_NORMAL, TIMER1_OC1_DISCONNECTED, TIMER1_OC1_DISCONNECTED);
-	TIMER1_ICPedgeMode(TIMER1_ICU_RAISING_EDGE);
-	LCD_Init();
+	UART_Init();
+	UART_TransmitterEnable();
 	
-	SEI();
-	TIMER1_timeStamp_interruptEnable();
-	TIMER1_overflow_interruptEnable();
-	
-	TIMER1_timeStampInterruptSet(ICUFunction);
-	TIMER1_overflowInterruptSet(overflowFunction);
-	
-	u32 noOfTicks = 0;
-	double pulseDuration = 0;
-	
-	double time = 0;
-	
-	double distance = 0;
-	
-	
-	double soundSpeed = (340.0 * 100) / 1000000.0;             //  centimeter/usec
-	
+	UART_Send_polling('A');
+	//_delay_ms(1);
+	UART_Send_polling('B');
+	//_delay_ms(1);
+	UART_Send_polling('C');
+	//_delay_ms(1);
 	while (1)
 	{
-		TIMER1_TCNT1_WRITE (0);
-		DIO_WritePin(PINB0, HIGH);
-		_delay_us(10);
-		DIO_WritePin(PINB0, LOW);
 		
-		//_delay_us(8.0 * ( (1.0 / (40.0 * 1000)) * 1000000.0 ));
-		
-		while (edgeCounter < 3);
-		
-		noOfTicks = TIMER1_TCNT1_value + TIMER1_NO_OF_TICKS * overflowCounterValue;
-		
-		// in usec
-		//pulseDuration = TIMER1_TICK_TIME * 1000000.0 * noOfTicks;
-		
-		pulseDuration = ICUvalue2 - ICUvalue1;
-		
-		//LCD_GoTo(0, 0);
-		//LCD_WriteNumber(pulseDuration);
-		//LCD_WriteNumber_4Digit((u16)pulseDuration);
-		
-		time = pulseDuration / 2.0;
-		
-		distance = time * soundSpeed;
-		
-		LCD_GoTo(1, 0);
-		LCD_WriteNumber_4Digit ((u16)distance);
-		//LCD_WriteNumber (distance);
-		LCD_WriteString(" ");
-		LCD_WriteString("cm");
-		edgeCounter = 1;
-		TIMER1_timeStamp_interruptEnable();
-		TIMER1_ICPedgeMode(TIMER1_ICU_RAISING_EDGE);
 	}
-}
-
-void ICUFunction ()
-{
-	if (edgeCounter == 1)
-	{
-		edgeCounter = 2;
-		//TIMER1_TCNT1_WRITE (0);
-		//overflowCounter = 0;
-		ICUvalue1 = TIMER1_ICR1_READ();
-		TIMER1_ICPedgeMode(TIMER1_ICU_FALLING_EDGE);
-	}
-	else if (edgeCounter == 2)
-	{
-		edgeCounter = 3;
-		//TIMER1_TCNT1_value = TIMER1_TCNT1_READ ();
-		//overflowCounterValue = overflowCounter;
-		ICUvalue2 = TIMER1_ICR1_READ();
-		//TIMER1_ICPedgeMode(TIMER1_ICU_RAISING_EDGE);
-		TIMER1_timeStamp_interruptDisable();
-	}
-}
-
-void overflowFunction ()
-{
-	overflowCounter++;
 }

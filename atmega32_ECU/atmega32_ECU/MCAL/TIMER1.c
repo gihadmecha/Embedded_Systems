@@ -253,22 +253,34 @@ void TIMER1_timeStampInterruptSet (void (*func)(void))
 
 ISR (TIMER1_compareMatch1A_vect)
 {
-	funcPtrCompareMatch1A();
+	if (funcPtrCompareMatch1A != NULLPTR)
+	{
+		funcPtrCompareMatch1A();
+	}
 }
 
 ISR (TIMER1_compareMatch1B_vect)
 {
-	funcPtrCompareMatch1B();
+	if (funcPtrCompareMatch1B != NULLPTR)
+	{
+		funcPtrCompareMatch1B();
+	}
 }
 
 ISR (TIMER1_overflow_vect)
 {
-	funcPtrOverflow();
+	if (funcPtrOverflow != NULLPTR)
+	{
+		funcPtrOverflow();
+	}
 }
 
 ISR (TIMER1_timeStamp_vect)
 {
-	funcPtrTimeStamp();
+	if (funcPtrTimeStamp != NULLPTR)
+	{
+		funcPtrTimeStamp();
+	}
 }
 
 
