@@ -1,4 +1,6 @@
 
+//Sender
+
 #include "UART.h"
 #include "DIO_interface.h"
 #include "LCD.h"
@@ -23,6 +25,8 @@ int main ()
 	SEI();
 	//UART_RXcomplateInterruptEnable ();
 	
+	
+	
 	//UART_Send_polling('A');
 	////_delay_ms(1);
 	//UART_Send_polling('B');
@@ -30,7 +34,9 @@ int main ()
 	//UART_Send_polling('C');
 	////_delay_ms(1);
 	
-	//UART_sendString ("Ahmed");
+	char name[20];
+	
+	
 	////
 	//UART_sendString_Asynchronous ("Mohamed");
 	//
@@ -45,7 +51,9 @@ int main ()
 	u8 data = 0;
 	u8 xlocation = 0;
 	
-	char name[20];
+	LCD_GoTo(0, 0);
+	LCD_WriteString("TX");
+	
 	
 	while (1)
 	{
@@ -63,6 +71,17 @@ int main ()
 				//xlocation = 0;
 			//}
 		//}
+		
+		UART_recieveString_polling_syncronous (name);
+		
+		LCD_GoTo(1, 6);
+		LCD_WriteString(name);
+		
+		UART_send_checkSum_synchronous (name);
+		
+		//LCD_GoTo (0, 0);
+		//LCD_WriteString("                  ");
+		//LCD_WriteString(name);
 		
 		//LCD_GoTo(0, xlocation);
 		//if (doneByte < recievedByteArrayPointer)
@@ -85,14 +104,14 @@ int main ()
 		//LCD_GoTo(0, 0);
 		//LCD_WriteString(name);
 		
-		if (UART_recieve_checkSum(name))
-		{
-			LCD_GoTo(0, 0);
-			LCD_WriteString(name);
-		}
-		
-		UART_send_checkSum("Ali");
-		//UART_send_checkSum("Ahmed");
+		//if (UART_recieve_checkSum(name))
+		//{
+			//LCD_GoTo(0, 0);
+			//LCD_WriteString(name);
+		//}
+		//
+		//UART_send_checkSum("Ali");
+		////UART_send_checkSum("Hhmed");
 		
 		LCD_GoTo(1, 0);
 		LCD_WriteNumber(counter);

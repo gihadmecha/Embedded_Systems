@@ -1,4 +1,6 @@
 
+//Reciever
+
 #include "UART.h"
 #include "DIO_interface.h"
 #include "LCD.h"
@@ -48,6 +50,9 @@ int main ()
 	char name[255];
 	char name2[255];
 	
+	LCD_GoTo(0, 0);
+	LCD_WriteString("RX");
+	
 	while (1)
 	{
 		//LCD_GoTo(0, 0);
@@ -86,28 +91,35 @@ int main ()
 		//LCD_GoTo(0, 0);
 		//LCD_WriteString(name);
 		
-		UART_send_checkSum("Ali");
-		
-		if (UART_recieve_checkSum(name))
+		if (UART_recieve_checkSum_synchronous (name))
 		{
-			LCD_GoTo(0, 0);
+			LCD_GoTo(1, 6);
 			LCD_WriteString(name);
 		}
+	
 		
-		if (UART_recieve_checkSum(name2))
-		{
-			LCD_GoTo(0, 6);
-			LCD_WriteString(name2);
-		}
+		//UART_send_checkSum("Ali");
 		
-		//LCD_GoTo(1, 0);
-		//LCD_WriteNumber(counter);
-		//_delay_ms(600);
-		//counter++;
-		//if (counter == 10)
+		//if (UART_recieve_checkSum(name))
 		//{
-			//counter = 0;
+			//LCD_GoTo(0, 0);
+			//LCD_WriteString(name);
 		//}
+		
+		//if (UART_recieve_checkSum(name2))
+		//{
+			//LCD_GoTo(0, 6);
+			//LCD_WriteString(name2);
+		//}
+		
+		LCD_GoTo(1, 0);
+		LCD_WriteNumber(counter);
+		//_delay_ms(600);
+		counter++;
+		if (counter == 10)
+		{
+			counter = 0;
+		}
 	}
 }
 

@@ -6,7 +6,7 @@
  </FRAME>
  <MODULE name="VSMDEBUG">
   <PWI>
-   <POPUP w="800" x="151" flags="00008003" y="163" h="200" pid="0" iid="-1">
+   <POPUP w="800" x="841" flags="00000003" y="832" h="200" pid="0" iid="-1">
     <PROPERTIES>
      <ITEM name="Message Column Width">544</ITEM>
      <ITEM name="ShowGrid">No</ITEM>
@@ -95,15 +95,15 @@
      <ITEM name="TopLineAddress">00000020</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="450" x="314" flags="00000063" y="450" h="250" pid="0" iid="2">
+   <POPUP w="450" x="1397" flags="00000063" y="454" h="250" pid="0" iid="2">
     <PROPERTIES>
-     <ITEM name="AutoEcho">1</ITEM>
+     <ITEM name="AutoEcho">0</ITEM>
      <ITEM name="HexMode">0</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="450" x="117" flags="00000063" y="663" h="250" pid="0" iid="6">
+   <POPUP w="450" x="553" flags="00008063" y="680" h="250" pid="0" iid="6">
     <PROPERTIES>
-     <ITEM name="AutoEcho">0</ITEM>
+     <ITEM name="AutoEcho">1</ITEM>
      <ITEM name="HexMode">0</ITEM>
     </PROPERTIES>
    </POPUP>
@@ -140,7 +140,7 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="16" x="137" flags="80000000" y="228" h="32" pid="14" iid="5">
+   <POPUP w="16" x="137" flags="00000000" y="228" h="32" pid="14" iid="5">
     <PROPERTIES>
      <ITEM name="DataType">2</ITEM>
      <ITEM name="DispChars">Yes</ITEM>

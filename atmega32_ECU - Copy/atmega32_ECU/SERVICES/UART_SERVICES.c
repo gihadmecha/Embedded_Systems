@@ -2,7 +2,9 @@
 #include "UART_SERVICES.h"
 #include "DIO_interface.h"
 
-void UART_sendString (char* string)
+#include "UART_SERVICES.h"
+
+void UART_sendString_synchronous (char* string)
 {
 	u8 index = 0;
 	for (		; string[index]; index++)
@@ -10,6 +12,126 @@ void UART_sendString (char* string)
 		UART_Send_polling(string[index]);
 	}
 	UART_Send_polling(0);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+void UART_recieveString_polling_syncronous (char* string)
+{
+	u8 index = 0;
+	string[index] = UART_Recieve_polling();
+	for (index = 0; string[index] != 13;		)
+	{
+		index++;
+		string[index] = UART_Recieve_polling();
+	}
+	string[index] = 0;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+void UART_recieveString_periodicCheck_syncronous (char* string)
+{
+	static u8 index = 0;
+	if (UART_Recieve_priodicCheck(string + index))
+	{
+		index++;
+		if (string[index-1] == 13)
+		{
+			string[index-1] = 0;
+			index = 0;
+		}
+	}
+	
+}
+
+////////////////////////////////////////////////////////////////////////////////////
+
+void UART_send32Number (u32 number)
+{
+	u32* pnumber = &number;
+	UART_Send_polling(pnumber[0]);
+	UART_Send_polling(pnumber[1]);
+	UART_Send_polling(pnumber[2]);
+	UART_Send_polling(pnumber[3]);
+}
+///////////////////////////////////////////////////////////////////////////////////
+
+u32 UART_recieve32Number ()
+{
+	u8 byte0 = UART_Recieve_polling();
+	u8 byte1 = UART_Recieve_polling();
+	u8 byte2 = UART_Recieve_polling();
+	u8 byte3 = UART_Recieve_polling();
+	
+	u32 number = ((u32)byte3<<24) | ((u32)byte2<<16) | ((u32)byte1<<8) | byte0;
+	
+	return number;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+static u8 string_length (char* string)
+{
+	u8 stringLength = 0;
+	for (stringLength = 0; string[stringLength]; stringLength++);
+	return stringLength;
+}
+
+static u16 string_sum (char* string)
+{
+	u16 sum = 0;
+	
+	for (u8 index = 0; string[index]; index++)
+	{
+		sum += string[index];
+	}
+	
+	return sum;
+}
+
+void UART_send_checkSum_synchronous (char* string)
+{
+	u8 stringLength = string_length(string);
+	UART_Send_polling(stringLength);
+	
+	for (u8	index = 0; index < stringLength; index++)
+	{
+		UART_Send_polling(string[index]);
+	}
+	
+	u16 stringSum = string_sum(string);
+	char* stringSumPointer = &stringSum;
+	UART_Send_polling(stringSumPointer[0]);
+	UART_Send_polling(stringSumPointer[1]);
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+u8 UART_recieve_checkSum_synchronous (char* string)
+{
+	u8 length = UART_Recieve_polling();
+	
+	u8 index = 0;
+	for (index = 0; index < length; index++)
+	{
+		string[index] = UART_Recieve_polling();
+	}
+	string[index] = NULL;
+	
+	u8 stringSum0 = UART_Recieve_polling();
+	u8 stringSum1 = UART_Recieve_polling();
+	
+	u16 stringSum = (((u16)stringSum1)<<8) | stringSum0;
+	
+	if ( stringSum == string_sum(string))
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
 }
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -58,22 +180,6 @@ static void sendInterruptFunction ()
 		doneString = 0;
 	}
 } 
-
-////////////////////////////////////////////////////////////////////////////////
-void UART_recieveString_syncronous (char* string)
-{
-	static u8 index = 0;
-	if (UART_Recieve_priodicCheck(string + index))
-	{
-		index++;
-		if (string[index-1] == 13)
-		{
-			string[index-1] = 0;
-			index = 0;
-		}
-	}
-	
-}
 
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -142,15 +248,13 @@ static void recieveInterruptFunction ()
 	{
 		
 		recieveStringsArray[recieveDoneString][recieveCharIndex] = UART_Recieve();
-		//LCD_GoTo(0, 6);
-		//LCD_WriteChar(recieveStringsArray[recieveDoneString][recieveCharIndex]);
+		
 		if (recieveStringsArray[recieveDoneString][recieveCharIndex] != NULL)
 		{
 			recieveCharIndex++;
 		}
 		else
 		{
-			DIO_TogglePin(PINA0);
 			recieveDoneString++;
 			recieveCharIndex = 0;
 		}
@@ -164,26 +268,6 @@ static void recieveInterruptFunction ()
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
-
-
-static u8 string_length (char* string)
-{
-	u8 stringLength = 0;
-	for (stringLength = 0; string[stringLength]; stringLength++);
-	return stringLength;
-}
-
-static u16 string_sum (char* string)
-{
-	u16 sum = 0;
-	
-	for (u8 index = 0; string[index]; index++)
-	{
-		sum += string[index];
-	}
-	
-	return sum;
-}
 
 static char sendCheckSumString[258];
 void UART_send_checkSum (char* string)
