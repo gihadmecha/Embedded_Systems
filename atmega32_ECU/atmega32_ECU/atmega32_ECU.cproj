@@ -259,6 +259,15 @@
     <Compile Include="MCAL\EXI.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MCAL\SPI.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\SPI.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\SPI_Lcfg.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="MCAL\TIMER0.c">
       <SubType>compile</SubType>
     </Compile>

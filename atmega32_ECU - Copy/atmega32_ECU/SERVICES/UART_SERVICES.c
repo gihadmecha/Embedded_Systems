@@ -197,7 +197,7 @@ static void sendInterruptFunction ()
 	//
 	//while (doneByte < recievedByteArrayPointer)
 	//{
-		//if (recievedByteArray[doneByte] != 0)
+		//if (recievedByteArray[doneByte] != 13)
 		//{
 			//string[doneByte] = recievedByteArray[doneByte];
 			//doneByte++;
@@ -217,6 +217,10 @@ static void sendInterruptFunction ()
 	//{
 		//recievedByteArray [recievedByteArrayPointer] = UART_Recieve ();
 		//recievedByteArrayPointer++;
+		//if (recievedByteArrayPointer == 19)
+		//{
+			//recievedByteArrayPointer = 0;
+		//}
 	//}
 //}
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -249,12 +253,13 @@ static void recieveInterruptFunction ()
 		
 		recieveStringsArray[recieveDoneString][recieveCharIndex] = UART_Recieve();
 		
-		if (recieveStringsArray[recieveDoneString][recieveCharIndex] != NULL)
+		if (recieveStringsArray[recieveDoneString][recieveCharIndex] != 13)
 		{
 			recieveCharIndex++;
 		}
 		else
 		{
+			recieveStringsArray[recieveDoneString][recieveCharIndex] = NULL;
 			recieveDoneString++;
 			recieveCharIndex = 0;
 		}

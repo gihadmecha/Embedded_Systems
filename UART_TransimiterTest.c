@@ -1,5 +1,5 @@
 
-//Reciever
+//Sender
 
 #include "UART.h"
 #include "DIO_interface.h"
@@ -8,8 +8,8 @@
 
 static void recieveInterruptFunction ();
 
-static volatile u8 recievedByteArray[20];
-static volatile u8 recievedByteArrayPointer = 0;
+static u8 recievedByteArray[20];
+static u8 recievedByteArrayPointer = 0;
 static u8 doneByte = 0;
 
 int main ()
@@ -25,20 +25,24 @@ int main ()
 	SEI();
 	//UART_RXcomplateInterruptEnable ();
 	
+	
+	
 	//UART_Send_polling('A');
 	////_delay_ms(1);
 	//UART_Send_polling('B');
 	////_delay_ms(1);
 	//UART_Send_polling('C');
-	//_delay_ms(1);
+	////_delay_ms(1);
 	
-	//UART_sendString ("Ahmed");
-	////
-	//UART_sendString_Asynchronous ("Mohamed");
+	char name[20];
+	
+	
 	//
-	//UART_sendString_Asynchronous ("Abd allah");
-	////
-	//UART_sendString_Asynchronous ("Omer");
+	UART_sendString_Asynchronous ("Mohamed");
+	
+	UART_sendString_Asynchronous ("Abd allah");
+	//
+	UART_sendString_Asynchronous ("Omer");
 	
 	//UART_send_checkSum ("Ali");
 	
@@ -47,11 +51,9 @@ int main ()
 	u8 data = 0;
 	u8 xlocation = 0;
 	
-	char name[255];
-	char name2[255];
-	
 	LCD_GoTo(0, 0);
-	LCD_WriteString("RX");
+	LCD_WriteString("TX");
+	
 	
 	while (1)
 	{
@@ -70,55 +72,50 @@ int main ()
 			//}
 		//}
 		
-		//LCD_GoTo(1, xlocation);
+		//UART_recieveString_polling_syncronous (name);
+		//
+		//LCD_GoTo(1, 6);
+		//LCD_WriteString(name);
+		//
+		//UART_send_checkSum_synchronous (name);
+		
+		//LCD_GoTo (0, 0);
+		//LCD_WriteString("                  ");
+		//LCD_WriteString(name);
+		
+		//LCD_GoTo(0, xlocation);
 		//if (doneByte < recievedByteArrayPointer)
 		//{
 			//LCD_WriteChar(recievedByteArray[doneByte]);
 			//doneByte++;
 			//xlocation++;
-			//if (xlocation == 16)
+			//if (xlocation == 17)
 			//{
 				//xlocation = 0;
 			//}
 		//}
-		//
 		
-		UART_recieveString_Asyncronous(name);
-		LCD_GoTo(1, 0);
-		LCD_WriteString(name);
 		
-		UART_recieveString_Asyncronous(name2);
-		LCD_GoTo(1, 6);
-		LCD_WriteString(name2);
+		//UART_recieveString_Asyncronous(name);
+		//LCD_GoTo(0, 0);
+		//LCD_WriteString(name);
 		
 		//UART_recieveString_syncronous(name);
 		//LCD_GoTo(0, 0);
 		//LCD_WriteString(name);
-		
-		//if (UART_recieve_checkSum_synchronous (name))
-		//{
-			//LCD_GoTo(1, 6);
-			//LCD_WriteString(name);
-		//}
-	//
-		
-		//UART_send_checkSum("Ali");
 		
 		//if (UART_recieve_checkSum(name))
 		//{
 			//LCD_GoTo(0, 0);
 			//LCD_WriteString(name);
 		//}
+		//
+		//UART_send_checkSum("Ali");
+		////UART_send_checkSum("Hhmed");
 		
-		//if (UART_recieve_checkSum(name2))
-		//{
-			//LCD_GoTo(0, 6);
-			//LCD_WriteString(name2);
-		//}
-		
-		LCD_GoTo(0, 11);
+		LCD_GoTo(1, 0);
 		LCD_WriteNumber(counter);
-		_delay_ms(1000);
+		_delay_ms(600);
 		counter++;
 		if (counter == 10)
 		{
@@ -127,12 +124,8 @@ int main ()
 	}
 }
 
-static void recieveInterruptFunction ()
-{
-	recievedByteArray [recievedByteArrayPointer] = UART_Recieve ();
-	recievedByteArrayPointer++;
-	if (recievedByteArrayPointer == 19)
-	{
-		recievedByteArrayPointer = 0;
-	}
-}
+//static void recieveInterruptFunction ()
+//{
+	//recievedByteArray [recievedByteArrayPointer] = UART_Recieve ();
+	//recievedByteArrayPointer++;
+//}

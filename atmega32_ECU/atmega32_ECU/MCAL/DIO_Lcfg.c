@@ -16,7 +16,7 @@ const DIO_PinStatus_type PinsStatusArray[] = {
 	OUTPUT, //PINB3//oc0
 	OUTPUT, //PINB4//ss
 	OUTPUT, //PINB5//mosi
-	OUTPUT, //PINB6//miso
+	INFREE, //PINB6//miso
 	OUTPUT, //PINB7//clk
 	OUTPUT, //PINC0
 	OUTPUT, //PINC1

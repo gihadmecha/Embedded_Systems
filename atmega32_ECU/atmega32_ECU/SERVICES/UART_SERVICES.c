@@ -192,35 +192,85 @@ static u8 recievedByteArray[258] = {0};
 static u8 recievedByteArrayPointer = 0;
 static u8 doneByte = 0;
 
+//void UART_recieveString_Asyncronous (char* string)
+//{
+	//UART_RXcomplateInterruptSetFunction (recieveInterruptFunction);
+	//UART_RXcomplateInterruptEnable ();
+	//
+	//while (doneByte < recievedByteArrayPointer)
+	//{
+		//if (recievedByteArray[doneByte] != 13)
+		//{
+			//string[doneByte] = recievedByteArray[doneByte];
+			//doneByte++;
+		//}
+		//else 
+		//{
+			//string[doneByte] = 0;
+			//recievedByteArrayPointer = 0;
+			//doneByte = 0;
+		//}
+	//}
+//}
+//
+//static void recieveInterruptFunction ()
+//{
+	//if (recievedByteArrayPointer < 258)
+	//{
+		//recievedByteArray [recievedByteArrayPointer] = UART_Recieve ();
+		//recievedByteArrayPointer++;
+	//}
+//}
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+static void recieveInterruptFunction ();
+
+char* recieveStringsArray[20] = {NULLPTR};
+static u8 recieveStringsArrayPointer = 0;
+static u8 recieveDoneString = 0;
+static u8 recieveCharIndex = 0;
+
 void UART_recieveString_Asyncronous (char* string)
 {
 	UART_RXcomplateInterruptSetFunction (recieveInterruptFunction);
 	UART_RXcomplateInterruptEnable ();
+	recieveStringsArray[recieveStringsArrayPointer] = string;
 	
-	while (doneByte < recievedByteArrayPointer)
+	if (recieveStringsArrayPointer < 20)
 	{
-		if (recievedByteArray[doneByte] != 13)
-		{
-			string[doneByte] = recievedByteArray[doneByte];
-			doneByte++;
-		}
-		else 
-		{
-			string[doneByte] = 0;
-			recievedByteArrayPointer = 0;
-			doneByte = 0;
-		}
+		recieveStringsArrayPointer++;
 	}
+	
 }
 
 static void recieveInterruptFunction ()
 {
-	if (recievedByteArrayPointer < 258)
+	
+	if (recieveDoneString < recieveStringsArrayPointer)
 	{
-		recievedByteArray [recievedByteArrayPointer] = UART_Recieve ();
-		recievedByteArrayPointer++;
+		
+		recieveStringsArray[recieveDoneString][recieveCharIndex] = UART_Recieve();
+		
+		if (recieveStringsArray[recieveDoneString][recieveCharIndex] != 13)
+		{
+			recieveCharIndex++;
+		}
+		else
+		{
+			recieveStringsArray[recieveDoneString][recieveCharIndex] = NULL;
+			recieveDoneString++;
+			recieveCharIndex = 0;
+		}
+		
+	}
+	else
+	{
+		recieveStringsArrayPointer = 0;
+		recieveDoneString = 0;
 	}
 }
+
 ///////////////////////////////////////////////////////////////////////////////////////
 
 
