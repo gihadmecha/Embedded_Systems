@@ -34,6 +34,8 @@ MCAL\DIO_Lcfg.c
 
 MCAL\EXI.c
 
+MCAL\SPI.c
+
 MCAL\TIMER0.c
 
 MCAL\TIMER1.c

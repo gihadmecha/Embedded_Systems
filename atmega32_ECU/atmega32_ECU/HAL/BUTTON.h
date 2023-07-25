@@ -11,6 +11,12 @@
 //needed to check periodically
 void BUTTON1_IfPressed_PeriodicCheck (void(*FUNC_PTR)(void));
 
+//needed to check periodically
+void BUTTON2_IfPressed_PeriodicCheck (void(*FUNC_PTR)(void));
+
+//needed to check periodically
+void BUTTON_mode_IfPressed_PeriodicCheck (void(*FUNC_PTR)(void));
+
 
 
 #endif /* BUTTON_H_ */

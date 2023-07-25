@@ -10,7 +10,12 @@
 
 
 //cathode
-void SEGMENTS1 (u8 number);
+//LEFT
+void SEGMENTS_left (u8 number);
+
+//cathode
+//RIGHT
+void SEGMENTS_right (u8 number);
 
 //anode
 void SEGMENTS2 (u8 number);

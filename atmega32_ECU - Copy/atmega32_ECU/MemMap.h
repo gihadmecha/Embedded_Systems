@@ -114,7 +114,7 @@
 #define		WGM11	1
 #define		WGM10	0
 
-/***********************************************UDR******************************************/
+/***********************************************UART******************************************/
 #define		UDR		(*(unsigned volatile char*)0x2C)
 
 #define		UCSRA	(*(unsigned volatile char*)0x2B)
@@ -145,6 +145,22 @@
 
 #define		UBRRL	(*(unsigned volatile char*)0x29)
 
+/***********************************************SPI******************************************/
+#define		SPCR	(*(unsigned volatile char*)0x2D)
+#define		SPIE	7
+#define		SPE		6
+#define		DORD	5
+#define		MSTR	4
+#define		SPR1	1
+#define		SPR0	0
+
+#define		SPSR	(*(unsigned volatile char*)0x2E)
+#define		SPIF	7
+#define		WCOL	6
+#define		SP12X	0	
+
+#define		SPDR	(*(unsigned volatile char*)0x2F)
+
 /******************************INTERRUPPT_ATTRRIBUTES****************************************/
 #define		SEI()		    __asm__ __volatile__("SEI"::)
 #define		CLI()		    __asm__ __volatile__("CLI"::)
@@ -162,6 +178,7 @@
 #define		UART_RXC_vect				__vector_13
 #define		UART_UDRempty_vect			__vector_14
 #define		UART_TXC_vect				__vector_15
+#define		SPI_Vect					__vector_12
 #define		ISR(vector)		void vector(void)__attribute__((signal));\
 						    void vector(void)
 

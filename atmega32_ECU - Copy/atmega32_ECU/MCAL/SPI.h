@@ -31,12 +31,13 @@ void SPI_InitSlave ();
 void SPI_Enable ();
 void SPI_Disable ();
 
-u8 SPI_SendRecieve (u8 data);
 void SPI_Send (u8 data);
 u8 SPI_Recieve_periodicCheck (u8* data);
 u8 SPI_Recieve ();
 
 void SPI_InterruptEnable ();
 void SPI_InterruptDisable ();
+
+void SPI_InterruptSet (void (*Func)(void));
 
 #endif /* SPI_H_ */
