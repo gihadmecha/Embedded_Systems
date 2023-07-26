@@ -2,6 +2,8 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+application\STOP_Watch.c
+
 HAL\BUTTON.c
 
 HAL\KEYPAD.c
