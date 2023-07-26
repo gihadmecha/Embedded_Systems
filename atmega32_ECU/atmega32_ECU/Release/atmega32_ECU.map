@@ -165,12 +165,14 @@ Discarded input sections
  .text          0x00000000        0x0 HAL/SEGMENTS.o
  .data          0x00000000        0x0 HAL/SEGMENTS.o
  .bss           0x00000000        0x0 HAL/SEGMENTS.o
+ .text.SEGMENTS_left
+                0x00000000       0x50 HAL/SEGMENTS.o
+ .text.SEGMENTS_right
+                0x00000000       0x50 HAL/SEGMENTS.o
  .text.SEGMENTS2
                 0x00000000       0x52 HAL/SEGMENTS.o
  .text.SEGMENTS3
                 0x00000000       0x56 HAL/SEGMENTS.o
- .text.SEGMENTS4
-                0x00000000       0xe0 HAL/SEGMENTS.o
  .text          0x00000000        0x0 HAL/SERVO.o
  .data          0x00000000        0x0 HAL/SERVO.o
  .bss           0x00000000        0x0 HAL/SERVO.o
@@ -864,7 +866,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0xbac
+.text           0x00000000      0xbd8
  *(.vectors)
  .vectors       0x00000000       0x54 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
                 0x00000000                __vector_default
@@ -948,102 +950,99 @@ END GROUP
                 0x000000fa       0x16 application/STOP_Watch.o
                 0x000000fa                STOP_Watch_switchMode
  .text.STOP_Watch_segments
-                0x00000110       0x10 application/STOP_Watch.o
+                0x00000110       0x14 application/STOP_Watch.o
                 0x00000110                STOP_Watch_segments
  .text.STOP_Watch_countingDown
-                0x00000120       0x2e application/STOP_Watch.o
-                0x00000120                STOP_Watch_countingDown
+                0x00000124       0x2e application/STOP_Watch.o
+                0x00000124                STOP_Watch_countingDown
  .text.STOP_watch_delay_s
-                0x0000014e       0x5c application/STOP_Watch.o
-                0x0000014e                STOP_watch_delay_s
+                0x00000152       0x44 application/STOP_Watch.o
+                0x00000152                STOP_watch_delay_s
  .text.STOP_Watch_workingMode
-                0x000001aa       0x1e application/STOP_Watch.o
-                0x000001aa                STOP_Watch_workingMode
+                0x00000196       0x1e application/STOP_Watch.o
+                0x00000196                STOP_Watch_workingMode
  .text.STOP_Watch_AdjustMode
-                0x000001c8       0x22 application/STOP_Watch.o
-                0x000001c8                STOP_Watch_AdjustMode
+                0x000001b4       0x26 application/STOP_Watch.o
+                0x000001b4                STOP_Watch_AdjustMode
  .text.BUTTON1_IfPressed_PeriodicCheck
-                0x000001ea       0x30 HAL/BUTTON.o
-                0x000001ea                BUTTON1_IfPressed_PeriodicCheck
+                0x000001da       0x30 HAL/BUTTON.o
+                0x000001da                BUTTON1_IfPressed_PeriodicCheck
  .text.BUTTON2_IfPressed_PeriodicCheck
-                0x0000021a       0x30 HAL/BUTTON.o
-                0x0000021a                BUTTON2_IfPressed_PeriodicCheck
+                0x0000020a       0x30 HAL/BUTTON.o
+                0x0000020a                BUTTON2_IfPressed_PeriodicCheck
  .text.BUTTON_mode_IfPressed_PeriodicCheck
-                0x0000024a       0x30 HAL/BUTTON.o
-                0x0000024a                BUTTON_mode_IfPressed_PeriodicCheck
+                0x0000023a       0x30 HAL/BUTTON.o
+                0x0000023a                BUTTON_mode_IfPressed_PeriodicCheck
  .text.SEGMENTS_EachPin_Of7Pins
-                0x0000027a       0x74 HAL/SEGMENTS.o
- .text.SEGMENTS_left
-                0x000002ee       0x50 HAL/SEGMENTS.o
-                0x000002ee                SEGMENTS_left
- .text.SEGMENTS_right
-                0x0000033e       0x50 HAL/SEGMENTS.o
-                0x0000033e                SEGMENTS_right
+                0x0000026a       0x74 HAL/SEGMENTS.o
+ .text.SEGMENTS_STOP_Watch
+                0x000002de       0xe0 HAL/SEGMENTS.o
+                0x000002de                SEGMENTS_STOP_Watch
  .text.startup.main
-                0x0000038e       0x12 main.o
-                0x0000038e                main
+                0x000003be        0xe main.o
+                0x000003be                main
  .text.__vector_16
-                0x000003a0       0x52 MCAL/ADC.o
-                0x000003a0                __vector_16
+                0x000003cc       0x52 MCAL/ADC.o
+                0x000003cc                __vector_16
  .text.DIO_Init
-                0x000003f2      0x1be MCAL/DIO.o
-                0x000003f2                DIO_Init
+                0x0000041e      0x1be MCAL/DIO.o
+                0x0000041e                DIO_Init
  .text.DIO_WritePin
-                0x000005b0       0xf6 MCAL/DIO.o
-                0x000005b0                DIO_WritePin
+                0x000005dc       0xf6 MCAL/DIO.o
+                0x000005dc                DIO_WritePin
  .text.DIO_TogglePin
-                0x000006a6       0x76 MCAL/DIO.o
-                0x000006a6                DIO_TogglePin
+                0x000006d2       0x76 MCAL/DIO.o
+                0x000006d2                DIO_TogglePin
  .text.DIO_ReadPin
-                0x0000071c       0x4a MCAL/DIO.o
-                0x0000071c                DIO_ReadPin
+                0x00000748       0x4a MCAL/DIO.o
+                0x00000748                DIO_ReadPin
  .text.__vector_1
-                0x00000766       0x52 MCAL/EXI.o
-                0x00000766                __vector_1
+                0x00000792       0x52 MCAL/EXI.o
+                0x00000792                __vector_1
  .text.__vector_2
-                0x000007b8       0x52 MCAL/EXI.o
-                0x000007b8                __vector_2
+                0x000007e4       0x52 MCAL/EXI.o
+                0x000007e4                __vector_2
  .text.__vector_3
-                0x0000080a       0x52 MCAL/EXI.o
-                0x0000080a                __vector_3
+                0x00000836       0x52 MCAL/EXI.o
+                0x00000836                __vector_3
  .text.__vector_12
-                0x0000085c       0x52 MCAL/SPI.o
-                0x0000085c                __vector_12
+                0x00000888       0x52 MCAL/SPI.o
+                0x00000888                __vector_12
  .text.__vector_10
-                0x000008ae       0x52 MCAL/TIMER0.o
-                0x000008ae                __vector_10
+                0x000008da       0x52 MCAL/TIMER0.o
+                0x000008da                __vector_10
  .text.__vector_11
-                0x00000900       0x52 MCAL/TIMER0.o
-                0x00000900                __vector_11
+                0x0000092c       0x52 MCAL/TIMER0.o
+                0x0000092c                __vector_11
  .text.__vector_7
-                0x00000952       0x52 MCAL/TIMER1.o
-                0x00000952                __vector_7
+                0x0000097e       0x52 MCAL/TIMER1.o
+                0x0000097e                __vector_7
  .text.__vector_8
-                0x000009a4       0x52 MCAL/TIMER1.o
-                0x000009a4                __vector_8
+                0x000009d0       0x52 MCAL/TIMER1.o
+                0x000009d0                __vector_8
  .text.__vector_9
-                0x000009f6       0x52 MCAL/TIMER1.o
-                0x000009f6                __vector_9
+                0x00000a22       0x52 MCAL/TIMER1.o
+                0x00000a22                __vector_9
  .text.__vector_6
-                0x00000a48       0x52 MCAL/TIMER1.o
-                0x00000a48                __vector_6
+                0x00000a74       0x52 MCAL/TIMER1.o
+                0x00000a74                __vector_6
  .text.__vector_13
-                0x00000a9a       0x52 MCAL/UART.o
-                0x00000a9a                __vector_13
+                0x00000ac6       0x52 MCAL/UART.o
+                0x00000ac6                __vector_13
  .text.__vector_15
-                0x00000aec       0x52 MCAL/UART.o
-                0x00000aec                __vector_15
+                0x00000b18       0x52 MCAL/UART.o
+                0x00000b18                __vector_15
  .text.__vector_14
-                0x00000b3e       0x52 MCAL/UART.o
-                0x00000b3e                __vector_14
+                0x00000b6a       0x52 MCAL/UART.o
+                0x00000b6a                __vector_14
  .text.libgcc.div
-                0x00000b90       0x18 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
-                0x00000b90                __udivmodqi4
-                0x00000ba8                . = ALIGN (0x2)
+                0x00000bbc       0x18 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_udivmodqi4.o)
+                0x00000bbc                __udivmodqi4
+                0x00000bd4                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000ba8        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x00000ba8                _exit
-                0x00000ba8                exit
+ .fini9         0x00000bd4        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x00000bd4                _exit
+                0x00000bd4                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -1062,11 +1061,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000ba8        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000bd4        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000bac                _etext = .
+                0x00000bd8                _etext = .
 
-.data           0x00800060       0x32 load address 0x00000bac
+.data           0x00800060       0x32 load address 0x00000bd8
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -1137,8 +1136,8 @@ END GROUP
                 0x008000b5        0x2 MCAL/UART.o
  *(COMMON)
                 0x008000b7                PROVIDE (__bss_end, .)
-                0x00000bac                __data_load_start = LOADADDR (.data)
-                0x00000bde                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000bd8                __data_load_start = LOADADDR (.data)
+                0x00000c0a                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x008000b7        0x0
                 [!provide]                PROVIDE (__noinit_start, .)

@@ -10,7 +10,7 @@ int main ()
 	
 	while (1)
 	{
-		STOP_Watch_segments ();
+		//STOP_Watch_segments ();
 		STOP_Watch_workingMode ();
 		STOP_Watch_AdjustMode ();
 	}

@@ -25,6 +25,6 @@ void SEGMENTS3 (u8 number);
 
 //needed to check periodically
 //2 digit cathode 7 segment 
-void SEGMENTS4 (u8 number);
+void SEGMENTS_STOP_Watch (u8 number);
 
 #endif /* SEGMENTS_H_ */
