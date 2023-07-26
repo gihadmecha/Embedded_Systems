@@ -2,6 +2,8 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+application\RC_car.c
+
 application\STOP_Watch.c
 
 HAL\BUTTON.c

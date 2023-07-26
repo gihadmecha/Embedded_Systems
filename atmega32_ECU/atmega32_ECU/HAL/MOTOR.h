@@ -14,5 +14,13 @@ void MOTOR2_Forward ();
 void MOTOR2_backward ();
 void MOTOR2_Stop ();
 
+void MOTOR3_Forward ();
+void MOTOR3_backward ();
+void MOTOR3_Stop ();
+
+void MOTOR4_Forward ();
+void MOTOR4_backward ();
+void MOTOR4_Stop ();
+
 
 #endif /* MOTOR_H_ */

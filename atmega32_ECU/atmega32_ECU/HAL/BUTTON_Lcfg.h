@@ -4,13 +4,29 @@
 #define BUTTON_LCFG_H_
 
 //PULL UP
-#define		BUTTON1		PINC0
+#define		BUTTON1		PINB0
 
 //PULL UP
-#define		BUTTON2		PINC4
+#define		BUTTON2		PINB1
 
 //PULL UP
-#define		BUTTON_mode		PIND7
+#define		BUTTON3		PINB2
+
+//PULL UP
+#define		BUTTON4		PINB3
+
+//PULL UP
+#define		BUTTON5		PINB4
+
+//PULL UP
+#define		BUTTON6		PINB5
+
+//PULL UP
+#define		BUTTON7		PINB6
+
+
+//PULL UP
+#define		BUTTON_mode		PIND4
 
 
 
