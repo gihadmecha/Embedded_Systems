@@ -4,10 +4,10 @@
 #define BUTTON_LCFG_H_
 
 //PULL UP
-#define		BUTTON1		PINB0
+#define		BUTTON1		PIND2
 
 //PULL UP
-#define		BUTTON2		PINB1
+#define		BUTTON2		PIND3
 
 //PULL UP
 #define		BUTTON3		PINB2

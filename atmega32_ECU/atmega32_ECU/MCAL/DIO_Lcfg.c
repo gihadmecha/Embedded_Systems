@@ -22,7 +22,7 @@ const DIO_PinStatus_type PinsStatusArray[] = {
 	OUTPUT, //PINC1
 	OUTPUT, //PINC2
 	OUTPUT, //PINC3
-	INPULL, //PINC4
+	OUTPUT, //PINC4
 	OUTPUT, //PINC5
 	OUTPUT, //PINC6
 	OUTPUT, //PINC7
