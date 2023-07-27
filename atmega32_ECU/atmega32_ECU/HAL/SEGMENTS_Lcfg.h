@@ -38,6 +38,7 @@
 #define		SEGMENT3_2	PINB6
 #define		SEGMENT3_3	PINB7
 
+// 4 mSec delay
 //2 digit cathode 7 segment
 #define		SEGMENTS_STOP_WATCH_A	PINA1
 #define		SEGMENTS_STOP_WATCH_B	PINA2

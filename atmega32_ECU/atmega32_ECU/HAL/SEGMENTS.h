@@ -23,6 +23,7 @@ void SEGMENTS2 (u8 number);
 //BCD
 void SEGMENTS3 (u8 number);
 
+// 4 mSec delay
 //needed to check periodically
 //2 digit cathode 7 segment 
 void SEGMENTS_STOP_Watch (u8 number);

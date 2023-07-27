@@ -44,6 +44,7 @@ C_SRCS +=  \
 ../application/RC_car.c \
 ../application/STOP_Watch.c \
 ../HAL/BUTTON.c \
+../HAL/BUZZER.c \
 ../HAL/KEYPAD.c \
 ../HAL/LCD.c \
 ../HAL/LED.c \
@@ -77,6 +78,7 @@ OBJS +=  \
 application/RC_car.o \
 application/STOP_Watch.o \
 HAL/BUTTON.o \
+HAL/BUZZER.o \
 HAL/KEYPAD.o \
 HAL/LCD.o \
 HAL/LED.o \
@@ -103,6 +105,7 @@ OBJS_AS_ARGS +=  \
 application/RC_car.o \
 application/STOP_Watch.o \
 HAL/BUTTON.o \
+HAL/BUZZER.o \
 HAL/KEYPAD.o \
 HAL/LCD.o \
 HAL/LED.o \
@@ -129,6 +132,7 @@ C_DEPS +=  \
 application/RC_car.d \
 application/STOP_Watch.d \
 HAL/BUTTON.d \
+HAL/BUZZER.d \
 HAL/KEYPAD.d \
 HAL/LCD.d \
 HAL/LED.d \
@@ -155,6 +159,7 @@ C_DEPS_AS_ARGS +=  \
 application/RC_car.d \
 application/STOP_Watch.d \
 HAL/BUTTON.d \
+HAL/BUZZER.d \
 HAL/KEYPAD.d \
 HAL/LCD.d \
 HAL/LED.d \
@@ -206,6 +211,13 @@ application/STOP_Watch.o: ../application/STOP_Watch.c
 	
 
 HAL/BUTTON.o: ../HAL/BUTTON.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DNDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../MCAL" -I".." -I"../HAL" -I"../SERVICES" -I"../application"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+HAL/BUZZER.o: ../HAL/BUZZER.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DNDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../MCAL" -I".." -I"../HAL" -I"../SERVICES" -I"../application"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

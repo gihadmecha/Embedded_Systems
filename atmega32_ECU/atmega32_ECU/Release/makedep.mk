@@ -8,6 +8,8 @@ application\STOP_Watch.c
 
 HAL\BUTTON.c
 
+HAL\BUZZER.c
+
 HAL\KEYPAD.c
 
 HAL\LCD.c

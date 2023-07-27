@@ -137,6 +137,9 @@
     <Compile Include="application\STOP_Watch.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="application\STOP_Watch_Private.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="HAL\BUTTON.c">
       <SubType>compile</SubType>
     </Compile>
@@ -144,6 +147,15 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="HAL\BUTTON_Lcfg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\BUZZER.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\BUZZER.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\BUZZER_Lcfg.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="HAL\KEYPAD.c">
