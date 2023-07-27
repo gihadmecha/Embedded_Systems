@@ -11,12 +11,18 @@ void RC_forward ()
 
 void RC_left ()
 {
-	
+	MOTOR1_Stop();
+	MOTOR3_Stop();
+	MOTOR2_Forward();
+	MOTOR4_Forward();
 }
 
 void RC_right ()
 {
-	
+	MOTOR2_Stop();
+	MOTOR4_Stop();
+	MOTOR1_Forward();
+	MOTOR3_Forward();
 }
 
 void RC_backward ()
@@ -37,10 +43,16 @@ void RC_stop ()
 
 void RC_turnLeft ()
 {
-	
+	MOTOR2_Forward();
+	MOTOR4_Forward();
+	MOTOR1_backward();
+	MOTOR3_backward();
 }
 
 void RC_turnRight ()
 {
-	
+	MOTOR1_Forward();
+	MOTOR3_Forward();
+	MOTOR2_backward();
+	MOTOR4_backward();
 }

@@ -907,7 +907,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0xa96
+.text           0x00000000      0xace
  *(.vectors)
  .vectors       0x00000000       0x54 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
                 0x00000000                __vector_default
@@ -978,138 +978,138 @@ END GROUP
  .text.RC_forward
                 0x00000092       0x10 application/RC_car.o
                 0x00000092                RC_forward
- .text.RC_left  0x000000a2        0x2 application/RC_car.o
+ .text.RC_left  0x000000a2       0x10 application/RC_car.o
                 0x000000a2                RC_left
  .text.RC_right
-                0x000000a4        0x2 application/RC_car.o
-                0x000000a4                RC_right
+                0x000000b2       0x10 application/RC_car.o
+                0x000000b2                RC_right
  .text.RC_backward
-                0x000000a6       0x10 application/RC_car.o
-                0x000000a6                RC_backward
- .text.RC_stop  0x000000b6       0x10 application/RC_car.o
-                0x000000b6                RC_stop
+                0x000000c2       0x10 application/RC_car.o
+                0x000000c2                RC_backward
+ .text.RC_stop  0x000000d2       0x10 application/RC_car.o
+                0x000000d2                RC_stop
  .text.RC_turnLeft
-                0x000000c6        0x2 application/RC_car.o
-                0x000000c6                RC_turnLeft
+                0x000000e2       0x10 application/RC_car.o
+                0x000000e2                RC_turnLeft
  .text.RC_turnRight
-                0x000000c8        0x2 application/RC_car.o
-                0x000000c8                RC_turnRight
+                0x000000f2       0x10 application/RC_car.o
+                0x000000f2                RC_turnRight
  .text.BUTTON1_IfPressed_PeriodicCheck
-                0x000000ca       0x30 HAL/BUTTON.o
-                0x000000ca                BUTTON1_IfPressed_PeriodicCheck
+                0x00000102       0x30 HAL/BUTTON.o
+                0x00000102                BUTTON1_IfPressed_PeriodicCheck
  .text.BUTTON2_IfPressed_PeriodicCheck
-                0x000000fa       0x30 HAL/BUTTON.o
-                0x000000fa                BUTTON2_IfPressed_PeriodicCheck
+                0x00000132       0x30 HAL/BUTTON.o
+                0x00000132                BUTTON2_IfPressed_PeriodicCheck
  .text.BUTTON3_IfPressed_PeriodicCheck
-                0x0000012a       0x30 HAL/BUTTON.o
-                0x0000012a                BUTTON3_IfPressed_PeriodicCheck
+                0x00000162       0x30 HAL/BUTTON.o
+                0x00000162                BUTTON3_IfPressed_PeriodicCheck
  .text.BUTTON4_IfPressed_PeriodicCheck
-                0x0000015a       0x30 HAL/BUTTON.o
-                0x0000015a                BUTTON4_IfPressed_PeriodicCheck
+                0x00000192       0x30 HAL/BUTTON.o
+                0x00000192                BUTTON4_IfPressed_PeriodicCheck
  .text.BUTTON5_IfPressed_PeriodicCheck
-                0x0000018a       0x30 HAL/BUTTON.o
-                0x0000018a                BUTTON5_IfPressed_PeriodicCheck
+                0x000001c2       0x30 HAL/BUTTON.o
+                0x000001c2                BUTTON5_IfPressed_PeriodicCheck
  .text.BUTTON6_IfPressed_PeriodicCheck
-                0x000001ba       0x30 HAL/BUTTON.o
-                0x000001ba                BUTTON6_IfPressed_PeriodicCheck
+                0x000001f2       0x30 HAL/BUTTON.o
+                0x000001f2                BUTTON6_IfPressed_PeriodicCheck
  .text.BUTTON7_IfPressed_PeriodicCheck
-                0x000001ea       0x30 HAL/BUTTON.o
-                0x000001ea                BUTTON7_IfPressed_PeriodicCheck
+                0x00000222       0x30 HAL/BUTTON.o
+                0x00000222                BUTTON7_IfPressed_PeriodicCheck
  .text.MOTOR1_Forward
-                0x0000021a       0x10 HAL/MOTOR.o
-                0x0000021a                MOTOR1_Forward
+                0x00000252       0x10 HAL/MOTOR.o
+                0x00000252                MOTOR1_Forward
  .text.MOTOR1_backward
-                0x0000022a       0x10 HAL/MOTOR.o
-                0x0000022a                MOTOR1_backward
+                0x00000262       0x10 HAL/MOTOR.o
+                0x00000262                MOTOR1_backward
  .text.MOTOR1_Stop
-                0x0000023a       0x10 HAL/MOTOR.o
-                0x0000023a                MOTOR1_Stop
+                0x00000272       0x10 HAL/MOTOR.o
+                0x00000272                MOTOR1_Stop
  .text.MOTOR2_Forward
-                0x0000024a       0x10 HAL/MOTOR.o
-                0x0000024a                MOTOR2_Forward
+                0x00000282       0x10 HAL/MOTOR.o
+                0x00000282                MOTOR2_Forward
  .text.MOTOR2_backward
-                0x0000025a       0x10 HAL/MOTOR.o
-                0x0000025a                MOTOR2_backward
+                0x00000292       0x10 HAL/MOTOR.o
+                0x00000292                MOTOR2_backward
  .text.MOTOR2_Stop
-                0x0000026a       0x10 HAL/MOTOR.o
-                0x0000026a                MOTOR2_Stop
+                0x000002a2       0x10 HAL/MOTOR.o
+                0x000002a2                MOTOR2_Stop
  .text.MOTOR3_Forward
-                0x0000027a       0x10 HAL/MOTOR.o
-                0x0000027a                MOTOR3_Forward
+                0x000002b2       0x10 HAL/MOTOR.o
+                0x000002b2                MOTOR3_Forward
  .text.MOTOR3_backward
-                0x0000028a       0x10 HAL/MOTOR.o
-                0x0000028a                MOTOR3_backward
+                0x000002c2       0x10 HAL/MOTOR.o
+                0x000002c2                MOTOR3_backward
  .text.MOTOR3_Stop
-                0x0000029a       0x10 HAL/MOTOR.o
-                0x0000029a                MOTOR3_Stop
+                0x000002d2       0x10 HAL/MOTOR.o
+                0x000002d2                MOTOR3_Stop
  .text.MOTOR4_Forward
-                0x000002aa       0x10 HAL/MOTOR.o
-                0x000002aa                MOTOR4_Forward
+                0x000002e2       0x10 HAL/MOTOR.o
+                0x000002e2                MOTOR4_Forward
  .text.MOTOR4_backward
-                0x000002ba       0x10 HAL/MOTOR.o
-                0x000002ba                MOTOR4_backward
+                0x000002f2       0x10 HAL/MOTOR.o
+                0x000002f2                MOTOR4_backward
  .text.MOTOR4_Stop
-                0x000002ca       0x10 HAL/MOTOR.o
-                0x000002ca                MOTOR4_Stop
+                0x00000302       0x10 HAL/MOTOR.o
+                0x00000302                MOTOR4_Stop
  .text.startup.main
-                0x000002da       0x3e main.o
-                0x000002da                main
+                0x00000312       0x3e main.o
+                0x00000312                main
  .text.__vector_16
-                0x00000318       0x52 MCAL/ADC.o
-                0x00000318                __vector_16
+                0x00000350       0x52 MCAL/ADC.o
+                0x00000350                __vector_16
  .text.DIO_Init
-                0x0000036a      0x1be MCAL/DIO.o
-                0x0000036a                DIO_Init
+                0x000003a2      0x1be MCAL/DIO.o
+                0x000003a2                DIO_Init
  .text.DIO_WritePin
-                0x00000528       0xf6 MCAL/DIO.o
-                0x00000528                DIO_WritePin
+                0x00000560       0xf6 MCAL/DIO.o
+                0x00000560                DIO_WritePin
  .text.DIO_ReadPin
-                0x0000061e       0x4a MCAL/DIO.o
-                0x0000061e                DIO_ReadPin
+                0x00000656       0x4a MCAL/DIO.o
+                0x00000656                DIO_ReadPin
  .text.__vector_1
-                0x00000668       0x52 MCAL/EXI.o
-                0x00000668                __vector_1
+                0x000006a0       0x52 MCAL/EXI.o
+                0x000006a0                __vector_1
  .text.__vector_2
-                0x000006ba       0x52 MCAL/EXI.o
-                0x000006ba                __vector_2
+                0x000006f2       0x52 MCAL/EXI.o
+                0x000006f2                __vector_2
  .text.__vector_3
-                0x0000070c       0x52 MCAL/EXI.o
-                0x0000070c                __vector_3
+                0x00000744       0x52 MCAL/EXI.o
+                0x00000744                __vector_3
  .text.__vector_12
-                0x0000075e       0x52 MCAL/SPI.o
-                0x0000075e                __vector_12
+                0x00000796       0x52 MCAL/SPI.o
+                0x00000796                __vector_12
  .text.__vector_10
-                0x000007b0       0x52 MCAL/TIMER0.o
-                0x000007b0                __vector_10
+                0x000007e8       0x52 MCAL/TIMER0.o
+                0x000007e8                __vector_10
  .text.__vector_11
-                0x00000802       0x52 MCAL/TIMER0.o
-                0x00000802                __vector_11
+                0x0000083a       0x52 MCAL/TIMER0.o
+                0x0000083a                __vector_11
  .text.__vector_7
-                0x00000854       0x52 MCAL/TIMER1.o
-                0x00000854                __vector_7
+                0x0000088c       0x52 MCAL/TIMER1.o
+                0x0000088c                __vector_7
  .text.__vector_8
-                0x000008a6       0x52 MCAL/TIMER1.o
-                0x000008a6                __vector_8
+                0x000008de       0x52 MCAL/TIMER1.o
+                0x000008de                __vector_8
  .text.__vector_9
-                0x000008f8       0x52 MCAL/TIMER1.o
-                0x000008f8                __vector_9
+                0x00000930       0x52 MCAL/TIMER1.o
+                0x00000930                __vector_9
  .text.__vector_6
-                0x0000094a       0x52 MCAL/TIMER1.o
-                0x0000094a                __vector_6
+                0x00000982       0x52 MCAL/TIMER1.o
+                0x00000982                __vector_6
  .text.__vector_13
-                0x0000099c       0x52 MCAL/UART.o
-                0x0000099c                __vector_13
+                0x000009d4       0x52 MCAL/UART.o
+                0x000009d4                __vector_13
  .text.__vector_15
-                0x000009ee       0x52 MCAL/UART.o
-                0x000009ee                __vector_15
+                0x00000a26       0x52 MCAL/UART.o
+                0x00000a26                __vector_15
  .text.__vector_14
-                0x00000a40       0x52 MCAL/UART.o
-                0x00000a40                __vector_14
-                0x00000a92                . = ALIGN (0x2)
+                0x00000a78       0x52 MCAL/UART.o
+                0x00000a78                __vector_14
+                0x00000aca                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000a92        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x00000a92                _exit
-                0x00000a92                exit
+ .fini9         0x00000aca        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x00000aca                _exit
+                0x00000aca                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -1128,11 +1128,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000a92        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000aca        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000a96                _etext = .
+                0x00000ace                _etext = .
 
-.data           0x00800060       0x20 load address 0x00000a96
+.data           0x00800060       0x20 load address 0x00000ace
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -1194,8 +1194,8 @@ END GROUP
                 0x008000a1        0x2 MCAL/UART.o
  *(COMMON)
                 0x008000a3                PROVIDE (__bss_end, .)
-                0x00000a96                __data_load_start = LOADADDR (.data)
-                0x00000ab6                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000ace                __data_load_start = LOADADDR (.data)
+                0x00000aee                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x008000a3        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
