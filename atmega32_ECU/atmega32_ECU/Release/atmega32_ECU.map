@@ -1142,7 +1142,7 @@ END GROUP
                 0x00800092                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
- .bss.oneFlag.1896
+ .bss.zeroOneFlag.1896
                 0x00800092        0x1 application/STOP_Watch.o
  .bss.currentNumber.1895
                 0x00800093        0x1 application/STOP_Watch.o

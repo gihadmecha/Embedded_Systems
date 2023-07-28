@@ -146,16 +146,16 @@ Disassembly of section .text:
  110:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
  114:	81 30       	cpi	r24, 0x01	; 1
  116:	91 f4       	brne	.+36     	; 0x13c <STOP_watch_delay_s+0x34>
- 118:	0e 94 7a 00 	call	0xf4	; 0xf4 <STOP_Watch_segments>
- 11c:	8f e6       	ldi	r24, 0x6F	; 111
- 11e:	90 e0       	ldi	r25, 0x00	; 0
- 120:	0e 94 04 01 	call	0x208	; 0x208 <BUTTON1_IfPressed_PeriodicCheck>
- 124:	81 ea       	ldi	r24, 0xA1	; 161
- 126:	90 e0       	ldi	r25, 0x00	; 0
- 128:	0e 94 1c 01 	call	0x238	; 0x238 <BUTTON2_IfPressed_PeriodicCheck>
- 12c:	87 e6       	ldi	r24, 0x67	; 103
- 12e:	90 e0       	ldi	r25, 0x00	; 0
- 130:	0e 94 34 01 	call	0x268	; 0x268 <BUTTON_mode_IfPressed_PeriodicCheck>
+ 118:	8f e6       	ldi	r24, 0x6F	; 111
+ 11a:	90 e0       	ldi	r25, 0x00	; 0
+ 11c:	0e 94 04 01 	call	0x208	; 0x208 <BUTTON1_IfPressed_PeriodicCheck>
+ 120:	81 ea       	ldi	r24, 0xA1	; 161
+ 122:	90 e0       	ldi	r25, 0x00	; 0
+ 124:	0e 94 1c 01 	call	0x238	; 0x238 <BUTTON2_IfPressed_PeriodicCheck>
+ 128:	87 e6       	ldi	r24, 0x67	; 103
+ 12a:	90 e0       	ldi	r25, 0x00	; 0
+ 12c:	0e 94 34 01 	call	0x268	; 0x268 <BUTTON_mode_IfPressed_PeriodicCheck>
+ 130:	0e 94 7a 00 	call	0xf4	; 0xf4 <STOP_Watch_segments>
  134:	21 96       	adiw	r28, 0x01	; 1
  136:	ca 3f       	cpi	r28, 0xFA	; 250
  138:	d1 05       	cpc	r29, r1
@@ -210,29 +210,29 @@ Disassembly of section .text:
  1b6:	39 f5       	brne	.+78     	; 0x206 <STOP_Watch_run+0xa8>
  1b8:	20 93 92 00 	sts	0x0092, r18	; 0x800092 <__data_end>
  1bc:	08 95       	ret
- 1be:	0e 94 58 01 	call	0x2b0	; 0x2b0 <LED1_Off>
- 1c2:	80 91 92 00 	lds	r24, 0x0092	; 0x800092 <__data_end>
- 1c6:	81 30       	cpi	r24, 0x01	; 1
- 1c8:	f1 f4       	brne	.+60     	; 0x206 <STOP_Watch_run+0xa8>
- 1ca:	10 92 92 00 	sts	0x0092, r1	; 0x800092 <__data_end>
- 1ce:	0e 94 4c 01 	call	0x298	; 0x298 <BUZZER_On>
- 1d2:	0e 94 84 00 	call	0x108	; 0x108 <STOP_watch_delay_s>
- 1d6:	0c 94 50 01 	jmp	0x2a0	; 0x2a0 <BUZZER_Off>
+ 1be:	80 91 92 00 	lds	r24, 0x0092	; 0x800092 <__data_end>
+ 1c2:	81 30       	cpi	r24, 0x01	; 1
+ 1c4:	41 f4       	brne	.+16     	; 0x1d6 <STOP_Watch_run+0x78>
+ 1c6:	10 92 92 00 	sts	0x0092, r1	; 0x800092 <__data_end>
+ 1ca:	0e 94 4c 01 	call	0x298	; 0x298 <BUZZER_On>
+ 1ce:	0e 94 84 00 	call	0x108	; 0x108 <STOP_watch_delay_s>
+ 1d2:	0e 94 50 01 	call	0x2a0	; 0x2a0 <BUZZER_Off>
+ 1d6:	0c 94 58 01 	jmp	0x2b0	; 0x2b0 <LED1_Off>
  1da:	81 11       	cpse	r24, r1
  1dc:	14 c0       	rjmp	.+40     	; 0x206 <STOP_Watch_run+0xa8>
  1de:	0e 94 58 01 	call	0x2b0	; 0x2b0 <LED1_Off>
  1e2:	10 92 94 00 	sts	0x0094, r1	; 0x800094 <pausePlayFlag>
  1e6:	0e 94 58 01 	call	0x2b0	; 0x2b0 <LED1_Off>
- 1ea:	0e 94 7a 00 	call	0xf4	; 0xf4 <STOP_Watch_segments>
- 1ee:	89 e4       	ldi	r24, 0x49	; 73
- 1f0:	90 e0       	ldi	r25, 0x00	; 0
- 1f2:	0e 94 04 01 	call	0x208	; 0x208 <BUTTON1_IfPressed_PeriodicCheck>
- 1f6:	88 e5       	ldi	r24, 0x58	; 88
- 1f8:	90 e0       	ldi	r25, 0x00	; 0
- 1fa:	0e 94 1c 01 	call	0x238	; 0x238 <BUTTON2_IfPressed_PeriodicCheck>
- 1fe:	87 e6       	ldi	r24, 0x67	; 103
- 200:	90 e0       	ldi	r25, 0x00	; 0
- 202:	0c 94 34 01 	jmp	0x268	; 0x268 <BUTTON_mode_IfPressed_PeriodicCheck>
+ 1ea:	89 e4       	ldi	r24, 0x49	; 73
+ 1ec:	90 e0       	ldi	r25, 0x00	; 0
+ 1ee:	0e 94 04 01 	call	0x208	; 0x208 <BUTTON1_IfPressed_PeriodicCheck>
+ 1f2:	88 e5       	ldi	r24, 0x58	; 88
+ 1f4:	90 e0       	ldi	r25, 0x00	; 0
+ 1f6:	0e 94 1c 01 	call	0x238	; 0x238 <BUTTON2_IfPressed_PeriodicCheck>
+ 1fa:	87 e6       	ldi	r24, 0x67	; 103
+ 1fc:	90 e0       	ldi	r25, 0x00	; 0
+ 1fe:	0e 94 34 01 	call	0x268	; 0x268 <BUTTON_mode_IfPressed_PeriodicCheck>
+ 202:	0c 94 7a 00 	jmp	0xf4	; 0xf4 <STOP_Watch_segments>
  206:	08 95       	ret
 
 00000208 <BUTTON1_IfPressed_PeriodicCheck>:

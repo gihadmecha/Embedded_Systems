@@ -10,15 +10,15 @@ const DIO_PinStatus_type PinsStatusArray[] = {
 	OUTPUT, //PINA5
 	OUTPUT, //PINA6
 	OUTPUT, //PINA7
-	INPULL, //PINB0
-	INPULL, //PINB1
-	INPULL, //PINB2//INT2
-	INPULL, //PINB3//oc0
-	INPULL, //PINB4//ss
-	INPULL, //PINB5//mosi
-	INPULL, //PINB6//miso
-	INPULL, //PINB7//clk
-	INPULL, //PINC0
+	OUTPUT, //PINB0
+	OUTPUT, //PINB1
+	OUTPUT, //PINB2//INT2
+	OUTPUT, //PINB3//oc0
+	OUTPUT, //PINB4//ss
+	OUTPUT, //PINB5//mosi
+	OUTPUT, //PINB6//miso
+	OUTPUT, //PINB7//clk
+	OUTPUT, //PINC0
 	OUTPUT, //PINC1
 	OUTPUT, //PINC2
 	OUTPUT, //PINC3
@@ -33,6 +33,6 @@ const DIO_PinStatus_type PinsStatusArray[] = {
 	INPULL, //PIND4//OC1B
 	OUTPUT, //PIND5//OC1A
 	OUTPUT, //PIND6//ICP1
-	INPULL  //PIND7
+	OUTPUT  //PIND7
 };
 
