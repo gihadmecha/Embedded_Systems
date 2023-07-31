@@ -1,14 +1,10 @@
 
-#include "STOP_Watch.h"
+#include "Calculator_Converter.h"
 
 int main ()
 {
-	STOP_Watch_Init ();
+	Calculator_Converter_Init ();
 	
-	while (1)
-	{
-		STOP_Watch_run();
-	}
+	Calculator_Converter_welcomeMessage ();
 	
 }
-

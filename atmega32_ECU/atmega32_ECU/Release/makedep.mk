@@ -2,6 +2,8 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+application\Calculator_Converter.c
+
 application\RC_car.c
 
 application\STOP_Watch.c

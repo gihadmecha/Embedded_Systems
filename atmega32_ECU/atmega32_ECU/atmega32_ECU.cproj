@@ -125,6 +125,12 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="application\Calculator_Converter.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="application\Calculator_Converter.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="application\RC_car.c">
       <SubType>compile</SubType>
     </Compile>
