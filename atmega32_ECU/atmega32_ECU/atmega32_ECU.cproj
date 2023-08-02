@@ -131,6 +131,9 @@
     <Compile Include="application\Calculator_Converter.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="application\Calculator_Converter_Private.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="application\RC_car.c">
       <SubType>compile</SubType>
     </Compile>

@@ -1,5 +1,6 @@
 application/Calculator_Converter.d application/Calculator_Converter.o: \
  ../application/Calculator_Converter.c \
+ ../application/Calculator_Converter_Private.h \
  ../application/Calculator_Converter.h ../HAL/LCD.h ../HAL/LCD_Lcfg.h \
  ../MCAL/DIO_interface.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
@@ -10,6 +11,8 @@ application/Calculator_Converter.d application/Calculator_Converter.o: \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
  ../StdTypes.h ../MemMap.h ../UTILS.h ../HAL/KEYPAD.h \
  ../HAL/KEYPAD_Lcfg.h
+
+../application/Calculator_Converter_Private.h:
 
 ../application/Calculator_Converter.h:
 

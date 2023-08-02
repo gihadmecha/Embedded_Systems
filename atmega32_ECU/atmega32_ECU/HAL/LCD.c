@@ -162,7 +162,7 @@ void LCD_Init()
 	// B: not blinking cursor
 	// C: display cursor
 	// D: display DDRAM Data on the Screen
-	LCD_WriteCommand(0b00001110);
+	LCD_WriteCommand(0b00001100);
 	
 	LCD_WriteCommand(0b00000001);
 	_delay_ms(1);
