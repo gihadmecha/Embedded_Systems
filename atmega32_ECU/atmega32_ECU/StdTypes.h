@@ -18,6 +18,7 @@ typedef		unsigned long	u32;
 typedef		signed long		s32;
 
 typedef		unsigned long long	u64;
+typedef		signed long long	s64;
 
 
 #endif /* STDTYPES_H_ */
