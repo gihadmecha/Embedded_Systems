@@ -5,7 +5,7 @@
 #define LED_LCFG_H_
 
 //Active High Led
-#define		LED1	PINC1
+#define		LED1	PINC0
 
 //Active High Led
 #define		LED2	PINA1

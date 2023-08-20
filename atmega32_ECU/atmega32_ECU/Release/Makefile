@@ -42,6 +42,7 @@ SUBDIRS :=  \
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../application/Calculator_Converter.c \
+../application/Fire_System.c \
 ../application/RC_car.c \
 ../application/STOP_Watch.c \
 ../HAL/BUTTON.c \
@@ -77,6 +78,7 @@ ASM_SRCS +=
 
 OBJS +=  \
 application/Calculator_Converter.o \
+application/Fire_System.o \
 application/RC_car.o \
 application/STOP_Watch.o \
 HAL/BUTTON.o \
@@ -105,6 +107,7 @@ SERVICES/UART_SERVICES.o
 
 OBJS_AS_ARGS +=  \
 application/Calculator_Converter.o \
+application/Fire_System.o \
 application/RC_car.o \
 application/STOP_Watch.o \
 HAL/BUTTON.o \
@@ -133,6 +136,7 @@ SERVICES/UART_SERVICES.o
 
 C_DEPS +=  \
 application/Calculator_Converter.d \
+application/Fire_System.d \
 application/RC_car.d \
 application/STOP_Watch.d \
 HAL/BUTTON.d \
@@ -161,6 +165,7 @@ SERVICES/UART_SERVICES.d
 
 C_DEPS_AS_ARGS +=  \
 application/Calculator_Converter.d \
+application/Fire_System.d \
 application/RC_car.d \
 application/STOP_Watch.d \
 HAL/BUTTON.d \
@@ -202,6 +207,13 @@ LINKER_SCRIPT_DEP+=
 
 # AVR32/GNU C Compiler
 application/Calculator_Converter.o: ../application/Calculator_Converter.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DNDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../MCAL" -I".." -I"../HAL" -I"../SERVICES" -I"../application"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+application/Fire_System.o: ../application/Fire_System.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DNDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../MCAL" -I".." -I"../HAL" -I"../SERVICES" -I"../application"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

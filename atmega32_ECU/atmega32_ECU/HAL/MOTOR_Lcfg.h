@@ -4,8 +4,8 @@
 #define MOTOR_LCFG_H_
 
 //MOTOR1
-#define		IN1_M1		PINA0
-#define		IN2_M1		PINA1
+#define		IN1_M1		PINC3
+#define		IN2_M1		PINC4
 
 
 //MOTOR2

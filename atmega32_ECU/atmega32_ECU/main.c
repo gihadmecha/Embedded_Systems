@@ -1,12 +1,12 @@
 
-#include "Calculator_Converter.h"
+#include "Fire_System.h"
 
 int main ()
 {
-	Calculator_Converter_Init ();
+	Fire_System_Init ();
 	
 	while (1)
 	{
-		Calculator_Converter_Run ();
+		Fire_System_Run ();
 	}
 }

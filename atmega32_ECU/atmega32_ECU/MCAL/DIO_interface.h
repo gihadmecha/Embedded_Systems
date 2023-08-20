@@ -3,9 +3,6 @@
 #ifndef DIO_INTERFACE_H_
 #define DIO_INTERFACE_H_
 
-#define F_CPU 8000000
-#include <util/delay.h>
-
 #include "StdTypes.h"
 #include "MemMap.h"
 #include "UTILS.h"

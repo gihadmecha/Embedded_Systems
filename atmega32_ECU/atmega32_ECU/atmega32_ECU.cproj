@@ -134,6 +134,15 @@
     <Compile Include="application\Calculator_Converter_Private.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="application\Fire_System.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="application\Fire_System.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="application\Fire_System_Private.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="application\RC_car.c">
       <SubType>compile</SubType>
     </Compile>
