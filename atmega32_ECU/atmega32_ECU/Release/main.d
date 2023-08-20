@@ -9,7 +9,7 @@ main.d main.o: .././main.c ../application/Fire_System.h ../HAL/LCD.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
  ../HAL/LM35.h ../HAL/LM35_Lcfg.h ../MCAL/ADC.h ../MCAL/ADC_Lcfg.h \
  ../HAL/LED.h ../HAL/LED_Lcfg.h ../HAL/KEYPAD.h ../HAL/KEYPAD_Lcfg.h \
- ../HAL/MOTOR.h ../HAL/MOTOR_Lcfg.h
+ ../HAL/STEPPER_MOTOR.h ../HAL/STEPPER_MOTOR_Lcfg.h
 
 ../application/Fire_System.h:
 
@@ -53,6 +53,6 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 
 ../HAL/KEYPAD_Lcfg.h:
 
-../HAL/MOTOR.h:
+../HAL/STEPPER_MOTOR.h:
 
-../HAL/MOTOR_Lcfg.h:
+../HAL/STEPPER_MOTOR_Lcfg.h:

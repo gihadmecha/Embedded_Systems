@@ -221,6 +221,15 @@
     <Compile Include="HAL\MOTOR_Lcfg.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="HAL\MQ_2.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\MQ_2.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\MQ_2_Lcfg.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="HAL\POTONTIOMETER.c">
       <SubType>compile</SubType>
     </Compile>

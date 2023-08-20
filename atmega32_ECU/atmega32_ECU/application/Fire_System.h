@@ -9,7 +9,7 @@
 
 #include "LED.h"
 #include "KEYPAD.h"
-#include "MOTOR.h"
+#include "STEPPER_MOTOR.h"
 
 extern void Fire_System_Init ();
 extern void Fire_System_Run ();
