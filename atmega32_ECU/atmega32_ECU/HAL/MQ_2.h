@@ -6,7 +6,7 @@
 #include "MQ_2_Lcfg.h"
 #include "ADC.h"
 
-extern u8 MQ_2 ();
+extern u16 MQ_2 ();
 
 
 

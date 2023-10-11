@@ -8,7 +8,7 @@
 #define		LED1	PINC0
 
 //Active High Led
-#define		LED2	PINA1
+#define		LED2	PINC2
 
 //Active High Led
 #define		LED3	PINA2
