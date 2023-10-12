@@ -8,7 +8,7 @@
 #include "DIO_interface.h"
 
 char KEYPAD_GetKey ();
-u32 KEYPAD_GetNumber ();
+
 
 
 #endif /* KEYPAD_H_ */

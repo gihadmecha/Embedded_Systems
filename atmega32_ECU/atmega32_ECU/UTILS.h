@@ -4,7 +4,7 @@
 #ifndef UTILS_H_
 #define UTILS_H_
 
-#define		F_CPU		1000000
+#define		F_CPU		8000000
 #include <util/delay.h> 
 
 #define		SET_BIT(reg, bit)				( reg = reg | (1 << bit) )

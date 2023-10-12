@@ -1,32 +1,33 @@
 
+#include "STEPPER_MOTOR_Private.h"
 #include "STEPPER_MOTOR.h"
 
 //Full Step
-void STEPPER1_Forward ()
+void STEPPER1_Forward (void (*FUNC)(void))
 {
 	DIO_WritePin(coilA1_STEPPER1, LOW);
 	DIO_WritePin(coilA2_STEPPER1, LOW);
 	DIO_WritePin(coilB1_STEPPER1, HIGH);
 	DIO_WritePin(coilB2_STEPPER1, LOW);
-	_delay_ms(DELAY);
+	STEPPER_MOTOR_delay_ms(FUNC);
 	
 	DIO_WritePin(coilA1_STEPPER1, LOW);
 	DIO_WritePin(coilA2_STEPPER1, HIGH);
 	DIO_WritePin(coilB1_STEPPER1, LOW);
 	DIO_WritePin(coilB2_STEPPER1, LOW);
-	_delay_ms(DELAY);
+	STEPPER_MOTOR_delay_ms(FUNC);
 	
 	DIO_WritePin(coilA1_STEPPER1, LOW);
 	DIO_WritePin(coilA2_STEPPER1, LOW);
 	DIO_WritePin(coilB1_STEPPER1, LOW);
 	DIO_WritePin(coilB2_STEPPER1, HIGH);
-	_delay_ms(DELAY);
+	STEPPER_MOTOR_delay_ms(FUNC);
 	
 	DIO_WritePin(coilA1_STEPPER1, HIGH);
 	DIO_WritePin(coilA2_STEPPER1, LOW);
 	DIO_WritePin(coilB1_STEPPER1, LOW);
 	DIO_WritePin(coilB2_STEPPER1, LOW);
-	_delay_ms(DELAY);
+	STEPPER_MOTOR_delay_ms(FUNC);
 }
 
 //Half Step
@@ -226,3 +227,16 @@ void STEPPER3_Backward ()
 	_delay_ms(DELAY);
 }
 void STEPPER3_Stop ();
+
+static void STEPPER_MOTOR_delay_ms (void (*FUNC)(void))
+{
+	for (u32 index = 0; index < DELAY; index++)
+	{
+		if (FUNC != NULL)
+		{
+			FUNC ();
+		}
+		
+		_delay_ms(1);
+	}
+}

@@ -177,7 +177,7 @@ void LCD_Init()
 
 void LCD_Clear()
 {
-	LCD_WriteCommand(0b0000001);
+	LCD_WriteCommand(0b00000001);
 	_delay_ms(1);
 }
 

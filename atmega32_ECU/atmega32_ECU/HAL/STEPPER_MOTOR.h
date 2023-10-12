@@ -7,11 +7,11 @@
 #include "STEPPER_MOTOR_Lcfg.h"
 #include "DIO_interface.h"
 
-#define		DELAY		500
+#define		DELAY		100
 
 //Bipoler Stepper Motor
 //full Step
-void STEPPER1_Forward ();
+void STEPPER1_Forward (void (*FUNC)(void));
 void STEPPER1_Backward ();
 void STEPPER1_Stop ();
 

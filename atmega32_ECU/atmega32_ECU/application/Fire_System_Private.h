@@ -16,6 +16,10 @@ static void Fire_System_State_Fine ();
 static void Fire_System_State_Heat ();
 static void Fire_System_State_Fire ();
 static void Fire_System_GetPassward ();
+static u8 Fire_System_CompareString (char* string1, char* string2);
+static void Fire_System_State_WrongPassword ();
+static void Fire_System_CheckPeriodically ();
+static void Fire_System_delay_ms(u32 delay);
 
 
 

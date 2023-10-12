@@ -269,6 +269,9 @@
     <Compile Include="HAL\STEPPER_MOTOR_Lcfg.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="HAL\STEPPER_MOTOR_Private.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="HAL\ultrasonic.c">
       <SubType>compile</SubType>
     </Compile>
