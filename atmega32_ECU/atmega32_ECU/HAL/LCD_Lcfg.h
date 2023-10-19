@@ -9,13 +9,13 @@
 #define		DB2		PINA2
 #define		DB3		PINA3
 
-#define		DB4		PINA3
-#define		DB5		PINA4
-#define		DB6		PINA5
-#define		DB7		PINA6
+#define		DB4		PINC2
+#define		DB5		PINC3
+#define		DB6		PINC4
+#define		DB7		PINC5
 
-#define		RS		PINA1
-#define		EN		PINA2
+#define		RS		PINC0
+#define		EN		PINC1
 
 
 #define		MODE_8_BIT		8		

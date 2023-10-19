@@ -9,10 +9,17 @@ void SERVO_setAngle (double angle)
 	//F(frequency) = 1 / (NO. of ticks * TIMER_TICK_TIME)
 	
 	//NO. of ticks = 1 / (F * TIMER_TICK_TIME)
-	u16 top = 1.0/(50*TIMER1_TICK_TIME);
+	//u16 top = 1.0/(50*TIMER1_TICK_TIME);
+	
+	u16 top = 1.0/(50*TIMER1_TICK_TIME * 2.0);
 	
 	
-	u16 compareMatch = 999 + (1000 * ((90 + angle) / 180));
+	//u16 compareMatch = 999 + (1000 * ((90 + angle) / 180));
+	
+	u16 compareMatch = 9500 + ((-500.0 * (90.0 + angle)) / 180.0);
+	
+	LCD_GoTo(0, 6);
+	LCD_WriteNumber_4Digit(compareMatch);
 	
 	switch (TOP)
 	{

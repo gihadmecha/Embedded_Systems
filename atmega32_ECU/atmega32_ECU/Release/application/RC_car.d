@@ -7,7 +7,8 @@ application/RC_car.d application/RC_car.o: ../application/RC_car.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdint.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
- ../MCAL/TIMER1.h ../MCAL/TIMER1_Lcfg.h
+ ../MCAL/TIMER0.h ../MCAL/TIMER0_Lcfg.h ../MCAL/TIMER1.h \
+ ../MCAL/TIMER1_Lcfg.h
 
 ../application/RC_car.h:
 
@@ -34,6 +35,10 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h:
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h:
+
+../MCAL/TIMER0.h:
+
+../MCAL/TIMER0_Lcfg.h:
 
 ../MCAL/TIMER1.h:
 

@@ -14,7 +14,8 @@ void MOTOR1_Init ()
 	switch (TOP)
 	{
 		case TIMER1_ICR:
-		TIMER1_ICR1_WRITE(1.0/(50*TIMER1_TICK_TIME));
+		//TIMER1_ICR1_WRITE(1.0/(50*TIMER1_TICK_TIME));
+		TIMER1_ICR1_WRITE(1.0/(50*TIMER1_TICK_TIME * 2.0));
 		break;
 	}
 }
@@ -36,6 +37,49 @@ void MOTOR1_Forward (u8 dutyCycle)
 				TIMER1_OCR1A_WRITE( (u16)((TIMER1_ICR1_READ() - 1.0) * (1.0 - (dutyCycle/100.0))) );
 				break;
 			}
+		break;
+	}
+}
+
+void MOTOR1_backward (u8 dutyCycle)
+{
+	dutyCycle = dutyCycle / 100.0;
+	
+	DIO_WritePin(IN1_M1, LOW);
+	DIO_WritePin(IN2_M1, HIGH);
+	
+	switch(EN_M1)
+	{
+		case OC1A_PIN:
+		//inverting
+		//duty cycle/100 = (2 * ((TIMER1_NO_OF_TICKS - 1) - compareMatch)) / (2 * (TIMER1_NO_OF_TICKS - 1))
+		//compareMatch = (TIMER1_NO_OF_TICKS - 1) * (1 - (duty cycle/100))
+		TIMER1_OCR1A_WRITE((TIMER1_ICR1_READ() - 1.0) * (1.0 - (dutyCycle/100.0)));
+		break;
+	}
+}
+
+void MOTOR1_Stop ()
+{
+	DIO_WritePin(IN1_M1, LOW);
+	DIO_WritePin(IN2_M1, LOW);
+	TIMER1_OCR1A_WRITE((TIMER1_ICR1_READ() - 1.0));
+}
+
+#elif (EN_M1 == OC0_PIN) || (EN_M1 == OC2_PIN)
+
+void MOTOR1_Forward (u8 dutyCycle)
+{
+	DIO_WritePin(IN1_M1, HIGH);
+	DIO_WritePin(IN2_M1, LOW);
+	
+	switch(EN_M1)
+	{
+		case OC0_PIN:
+		//inverting
+		//duty cycle/100 = (2 * ((TIMER1_NO_OF_TICKS - 1) - compareMatch)) / (2 * (TIMER1_NO_OF_TICKS - 1))
+		//compareMatch = (TIMER1_NO_OF_TICKS - 1) * (1 - (duty cycle/100))
+		TIMER0_OCR0_WRITE( (u16)((TIMER0_NO_OF_TICKS - 1.0) * (1.0 - (dutyCycle/100.0))) );
 		break;
 	}
 }
