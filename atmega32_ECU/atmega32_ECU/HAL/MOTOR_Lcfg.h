@@ -3,9 +3,14 @@
 #ifndef MOTOR_LCFG_H_
 #define MOTOR_LCFG_H_
 
+#define		OC1A_PIN		19	
+#define		OC1B_PIN		18
+
 //MOTOR1
-#define		IN1_M1		PINC3
-#define		IN2_M1		PINC4
+#define		IN1_M1		PINC6
+#define		IN2_M1		PINC7
+//#define	EN_M1		0
+#define		EN_M1		OC1A_PIN
 
 
 //MOTOR2

@@ -143,6 +143,15 @@
     <Compile Include="application\Fire_System_Private.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="application\Motors_Dashboard.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="application\Motors_Dashboard.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="application\Motors_Dashboard_Private.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="application\RC_car.c">
       <SubType>compile</SubType>
     </Compile>

@@ -5,10 +5,22 @@
 
 #include "MOTOR_Lcfg.h"
 #include "DIO_interface.h"
+#include "TIMER1.h"
+
+#if (EN_M1 == OC1A_PIN) || (EN_M1 == OC1B_PIN)
+
+void MOTOR1_Init ();
+void MOTOR1_Forward (u8 dutyCycle);
+void MOTOR1_backward (u8 dutyCycle);
+void MOTOR1_Stop ();
+
+#else
 
 void MOTOR1_Forward ();
 void MOTOR1_backward ();
 void MOTOR1_Stop ();
+
+#endif
 
 void MOTOR2_Forward ();
 void MOTOR2_backward ();

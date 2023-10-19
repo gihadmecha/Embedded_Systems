@@ -1,7 +1,7 @@
 
 #include "TIMER1.h"
 
-void TIMER1_Init (timer1_prescaler_type prescaler, timer1_mode_type timerMode, timer1_OC1_mode_type OC1AMode, timer1_OC1_mode_type OC1BMode)
+void TIMER1_Init (timer1_prescaler_type prescaler, timer1_mode_type timerMode, timer1_OC1A_mode_type OC1AMode, timer1_OC1B_mode_type OC1BMode)
 {
 	switch (prescaler)
 	{
@@ -133,19 +133,19 @@ void TIMER1_Init (timer1_prescaler_type prescaler, timer1_mode_type timerMode, t
 	
 	switch (OC1AMode)
 	{
-		case TIMER1_OC1_DISCONNECTED:
+		case TIMER1_OC1A_DISCONNECTED:
 		CLR_BIT(TCCR1A, COM1A1);
 		CLR_BIT(TCCR1A, COM1A0);
 		break;
-		case TIMER1_OC1_TOGGLE_ON_COMPARE_MATCH:
+		case TIMER1_OC1A_TOGGLE_ON_COMPARE_MATCH:
 		CLR_BIT(TCCR1A, COM1A1);
 		SET_BIT(TCCR1A, COM1A0);
 		break;
-		case TIMER1_OC1_CLEAR_ON_COMPARE_MATCH:
+		case TIMER1_OC1A_CLEAR_ON_COMPARE_MATCH:
 		SET_BIT(TCCR1A, COM1A1);
 		CLR_BIT(TCCR1A, COM1A0);
 		break;
-		case TIMER1_OC1_SET_ON_COMPARE_MATCH:
+		case TIMER1_OC1A_SET_ON_COMPARE_MATCH:
 		SET_BIT(TCCR1A, COM1A1);
 		SET_BIT(TCCR1A, COM1A0);
 		break;
@@ -153,19 +153,19 @@ void TIMER1_Init (timer1_prescaler_type prescaler, timer1_mode_type timerMode, t
 	
 	switch (OC1BMode)
 	{
-		case TIMER1_OC1_DISCONNECTED:
+		case TIMER1_OC1B_DISCONNECTED:
 		CLR_BIT(TCCR1A, COM1B1);
 		CLR_BIT(TCCR1A, COM1B0);
 		break;
-		case TIMER1_OC1_TOGGLE_ON_COMPARE_MATCH:
+		case TIMER1_OC1B_TOGGLE_ON_COMPARE_MATCH:
 		CLR_BIT(TCCR1A, COM1B1);
 		SET_BIT(TCCR1A, COM1B0);
 		break;
-		case TIMER1_OC1_CLEAR_ON_COMPARE_MATCH:
+		case TIMER1_OC1B_CLEAR_ON_COMPARE_MATCH:
 		SET_BIT(TCCR1A, COM1B1);
 		CLR_BIT(TCCR1A, COM1B0);
 		break;
-		case TIMER1_OC1_SET_ON_COMPARE_MATCH:
+		case TIMER1_OC1B_SET_ON_COMPARE_MATCH:
 		SET_BIT(TCCR1A, COM1B1);
 		SET_BIT(TCCR1A, COM1B0);
 		break;

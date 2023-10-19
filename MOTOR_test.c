@@ -20,7 +20,7 @@ int main()
 		DIO_TogglePin(PIND4);
 		DIO_TogglePin(PIND6);
 		_delay_ms(3000);
-		MOTOR_Stop();
+		MOTOR1_Stop();
 		DIO_TogglePin(PINC0);
 		DIO_TogglePin(PINC3);
 		DIO_TogglePin(PIND4);

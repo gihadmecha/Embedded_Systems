@@ -6,6 +6,8 @@ application\Calculator_Converter.c
 
 application\Fire_System.c
 
+application\Motors_Dashboard.c
+
 application\RC_car.c
 
 application\STOP_Watch.c

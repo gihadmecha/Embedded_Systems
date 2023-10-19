@@ -1,12 +1,16 @@
 
-#include "Fire_System.h"
+#include "DIO_interface.h"
+#include "MOTOR.h"
 
-int main ()
+
+#include "Motors_Dashboard.h"
+
+int main()
 {
-	Fire_System_Init ();
-	
+	Motors_Dashboard_Init();
+
 	while (1)
 	{
-		Fire_System_Run ();
+		Motors_Dashboard_Run();
 	}
 }

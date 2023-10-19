@@ -12,7 +12,7 @@
 
 #define		TIMER1_F				    (CPU_F/TIMER1_PRESCALAR)		//HZ
 #define		TIMER1_TICK_TIME			(1.0/TIMER1_F)			        //sec
-#define		TIMER1_NO_OF_TICKS			65535
+#define		TIMER1_NO_OF_TICKS			65536
 
 #define		TIMER1_TCNT1_READ()				TCNT1
 #define		TIMER1_TCNT1_WRITE(data)	    TCNT1 = data
@@ -52,18 +52,25 @@ typedef enum {
 }timer1_mode_type;
 
 typedef enum {
-	TIMER1_OC1_DISCONNECTED,
-	TIMER1_OC1_TOGGLE_ON_COMPARE_MATCH,
-	TIMER1_OC1_CLEAR_ON_COMPARE_MATCH,
-	TIMER1_OC1_SET_ON_COMPARE_MATCH
-}timer1_OC1_mode_type;
+	TIMER1_OC1A_DISCONNECTED,
+	TIMER1_OC1A_TOGGLE_ON_COMPARE_MATCH,
+	TIMER1_OC1A_CLEAR_ON_COMPARE_MATCH,
+	TIMER1_OC1A_SET_ON_COMPARE_MATCH
+}timer1_OC1A_mode_type;
+
+typedef enum {
+	TIMER1_OC1B_DISCONNECTED,
+	TIMER1_OC1B_TOGGLE_ON_COMPARE_MATCH,
+	TIMER1_OC1B_CLEAR_ON_COMPARE_MATCH,
+	TIMER1_OC1B_SET_ON_COMPARE_MATCH
+}timer1_OC1B_mode_type;
 
 typedef enum {
 	TIMER1_ICU_FALLING_EDGE,
 	TIMER1_ICU_RAISING_EDGE
 	}timer1_ICP_EDGE_type;
 
-void TIMER1_Init (timer1_prescaler_type prescaler, timer1_mode_type timerMode, timer1_OC1_mode_type OC1AMode, timer1_OC1_mode_type OC1BMode);
+void TIMER1_Init (timer1_prescaler_type prescaler, timer1_mode_type timerMode, timer1_OC1A_mode_type OC1AMode, timer1_OC1B_mode_type OC1BMode);
 void TIMER1_ICPedgeMode (timer1_ICP_EDGE_type edgeType);
 void TIMER1_OCM1A_interruptEnable ();
 void TIMER1_OCM1A_interruptDisable ();
