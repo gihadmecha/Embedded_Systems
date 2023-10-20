@@ -19,7 +19,6 @@ void MOTOR1_Stop ();
 
 void MOTOR1_Forward (u8 dutyCycle);
 void MOTOR1_backward (u8 dutyCycle);
-void MOTOR1_Stop ();
 
 #else
 

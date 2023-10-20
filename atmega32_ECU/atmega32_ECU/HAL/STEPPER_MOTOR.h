@@ -9,7 +9,6 @@
 
 #define		DELAY							50
 
-#define     STEPPER3_STEP_ANGLE				10
 #define		STEPPER3_POSITIVE_DIRECTION		1
 #define		STEPPER3_NEGATIVE_DIRECTION		0			
 

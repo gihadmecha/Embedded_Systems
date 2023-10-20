@@ -3,6 +3,8 @@
 #ifndef STEPPER_MOTOR_LCFG_H_
 #define STEPPER_MOTOR_LCFG_H_
 
+#define     STEPPER3_STEP_ANGLE				10
+
 //Bi poler stepper Motor
 #define		coilA1_STEPPER1		PINC3
 #define		coilA2_STEPPER1		PINC4
