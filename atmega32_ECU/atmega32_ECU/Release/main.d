@@ -11,7 +11,7 @@ main.d main.o: .././main.c ../MCAL/DIO_interface.h ../StdTypes.h \
  ../application/Motors_Dashboard.h ../HAL/SERVO.h ../HAL/SERVO_Lcfg.h \
  ../HAL/POTONTIOMETER.h ../HAL/POTONTIOMETER_Lcfg.h ../MCAL/ADC.h \
  ../MCAL/ADC_Lcfg.h ../HAL/LCD.h ../HAL/LCD_Lcfg.h ../HAL/KEYPAD.h \
- ../HAL/KEYPAD_Lcfg.h
+ ../HAL/KEYPAD_Lcfg.h ../HAL/STEPPER_MOTOR.h ../HAL/STEPPER_MOTOR_Lcfg.h
 
 ../MCAL/DIO_interface.h:
 
@@ -66,3 +66,7 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../HAL/KEYPAD.h:
 
 ../HAL/KEYPAD_Lcfg.h:
+
+../HAL/STEPPER_MOTOR.h:
+
+../HAL/STEPPER_MOTOR_Lcfg.h:

@@ -7,7 +7,11 @@
 #include "STEPPER_MOTOR_Lcfg.h"
 #include "DIO_interface.h"
 
-#define		DELAY		100
+#define		DELAY							50
+
+#define     STEPPER3_STEP_ANGLE				10
+#define		STEPPER3_POSITIVE_DIRECTION		1
+#define		STEPPER3_NEGATIVE_DIRECTION		0			
 
 //Bipoler Stepper Motor
 //full Step
@@ -23,8 +27,7 @@ void STEPPER2_Stop ();
 
 //unipoler Stepper Motor
 //Half Step
-void STEPPER3_Forward ();
-void STEPPER3_Backward ();
-void STEPPER3_Stop ();
+void STEPPER3 (s32 angle);
+
 
 #endif /* STEPPER_MOTOR_H_ */
