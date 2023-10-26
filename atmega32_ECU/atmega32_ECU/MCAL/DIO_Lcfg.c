@@ -3,8 +3,8 @@
 
 const DIO_PinStatus_type PinsStatusArray[] = {
 	INFREE, //PINA0//CHANNEL_0
-	OUTPUT, //PINA1
-	OUTPUT, //PINA2
+	INFREE, //PINA1
+	INFREE, //PINA2
 	OUTPUT, //PINA3
 	OUTPUT, //PINA4
 	OUTPUT, //PINA5

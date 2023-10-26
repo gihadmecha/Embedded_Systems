@@ -1,5 +1,5 @@
-main.d main.o: .././main.c ../HAL/RGB_LED.h ../MemMap.h ../StdTypes.h \
- ../UTILS.h \
+HAL/RGB_LED.d HAL/RGB_LED.o: ../HAL/RGB_LED.c ../HAL/RGB_LED.h \
+ ../MemMap.h ../StdTypes.h ../UTILS.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include\stdint.h \

@@ -248,6 +248,15 @@
     <Compile Include="HAL\POTONTIOMETER_Lcfg.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="HAL\RGB_LED.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\RGB_LED.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="HAL\RGB_LED_Lcfg.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="HAL\SEGMENTS.c">
       <SubType>compile</SubType>
     </Compile>
