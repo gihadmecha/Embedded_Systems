@@ -10,6 +10,8 @@ application\Motors_Dashboard.c
 
 application\RC_car.c
 
+application\RGB.c
+
 application\STOP_Watch.c
 
 HAL\BUTTON.c

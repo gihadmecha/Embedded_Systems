@@ -1,14 +1,19 @@
 
-#include "RGB_LED.h"
+#include "ultrasonic.h"
+#include "LCD.h"
 
 int main ()
 {
-	DIO_Init();
-	TIMER0_Init(TIMER0_PRESCALER_8, TIMER0_FAST_PWM, TIMER0_OC0_CLEAR_ON_COMPARE_MATCH);
-	TIMER1_Init(TIMER1_PRESCALER_8, TIMER1_FAST_PWM_8BIT, TIMER1_OC1A_CLEAR_ON_COMPARE_MATCH, TIMER1_OC1B_CLEAR_ON_COMPARE_MATCH);
+	ultrasonic_Init ();
+	LCD_Init();
 	
 	while (1)
 	{
-		RGB_LED (0, 0, 255);
+		LCD_GoTo(1, 0);
+		LCD_WriteNumber_4Digit ((u16)ultrasonic ());
+		//LCD_WriteNumber (distance);
+		LCD_WriteString(" ");
+		LCD_WriteString("cm");
 	}
 }
+

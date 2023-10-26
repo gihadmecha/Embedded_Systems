@@ -158,6 +158,15 @@
     <Compile Include="application\RC_car.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="application\RGB.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="application\RGB.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="application\RGB_Private.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="application\STOP_Watch.c">
       <SubType>compile</SubType>
     </Compile>
