@@ -1,4 +1,24 @@
 
+
+// #include "ultrasonic.h"
+// #include "LCD.h"
+
+// int main ()
+// {
+// 	ultrasonic_Init ();
+// 	LCD_Init();
+	
+// 	while (1)
+// 	{
+// 		LCD_GoTo(1, 0);
+// 		LCD_WriteNumber_4Digit ((u16)ultrasonic ());
+// 		//LCD_WriteNumber (distance);
+// 		LCD_WriteString(" ");
+// 		LCD_WriteString("cm");
+// 	}
+// }
+
+
 #include "ultrasonic.h"
 #include "DIO_interface.h"
 #include "TIMER1.h"
@@ -15,7 +35,7 @@ static u16 TIMER1_TCNT1_value = 0;
 int main ()
 {
 	DIO_Init();
-	TIMER1_Init(TIMER1_PRESCALER_8, TIMER1_NORMAL, TIMER1_OC1_DISCONNECTED, TIMER1_OC1_DISCONNECTED);
+	TIMER1_Init(TIMER1_PRESCALER_8, TIMER1_NORMAL, TIMER1_OC1A_DISCONNECTED, TIMER1_OC1B_DISCONNECTED);
 	TIMER1_ICPedgeMode(TIMER1_ICU_RAISING_EDGE);
 	LCD_Init();
 	

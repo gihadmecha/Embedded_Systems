@@ -14,6 +14,8 @@ application\RGB.c
 
 application\STOP_Watch.c
 
+application\ultrasonics_and_servo.c
+
 HAL\BUTTON.c
 
 HAL\BUZZER.c

@@ -47,6 +47,7 @@ C_SRCS +=  \
 ../application/RC_car.c \
 ../application/RGB.c \
 ../application/STOP_Watch.c \
+../application/ultrasonics_and_servo.c \
 ../HAL/BUTTON.c \
 ../HAL/BUZZER.c \
 ../HAL/KEYPAD.c \
@@ -87,6 +88,7 @@ application/Motors_Dashboard.o \
 application/RC_car.o \
 application/RGB.o \
 application/STOP_Watch.o \
+application/ultrasonics_and_servo.o \
 HAL/BUTTON.o \
 HAL/BUZZER.o \
 HAL/KEYPAD.o \
@@ -120,6 +122,7 @@ application/Motors_Dashboard.o \
 application/RC_car.o \
 application/RGB.o \
 application/STOP_Watch.o \
+application/ultrasonics_and_servo.o \
 HAL/BUTTON.o \
 HAL/BUZZER.o \
 HAL/KEYPAD.o \
@@ -153,6 +156,7 @@ application/Motors_Dashboard.d \
 application/RC_car.d \
 application/RGB.d \
 application/STOP_Watch.d \
+application/ultrasonics_and_servo.d \
 HAL/BUTTON.d \
 HAL/BUZZER.d \
 HAL/KEYPAD.d \
@@ -186,6 +190,7 @@ application/Motors_Dashboard.d \
 application/RC_car.d \
 application/RGB.d \
 application/STOP_Watch.d \
+application/ultrasonics_and_servo.d \
 HAL/BUTTON.d \
 HAL/BUZZER.d \
 HAL/KEYPAD.d \
@@ -262,6 +267,13 @@ application/RGB.o: ../application/RGB.c
 	
 
 application/STOP_Watch.o: ../application/STOP_Watch.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DNDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../MCAL" -I".." -I"../HAL" -I"../SERVICES" -I"../application"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+application/ultrasonics_and_servo.o: ../application/ultrasonics_and_servo.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DNDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../MCAL" -I".." -I"../HAL" -I"../SERVICES" -I"../application"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

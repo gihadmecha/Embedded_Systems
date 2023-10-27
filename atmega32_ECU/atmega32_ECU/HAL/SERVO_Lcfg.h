@@ -6,7 +6,7 @@
 
 #define		OC1A_pin		19
 #define		OC1B_pin		18
-#define		SERVO_PIN		OC1A_pin
+#define		SERVO_PIN		OC1B_pin
 
 
 

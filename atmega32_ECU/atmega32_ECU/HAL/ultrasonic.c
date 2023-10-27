@@ -16,10 +16,7 @@ static u16 TIMER1_TCNT1_value = 0;
 
 void ultrasonic_Init ()
 {
-	DIO_Init();
-	TIMER1_Init(TIMER1_PRESCALER_8, TIMER1_NORMAL, TIMER1_OC1A_DISCONNECTED, TIMER1_OC1B_DISCONNECTED);
 	TIMER1_ICPedgeMode(TIMER1_ICU_RAISING_EDGE);
-	
 	
 	SEI();
 	TIMER1_timeStamp_interruptEnable();
@@ -37,13 +34,13 @@ double ultrasonic ()
 	double distance = 0;
 	double soundSpeed = (340.0 * 100) / 1000000.0;             //  centimeter/usec
 	
-	DIO_WritePin(PINB0, HIGH);
+	DIO_WritePin(ULTRASONIC1_TRIGGER_PIN, HIGH);
 	_delay_us(10);
-	DIO_WritePin(PINB0, LOW);
+	DIO_WritePin(ULTRASONIC1_TRIGGER_PIN, LOW);
 		
 	_delay_us(8.0 * ( (1.0 / (40.0 * 1000)) * 1000000.0 ));
 		
-	noOfTicks = TIMER1_TCNT1_value + TIMER1_NO_OF_TICKS * overflowCounterValue;
+	noOfTicks = TIMER1_TCNT1_value + TIMER1_TOP_VALUE * overflowCounterValue;
 		
 	// in usec
 	pulseDuration = TIMER1_TICK_TIME * 1000000.0 * noOfTicks;

@@ -176,6 +176,15 @@
     <Compile Include="application\STOP_Watch_Private.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="application\ultrasonics_and_servo.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="application\ultrasonics_and_servo.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="application\ultrasonics_and_servo_Private.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="HAL\BUTTON.c">
       <SubType>compile</SubType>
     </Compile>

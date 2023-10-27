@@ -29,6 +29,9 @@ void SERVO_setAngle (double angle)
 		case TIMER1_ICR:
 		TIMER1_ICR1_WRITE (top);
 		break;
+		case TIMER1_OC1A:
+		TIMER1_OCR1A_WRITE (top);
+		break;
 	}
 	
 	switch (SERVO_PIN)
