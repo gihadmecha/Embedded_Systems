@@ -27,7 +27,13 @@ void ultrasonics_and_servo_Init ()
 void ultrasonics_and_servo_Run ()
 {
 	LCD_GoTo(1, 0);
-	LCD_WriteNumber_4Digit((u16)ultrasonic ());
+	LCD_WriteNumber_4Digit((u16)ultrasonic1 ());
+	LCD_GoTo(1, 4);
+	LCD_WriteNumber_4Digit((u16)ultrasonic2 ());
+	LCD_GoTo(1, 8);
+	LCD_WriteNumber_4Digit((u16)ultrasonic3 ());
+	LCD_GoTo(1, 12);
+	LCD_WriteNumber_4Digit((u16)ultrasonic4 ());
 	
 	SERVO_setAngle(ultrasonics_and_servo_servoAngle ());
 }

@@ -12,7 +12,7 @@ void SERVO_setAngle (double angle)
 	
 	//Fast PWM
 	//CLEAR_ON_COMPARE_MATCH
-	u16 top = 1.0/(50*TIMER1_TICK_TIME);
+	//u16 top = 1.0/(50*TIMER1_TICK_TIME);
 	//Phase Correct PWM
 	//SET_ON_COMPARE_MATCH
 	//u16 top = 1.0/(50*TIMER1_TICK_TIME * 2.0);
@@ -24,15 +24,15 @@ void SERVO_setAngle (double angle)
 	//SET_ON_COMPARE_MATCH
 	//u16 compareMatch = 9500 + ((-500.0 * (90.0 + angle)) / 180.0);
 	
-	switch (TOP)
-	{
-		case TIMER1_ICR:
-		TIMER1_ICR1_WRITE (top);
-		break;
-		case TIMER1_OC1A:
-		TIMER1_OCR1A_WRITE (top);
-		break;
-	}
+	//switch (TOP)
+	//{
+		//case TIMER1_ICR:
+		//TIMER1_ICR1_WRITE (top);
+		//break;
+		//case TIMER1_OC1A:
+		//TIMER1_OCR1A_WRITE (top);
+		//break;
+	//}
 	
 	switch (SERVO_PIN)
 	{

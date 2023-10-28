@@ -54,6 +54,126 @@ double ultrasonic ()
 	return distance = time * soundSpeed;
 }
 
+double ultrasonic1 ()
+{
+	u32 noOfTicks = 0;
+	double pulseDuration = 0;
+	double time = 0;
+	double distance = 0;
+	double soundSpeed = (340.0 * 100) / 1000000.0;             //  centimeter/usec
+	
+	DIO_WritePin(ULTRASONIC1_TRIGGER_PIN, HIGH);
+	_delay_us(10);
+	DIO_WritePin(ULTRASONIC1_TRIGGER_PIN, LOW);
+	
+	_delay_us(8.0 * ( (1.0 / (40.0 * 1000)) * 1000000.0 ));
+	
+	_delay_ms(75);
+	
+	noOfTicks = TIMER1_TCNT1_value + TIMER1_TOP_VALUE * overflowCounterValue;
+	
+	// in usec
+	pulseDuration = TIMER1_TICK_TIME * 1000000.0 * noOfTicks;
+	
+	//LCD_GoTo(0, 0);
+	//LCD_WriteNumber(pulseDuration);
+	//LCD_WriteNumber_4Digit((u16)pulseDuration);
+	
+	time = pulseDuration / 2.0;
+	
+	return distance = time * soundSpeed;
+}
+
+double ultrasonic2 ()
+{
+	u32 noOfTicks = 0;
+	double pulseDuration = 0;
+	double time = 0;
+	double distance = 0;
+	double soundSpeed = (340.0 * 100) / 1000000.0;             //  centimeter/usec
+	
+	DIO_WritePin(ULTRASONIC2_TRIGGER_PIN, HIGH);
+	_delay_us(10);
+	DIO_WritePin(ULTRASONIC2_TRIGGER_PIN, LOW);
+	
+	_delay_us(8.0 * ( (1.0 / (40.0 * 1000)) * 1000000.0 ));
+	
+	_delay_ms(75);
+	
+	noOfTicks = TIMER1_TCNT1_value + TIMER1_TOP_VALUE * overflowCounterValue;
+	
+	// in usec
+	pulseDuration = TIMER1_TICK_TIME * 1000000.0 * noOfTicks;
+	
+	//LCD_GoTo(0, 0);
+	//LCD_WriteNumber(pulseDuration);
+	//LCD_WriteNumber_4Digit((u16)pulseDuration);
+	
+	time = pulseDuration / 2.0;
+	
+	return distance = time * soundSpeed;
+}
+
+double ultrasonic3 ()
+{
+	u32 noOfTicks = 0;
+	double pulseDuration = 0;
+	double time = 0;
+	double distance = 0;
+	double soundSpeed = (340.0 * 100) / 1000000.0;             //  centimeter/usec
+	
+	DIO_WritePin(ULTRASONIC3_TRIGGER_PIN, HIGH);
+	_delay_us(10);
+	DIO_WritePin(ULTRASONIC3_TRIGGER_PIN, LOW);
+	
+	_delay_us(8.0 * ( (1.0 / (40.0 * 1000)) * 1000000.0 ));
+	
+	_delay_ms(75);
+	
+	noOfTicks = TIMER1_TCNT1_value + TIMER1_TOP_VALUE * overflowCounterValue;
+	
+	// in usec
+	pulseDuration = TIMER1_TICK_TIME * 1000000.0 * noOfTicks;
+	
+	//LCD_GoTo(0, 0);
+	//LCD_WriteNumber(pulseDuration);
+	//LCD_WriteNumber_4Digit((u16)pulseDuration);
+	
+	time = pulseDuration / 2.0;
+	
+	return distance = time * soundSpeed;
+}
+
+double ultrasonic4 ()
+{
+	u32 noOfTicks = 0;
+	double pulseDuration = 0;
+	double time = 0;
+	double distance = 0;
+	double soundSpeed = (340.0 * 100) / 1000000.0;             //  centimeter/usec
+	
+	DIO_WritePin(ULTRASONIC4_TRIGGER_PIN, HIGH);
+	_delay_us(10);
+	DIO_WritePin(ULTRASONIC4_TRIGGER_PIN, LOW);
+	
+	_delay_us(8.0 * ( (1.0 / (40.0 * 1000)) * 1000000.0 ));
+	
+	_delay_ms(75);
+	
+	noOfTicks = TIMER1_TCNT1_value + TIMER1_TOP_VALUE * overflowCounterValue;
+	
+	// in usec
+	pulseDuration = TIMER1_TICK_TIME * 1000000.0 * noOfTicks;
+	
+	//LCD_GoTo(0, 0);
+	//LCD_WriteNumber(pulseDuration);
+	//LCD_WriteNumber_4Digit((u16)pulseDuration);
+	
+	time = pulseDuration / 2.0;
+	
+	return distance = time * soundSpeed;
+}
+
 void ICUFunction ()
 {
 	if (edgeCounter == 1)
