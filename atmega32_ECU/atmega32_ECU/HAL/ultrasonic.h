@@ -13,4 +13,7 @@ double ultrasonic2 ();
 double ultrasonic3 ();
 double ultrasonic4 ();
 
+static void ICUFunction ();
+static void overflowFunction ();
+
 #endif /* ULTRASONIC_H_ */

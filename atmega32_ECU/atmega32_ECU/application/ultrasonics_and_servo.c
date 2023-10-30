@@ -15,22 +15,23 @@ void ultrasonics_and_servo_Init ()
 	ADC_Enable();
 	
 	LCD_GoTo(0, 0);
-	LCD_WriteString("U1");
-	LCD_GoTo(0, 4);
-	LCD_WriteString("U2");
-	LCD_GoTo(0, 8);
-	LCD_WriteString("U3");
-	LCD_GoTo(0, 12);
-	LCD_WriteString("U4");
+	LCD_WriteString("U1=");
+	LCD_GoTo(0, 9);
+	LCD_WriteString("U2=");
+	LCD_GoTo(1, 0);
+	LCD_WriteString("U3=");
+	LCD_GoTo(1, 9);
+	LCD_WriteString("U4=");
 }
 
 void ultrasonics_and_servo_Run ()
 {
-	LCD_GoTo(1, 0);
+	
+	LCD_GoTo(0, 3);
 	LCD_WriteNumber_4Digit((u16)ultrasonic1 ());
-	LCD_GoTo(1, 4);
+	LCD_GoTo(0, 12);
 	LCD_WriteNumber_4Digit((u16)ultrasonic2 ());
-	LCD_GoTo(1, 8);
+	LCD_GoTo(1, 3);
 	LCD_WriteNumber_4Digit((u16)ultrasonic3 ());
 	LCD_GoTo(1, 12);
 	LCD_WriteNumber_4Digit((u16)ultrasonic4 ());

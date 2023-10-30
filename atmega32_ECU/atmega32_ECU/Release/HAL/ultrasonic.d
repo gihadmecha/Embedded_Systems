@@ -7,7 +7,7 @@ HAL/ultrasonic.d HAL/ultrasonic.o: ../HAL/ultrasonic.c \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\stdint.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
- ../MCAL/TIMER1.h ../MCAL/TIMER1_Lcfg.h ../HAL/LCD.h ../HAL/LCD_Lcfg.h
+ ../MCAL/TIMER1.h ../MCAL/TIMER1_Lcfg.h
 
 ../HAL/ultrasonic.h:
 
@@ -36,7 +36,3 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../MCAL/TIMER1.h:
 
 ../MCAL/TIMER1_Lcfg.h:
-
-../HAL/LCD.h:
-
-../HAL/LCD_Lcfg.h:
