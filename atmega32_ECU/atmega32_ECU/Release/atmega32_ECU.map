@@ -1262,7 +1262,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0xc74
+.text           0x00000000      0xc58
  *(.vectors)
  .vectors       0x00000000       0x54 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
                 0x00000000                __vector_default
@@ -1336,102 +1336,102 @@ END GROUP
                 0x000000b6       0x16 application/Smart_Home.o
                 0x000000b6                Smart_Home_Init
  .text.Smart_Home_Run
-                0x000000cc      0x114 application/Smart_Home.o
+                0x000000cc       0xf8 application/Smart_Home.o
                 0x000000cc                Smart_Home_Run
  .text.LCD_WriteCommand
-                0x000001e0       0xb4 HAL/LCD.o
-                0x000001e0                LCD_WriteCommand
+                0x000001c4       0xb4 HAL/LCD.o
+                0x000001c4                LCD_WriteCommand
  .text.LCD_WriteData
-                0x00000294       0xb4 HAL/LCD.o
-                0x00000294                LCD_WriteData
+                0x00000278       0xb4 HAL/LCD.o
+                0x00000278                LCD_WriteData
  .text.LCD_Init
-                0x00000348       0x76 HAL/LCD.o
-                0x00000348                LCD_Init
+                0x0000032c       0x76 HAL/LCD.o
+                0x0000032c                LCD_Init
  .text.LCD_Clear
-                0x000003be       0x14 HAL/LCD.o
-                0x000003be                LCD_Clear
+                0x000003a2       0x14 HAL/LCD.o
+                0x000003a2                LCD_Clear
  .text.LCD_GoTo
-                0x000003d2       0x18 HAL/LCD.o
-                0x000003d2                LCD_GoTo
+                0x000003b6       0x18 HAL/LCD.o
+                0x000003b6                LCD_GoTo
  .text.LCD_WriteString
-                0x000003ea       0x26 HAL/LCD.o
-                0x000003ea                LCD_WriteString
+                0x000003ce       0x26 HAL/LCD.o
+                0x000003ce                LCD_WriteString
  .text.startup.main
-                0x00000410        0xa main.o
-                0x00000410                main
+                0x000003f4        0xa main.o
+                0x000003f4                main
  .text.__vector_16
-                0x0000041a       0x52 MCAL/ADC.o
-                0x0000041a                __vector_16
+                0x000003fe       0x52 MCAL/ADC.o
+                0x000003fe                __vector_16
  .text.DIO_Init
-                0x0000046c      0x1be MCAL/DIO.o
-                0x0000046c                DIO_Init
+                0x00000450      0x1be MCAL/DIO.o
+                0x00000450                DIO_Init
  .text.DIO_WritePin
-                0x0000062a       0xf6 MCAL/DIO.o
-                0x0000062a                DIO_WritePin
+                0x0000060e       0xf6 MCAL/DIO.o
+                0x0000060e                DIO_WritePin
  .text.__vector_1
-                0x00000720       0x52 MCAL/EXI.o
-                0x00000720                __vector_1
+                0x00000704       0x52 MCAL/EXI.o
+                0x00000704                __vector_1
  .text.__vector_2
-                0x00000772       0x52 MCAL/EXI.o
-                0x00000772                __vector_2
+                0x00000756       0x52 MCAL/EXI.o
+                0x00000756                __vector_2
  .text.__vector_3
-                0x000007c4       0x52 MCAL/EXI.o
-                0x000007c4                __vector_3
+                0x000007a8       0x52 MCAL/EXI.o
+                0x000007a8                __vector_3
  .text.__vector_12
-                0x00000816       0x52 MCAL/SPI.o
-                0x00000816                __vector_12
+                0x000007fa       0x52 MCAL/SPI.o
+                0x000007fa                __vector_12
  .text.__vector_10
-                0x00000868       0x52 MCAL/TIMER0.o
-                0x00000868                __vector_10
+                0x0000084c       0x52 MCAL/TIMER0.o
+                0x0000084c                __vector_10
  .text.__vector_11
-                0x000008ba       0x52 MCAL/TIMER0.o
-                0x000008ba                __vector_11
+                0x0000089e       0x52 MCAL/TIMER0.o
+                0x0000089e                __vector_11
  .text.__vector_7
-                0x0000090c       0x52 MCAL/TIMER1.o
-                0x0000090c                __vector_7
+                0x000008f0       0x52 MCAL/TIMER1.o
+                0x000008f0                __vector_7
  .text.__vector_8
-                0x0000095e       0x52 MCAL/TIMER1.o
-                0x0000095e                __vector_8
+                0x00000942       0x52 MCAL/TIMER1.o
+                0x00000942                __vector_8
  .text.__vector_9
-                0x000009b0       0x52 MCAL/TIMER1.o
-                0x000009b0                __vector_9
+                0x00000994       0x52 MCAL/TIMER1.o
+                0x00000994                __vector_9
  .text.__vector_6
-                0x00000a02       0x52 MCAL/TIMER1.o
-                0x00000a02                __vector_6
+                0x000009e6       0x52 MCAL/TIMER1.o
+                0x000009e6                __vector_6
  .text.UART_Init
-                0x00000a54       0x5e MCAL/UART.o
-                0x00000a54                UART_Init
+                0x00000a38       0x5e MCAL/UART.o
+                0x00000a38                UART_Init
  .text.UART_RecieverEnable
-                0x00000ab2        0x4 MCAL/UART.o
-                0x00000ab2                UART_RecieverEnable
+                0x00000a96        0x4 MCAL/UART.o
+                0x00000a96                UART_RecieverEnable
  .text.UART_Recieve
-                0x00000ab6        0x4 MCAL/UART.o
-                0x00000ab6                UART_Recieve
+                0x00000a9a        0x4 MCAL/UART.o
+                0x00000a9a                UART_Recieve
  .text.UART_RXcomplateInterruptEnable
-                0x00000aba        0x4 MCAL/UART.o
-                0x00000aba                UART_RXcomplateInterruptEnable
+                0x00000a9e        0x4 MCAL/UART.o
+                0x00000a9e                UART_RXcomplateInterruptEnable
  .text.UART_RXcomplateInterruptSetFunction
-                0x00000abe        0xa MCAL/UART.o
-                0x00000abe                UART_RXcomplateInterruptSetFunction
+                0x00000aa2        0xa MCAL/UART.o
+                0x00000aa2                UART_RXcomplateInterruptSetFunction
  .text.__vector_13
-                0x00000ac8       0x52 MCAL/UART.o
-                0x00000ac8                __vector_13
+                0x00000aac       0x52 MCAL/UART.o
+                0x00000aac                __vector_13
  .text.__vector_15
-                0x00000b1a       0x52 MCAL/UART.o
-                0x00000b1a                __vector_15
+                0x00000afe       0x52 MCAL/UART.o
+                0x00000afe                __vector_15
  .text.__vector_14
-                0x00000b6c       0x52 MCAL/UART.o
-                0x00000b6c                __vector_14
+                0x00000b50       0x52 MCAL/UART.o
+                0x00000b50                __vector_14
  .text.recieveInterruptFunction
-                0x00000bbe       0x7c SERVICES/UART_SERVICES.o
+                0x00000ba2       0x7c SERVICES/UART_SERVICES.o
  .text.UART_recieveString_Asyncronous
-                0x00000c3a       0x36 SERVICES/UART_SERVICES.o
-                0x00000c3a                UART_recieveString_Asyncronous
-                0x00000c70                . = ALIGN (0x2)
+                0x00000c1e       0x36 SERVICES/UART_SERVICES.o
+                0x00000c1e                UART_recieveString_Asyncronous
+                0x00000c54                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000c70        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x00000c70                _exit
-                0x00000c70                exit
+ .fini9         0x00000c54        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x00000c54                _exit
+                0x00000c54                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -1450,11 +1450,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000c70        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000c54        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000c74                _etext = .
+                0x00000c58                _etext = .
 
-.data           0x00800060       0x26 load address 0x00000c74
+.data           0x00800060       0x26 load address 0x00000c58
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -1521,8 +1521,8 @@ END GROUP
                 0x008000e1                recieveStringsArray
  *(COMMON)
                 0x00800109                PROVIDE (__bss_end, .)
-                0x00000c74                __data_load_start = LOADADDR (.data)
-                0x00000c9a                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000c58                __data_load_start = LOADADDR (.data)
+                0x00000c7e                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00800109        0x0
                 [!provide]                PROVIDE (__noinit_start, .)

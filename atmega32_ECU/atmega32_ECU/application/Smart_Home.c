@@ -34,14 +34,14 @@ extern void Smart_Home_Run ()
 	//
 	//LCD_GoTo(1, 7);
 	//LCD_WriteString(operator);
-	//
+	
 	//if (Smart_Home_operatorSearchEnter ())
 	//{
 		//Smart_Home_instructionDone();
 		//LCD_Clear();
 	//}
 	
-	Smart_Home_LCD ();
+	Smart_Home ();
 }
 
 static void Smart_Home_stringAnalysis ()
@@ -93,7 +93,7 @@ static u8 Smart_Home_operatorSearchEnter ()
 	return 0;
 }
 
-static void Smart_Home_LCD ()
+static void Smart_Home ()
 {
 	if (Smart_Home_instructionCompare("lcd"))
 	{
@@ -109,13 +109,6 @@ static void Smart_Home_LCD ()
 		{
 			Smart_Home_instructionDone();
 			firstCharLcdFlag = 1;
-		}
-	}
-	else
-	{
-		if (Smart_Home_operatorSearchEnter ())
-		{
-			Smart_Home_instructionDone();
 		}
 	}
 }

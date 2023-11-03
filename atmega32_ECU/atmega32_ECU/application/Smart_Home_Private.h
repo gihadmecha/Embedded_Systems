@@ -6,7 +6,7 @@
 static void Smart_Home_stringAnalysis ();
 static	u8 Smart_Home_instructionCompare (char constant_Instuction[]);
 static void Smart_Home_instructionDone ();
-static void Smart_Home_LCD ();
+static void Smart_Home ();
 static u8 Smart_Home_operatorSearchEnter ();
 
 
