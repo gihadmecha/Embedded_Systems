@@ -12,6 +12,8 @@ application\RC_car.c
 
 application\RGB.c
 
+application\Smart_Home.c
+
 application\STOP_Watch.c
 
 application\ultrasonics_and_servo.c

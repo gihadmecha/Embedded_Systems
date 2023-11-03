@@ -1,51 +1,124 @@
 
+//Reciever
 
-//Slave
-
+#include "UART.h"
 #include "DIO_interface.h"
-#include "SPI.h"
 #include "LCD.h"
+#include "UART_SERVICES.h"
 
-static void SPI_recieveInterrupt ();
+static void recieveInterruptFunction ();
 
-static u8 data_recieve;
+static volatile u8 recievedByteArray[20];
+static volatile u8 recievedByteArrayPointer = 0;
+static u8 doneByte = 0;
 
 int main ()
 {
+	UART_Init();
+	UART_TransmitterEnable();
+	UART_RecieverEnable();
 	DIO_Init();
-	SPI_InitSlave(SPI_PRESCALAR_4);
 	LCD_Init();
 	
+	//UART_RXcomplateInterruptSetFunction (recieveInterruptFunction);
+	
 	SEI();
-	SPI_Enable();
+	//UART_RXcomplateInterruptEnable ();
 	
-	SPI_InterruptSet (SPI_recieveInterrupt);
+	//UART_Send_polling('A');
+	////_delay_ms(1);
+	//UART_Send_polling('B');
+	////_delay_ms(1);
+	//UART_Send_polling('C');
+	//_delay_ms(1);
 	
-	SPI_InterruptEnable();
+	//UART_sendString ("Ahmed");
+	////
+	//UART_sendString_Asynchronous ("Mohamed");
+	//
+	//UART_sendString_Asynchronous ("Abd allah");
+	////
+	//UART_sendString_Asynchronous ("Omer");
 	
-	LCD_WriteString("Slave");
+	//UART_send_checkSum ("Ali");
 	
+	u8 recievedByte = 0;
 	u8 counter = 0;
+	u8 data = 0;
+	u8 xlocation = 0;
 	
-	u8 data_send = '1';
+	char name[255] = {NULL};
+	char name2[255] = {NULL};
+	
+	LCD_GoTo(0, 0);
+	LCD_WriteString("RX");
 	
 	while (1)
 	{
-		SPI_Send(data_send);
+		//LCD_GoTo(0, 0);
+		//recievedByte = UART_Recieve_polling ();
+		//LCD_WriteChar(recievedByte);
 		
-		//LCD_GoTo(1, 6);
-		//LCD_WriteNumber_4Digit(data_send - '0');
+		//LCD_GoTo(0, xlocation);
+		//if (UART_Recieve_priodicCheck (&data))
+		//{
+		//LCD_WriteChar(data);
+		//xlocation++;
+		//if (xlocation == 17)
+		//{
+		//xlocation = 0;
+		//}
+		//}
+		
+		//LCD_GoTo(1, xlocation);
+		//if (doneByte < recievedByteArrayPointer)
+		//{
+		//LCD_WriteChar(recievedByteArray[doneByte]);
+		//doneByte++;
+		//xlocation++;
+		//if (xlocation == 16)
+		//{
+		//xlocation = 0;
+		//}
+		//}
+		//
+		
+		UART_recieveString_Asyncronous(name);
 		LCD_GoTo(1, 0);
-		LCD_WriteChar(data_recieve);
+		LCD_WriteString(name);
 		
-		if (data_send > '9')
-		data_send = '1';
+		//UART_recieveString_Asyncronous(name2);
+		//LCD_GoTo(1, 6);
+		//LCD_WriteString(name2);
 		
-		data_send++;
+		//UART_recieveString_syncronous(name);
+		//LCD_GoTo(0, 0);
+		//LCD_WriteString(name);
+		
+		//if (UART_recieve_checkSum_synchronous (name))
+		//{
+		//LCD_GoTo(1, 6);
+		//LCD_WriteString(name);
+		//}
+		//
+		
+		//UART_send_checkSum("Ali");
+		
+		//if (UART_recieve_checkSum(name))
+		//{
+		//LCD_GoTo(0, 0);
+		//LCD_WriteString(name);
+		//}
+		
+		//if (UART_recieve_checkSum(name2))
+		//{
+		//LCD_GoTo(0, 6);
+		//LCD_WriteString(name2);
+		//}
 		
 		LCD_GoTo(0, 11);
 		LCD_WriteNumber(counter);
-		_delay_ms(600);
+		_delay_ms(1000);
 		counter++;
 		if (counter == 10)
 		{
@@ -54,7 +127,12 @@ int main ()
 	}
 }
 
-static void SPI_recieveInterrupt ()
+static void recieveInterruptFunction ()
 {
-	data_recieve = SPI_Recieve();
+	recievedByteArray [recievedByteArrayPointer] = UART_Recieve ();
+	recievedByteArrayPointer++;
+	if (recievedByteArrayPointer == 19)
+	{
+		recievedByteArrayPointer = 0;
+	}
 }

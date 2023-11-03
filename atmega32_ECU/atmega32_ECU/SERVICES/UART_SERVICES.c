@@ -255,14 +255,14 @@ static void recieveInterruptFunction ()
 		if (recieveStringsArray[recieveDoneString][recieveCharIndex] != 13)
 		{
 			recieveCharIndex++;
+			recieveStringsArray[recieveDoneString][recieveCharIndex] = NULL;
 		}
 		else
 		{
-			recieveStringsArray[recieveDoneString][recieveCharIndex] = NULL;
+			recieveStringsArray[recieveDoneString][recieveCharIndex] = 13;
 			recieveDoneString++;
 			recieveCharIndex = 0;
 		}
-		
 	}
 	else
 	{

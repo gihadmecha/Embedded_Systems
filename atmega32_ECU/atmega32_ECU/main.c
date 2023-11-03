@@ -1,12 +1,12 @@
 
-#include "ultrasonics_and_servo.h"
+#include "Smart_Home.h"
 
 int main ()
 {
-	ultrasonics_and_servo_Init ();
+	Smart_Home_Init ();
 	
 	while (1)
 	{
-		ultrasonics_and_servo_Run ();
+		Smart_Home_Run ();
 	}
 }

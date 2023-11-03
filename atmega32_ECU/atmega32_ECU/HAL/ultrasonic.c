@@ -1,7 +1,7 @@
 
-#include "ultrasonic.h"
 #include "DIO_interface.h"
 #include "TIMER1.h"
+#include "ultrasonic.h"
 
 //from HCSR04 ultrasonic dataSheet
 #define		kHZ_TO_HZ											1000.0

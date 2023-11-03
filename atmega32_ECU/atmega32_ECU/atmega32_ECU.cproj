@@ -167,6 +167,15 @@
     <Compile Include="application\RGB_Private.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="application\Smart_Home.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="application\Smart_Home.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="application\Smart_Home_Private.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="application\STOP_Watch.c">
       <SubType>compile</SubType>
     </Compile>
