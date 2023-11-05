@@ -252,10 +252,12 @@ static void recieveInterruptFunction ()
 		
 		recieveStringsArray[recieveDoneString][recieveCharIndex] = UART_Recieve();
 		
+		//for virtual terminal proteus
 		if (recieveStringsArray[recieveDoneString][recieveCharIndex] != 13)
+		//for docklight and HC-05 blutooth terminal android app.
+		//if (recieveStringsArray[recieveDoneString][recieveCharIndex] != '\n')
 		{
 			recieveCharIndex++;
-			recieveStringsArray[recieveDoneString][recieveCharIndex] = NULL;
 		}
 		else
 		{
