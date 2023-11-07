@@ -26,6 +26,7 @@ void SPI_sendRecieveArray (u8 arraySend[], u8 arrayRecieve[], u32 arraySize, u8 
 	for (u32 index = 0; index < arraySize; index++)
 	{
 		arrayRecieve[index] = SPI_SendRecieve (arraySend[index]);
+		_delay_us(10);
 	}
 	
 	DIO_WritePin(SLAVE1, HIGH);

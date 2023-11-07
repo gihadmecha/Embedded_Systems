@@ -1,0 +1,43 @@
+
+
+#ifndef SEGMENTS_LCFG_H_
+#define SEGMENTS_LCFG_H_
+
+//cathode
+#define		SEGMENT1_A	PINB0
+#define		SEGMENT1_B	PINB1
+#define		SEGMENT1_C	PINB2
+#define		SEGMENT1_D	PINB3
+#define		SEGMENT1_E	PINB4
+#define		SEGMENT1_F	PINB5
+#define		SEGMENT1_G	PINB6
+
+//anode
+#define		SEGMENT2_A	PIND0
+#define		SEGMENT2_B	PIND1
+#define		SEGMENT2_C	PIND2
+#define		SEGMENT2_D	PIND3
+#define		SEGMENT2_E	PIND4
+#define		SEGMENT2_F	PIND5
+#define		SEGMENT2_G	PIND6
+
+//BCD
+#define		SEGMENT3_0	PINB4
+#define		SEGMENT3_1	PINB5
+#define		SEGMENT3_2	PINB6
+#define		SEGMENT3_3	PINB7
+
+//2 digit cathode 7 segment
+#define		SEGMENT4_A	PINA1
+#define		SEGMENT4_B	PINA2
+#define		SEGMENT4_C	PINA3
+#define		SEGMENT4_D	PINA4
+#define		SEGMENT4_E	PINA5
+#define		SEGMENT4_F	PINA6
+#define		SEGMENT4_G	PINA7
+
+#define		SEGMENT4_1	PINB0
+#define		SEGMENT4_2	PINB1
+
+
+#endif /* SEGMENTS_LCFG_H_ */
