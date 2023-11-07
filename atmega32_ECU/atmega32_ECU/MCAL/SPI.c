@@ -101,7 +101,7 @@ u8 SPI_Recieve_periodicCheck (u8* data)
 {
 	if (READ_BIT(SPSR, SPIF) == 1)
 	{
-		*data = SPSR;
+		*data = SPDR;
 		return 1;
 	}
 	
@@ -110,7 +110,7 @@ u8 SPI_Recieve_periodicCheck (u8* data)
 
 u8 SPI_Recieve()
 {
-	return SPSR;
+	return SPDR;
 }
 
 void SPI_InterruptEnable ()

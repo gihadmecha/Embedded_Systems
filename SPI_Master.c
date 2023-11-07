@@ -18,22 +18,21 @@ int main ()
 	u8 counter = 0;
 	
 	u8 data_send = 'a';
-	u8 data_recieve;
+	u8 data_recieve = 0;
 	
 	while (1)
 	{
 		data_recieve = SPI_SendRecieve(data_send);
 		
-		//LCD_GoTo(1, 0);
-		//LCD_WriteChar(data_send);
+		LCD_GoTo(1, 0);
+		LCD_WriteChar(data_send);
 		LCD_GoTo(1, 6);
-		LCD_WriteNumber_4Digit(data_recieve - '0');
-		
-		if (data_send > 'z')
-			data_send = 'a';
+		//LCD_WriteNumber_4Digit(data_recieve - '0');
+		LCD_WriteChar(data_recieve);
 		
 		data_send++;
-		
+		if (data_send > 'z')
+		data_send = 'a';
 		
 		LCD_GoTo(0, 11);
 		LCD_WriteNumber(counter);

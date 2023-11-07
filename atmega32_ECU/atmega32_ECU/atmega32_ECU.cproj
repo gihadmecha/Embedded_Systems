@@ -395,6 +395,12 @@
     <Compile Include="MemMap.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="SERVICES\SPI_SERVICES.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="SERVICES\SPI_SERVICES.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="SERVICES\TIMER_SERVICES.c">
       <SubType>compile</SubType>
     </Compile>
