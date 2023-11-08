@@ -23,7 +23,7 @@ void SPI_sendRecieveArray (u8 arraySend[], u8 arrayRecieve[], u32 arraySize, u8 
 		break;
 	}
 	
-	arrayRecieve[0] = SPI_SendRecieve (arraySend[0]);
+	SPI_SendRecieve (0);
 	_delay_us(15);
 	for (u32 index = 0; index <= arraySize; index++)
 	{
