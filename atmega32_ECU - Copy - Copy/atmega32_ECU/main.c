@@ -14,12 +14,13 @@ static u8 data_recieve_Index = 0;
 static u8 data_send[26] = "Master2";
 static u8 data_send_Index = 0;
 
+static u8 data_recieve_flag = 0;
+
 int main ()
 {
 	DIO_Init();
 	SPI_InitSlave(SPI_PRESCALAR_4);
 	LCD_Init();
-	
 	
 	SPI_Enable();
 	
@@ -32,8 +33,7 @@ int main ()
 	
 	u8 counter = 0;
 	
-	SPI_Send(data_send[data_send_Index]);
-	
+	SPI_Send(0);
 	while (1)
 	{
 		LCD_GoTo(1, 0);
@@ -52,13 +52,21 @@ int main ()
 
 static void SPI_recieveInterrupt ()
 {
-	data_recieve[data_recieve_Index] = SPI_Recieve();
-	data_recieve_Index++;
-	if(data_recieve_Index >= 26)
-	data_recieve_Index = 0;
+	if (data_recieve_flag == 0)
+	{
+		data_recieve[data_recieve_Index] = SPI_Recieve();
+		data_recieve_flag = 1;
+	}
+	else if (data_recieve_flag == 1)
+	{
+		data_recieve[data_recieve_Index] = SPI_Recieve();
+		data_recieve_Index++;
+		if(data_recieve_Index >= 26)
+		data_recieve_Index = 0;
+	}
 	
+	SPI_Send(data_send[data_send_Index]);
 	data_send_Index++;
 	if(data_send_Index >= 26)
 	data_send_Index = 0;
-	SPI_Send(data_send[data_send_Index]);
 }
