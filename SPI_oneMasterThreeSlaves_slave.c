@@ -62,6 +62,6 @@ static void SPI_recieveInterrupt ()
 	
 	SPI_Send(data_send[data_send_Index]);
 	data_send_Index++;
-	if(data_send_Index >= 26)
+	if(data_send_Index == 26)
 	data_send_Index = 0;
 }

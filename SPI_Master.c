@@ -23,13 +23,12 @@ int main ()
 	while (1)
 	{
 		data_recieve = SPI_SendRecieve(data_send);
-		
-		LCD_GoTo(1, 0);
-		LCD_WriteChar(data_send);
 		LCD_GoTo(1, 6);
 		//LCD_WriteNumber_4Digit(data_recieve - '0');
 		LCD_WriteChar(data_recieve);
 		
+		LCD_GoTo(1, 0);
+		LCD_WriteChar(data_send);
 		data_send++;
 		if (data_send > 'z')
 		data_send = 'a';
@@ -41,7 +40,6 @@ int main ()
 		if (counter == 10)
 		{
 			counter = 0;
-		}
-		
+		}		
 	}
 }

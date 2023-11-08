@@ -47,6 +47,6 @@ int main ()
 		if (counter == 10)
 		{
 			counter = 0;
-		}	
+		}
 	}
 }

@@ -457,7 +457,7 @@ Disassembly of section .text:
  3c2:	80 91 a0 00 	lds	r24, 0x00A0	; 0x8000a0 <__data_end>
  3c6:	8f 5f       	subi	r24, 0xFF	; 255
  3c8:	8a 31       	cpi	r24, 0x1A	; 26
- 3ca:	18 f4       	brcc	.+6      	; 0x3d2 <SPI_recieveInterrupt+0x50>
+ 3ca:	19 f0       	breq	.+6      	; 0x3d2 <SPI_recieveInterrupt+0x50>
  3cc:	80 93 a0 00 	sts	0x00A0, r24	; 0x8000a0 <__data_end>
  3d0:	02 c0       	rjmp	.+4      	; 0x3d6 <SPI_recieveInterrupt+0x54>
  3d2:	10 92 a0 00 	sts	0x00A0, r1	; 0x8000a0 <__data_end>

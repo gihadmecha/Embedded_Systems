@@ -38,5 +38,6 @@ u8 SPI_Recieve ();
 
 void SPI_InterruptEnable ();
 void SPI_InterruptDisable ();
+void SPI_InterruptSet (void (*Func)(void));
 
 #endif /* SPI_H_ */
