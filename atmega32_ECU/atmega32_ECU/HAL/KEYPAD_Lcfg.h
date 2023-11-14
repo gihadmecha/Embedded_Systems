@@ -4,14 +4,16 @@
 #ifndef KEYPAD_LCFG_H_
 #define KEYPAD_LCFG_H_
 
+//INPULL
 #define		A		PINB4
 #define		B		PINB5
 #define		C		PINB6
 #define		D		PINB7
+//OUTPUT
 #define		_1		PIND2
 #define		_2		PIND3
 #define		_3		PIND4
-#define		_4		PIND0
+#define		_4		PIND5
 
 #define		NO_KEY		NULL
 

@@ -145,6 +145,16 @@
 
 #define		UBRRL	(*(unsigned volatile char*)0x29)
 
+/***********************************************EEPROM******************************************/
+#define		EECR    (*(unsigned volatile char*)0x3C)
+#define		EERE    0
+#define		EEWE    1
+#define		EEMWE   2
+#define		EEARH   (*(unsigned volatile char*)0x3F)
+#define		EEARL   (*(unsigned volatile char*)0x3E)
+#define		EEAR    (*(unsigned volatile short*)0x3E)
+#define		EEDR	(*(unsigned volatile short*)0x3D)
+
 /***********************************************SPI******************************************/
 #define		SPCR	(*(unsigned volatile char*)0x2D)
 #define		SPIE	7

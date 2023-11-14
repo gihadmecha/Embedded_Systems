@@ -2,7 +2,7 @@
 #include "DIO_interface.h"
 
 const DIO_PinStatus_type PinsStatusArray[] = {
-	OUTPUT, //PINA0//CHANNEL_0
+	INFREE, //PINA0//CHANNEL_0
 	OUTPUT, //PINA1
 	OUTPUT, //PINA2
 	OUTPUT, //PINA3
@@ -10,14 +10,14 @@ const DIO_PinStatus_type PinsStatusArray[] = {
 	OUTPUT, //PINA5
 	OUTPUT, //PINA6
 	INFREE, //PINA7//CHANNEL_7
-	OUTPUT, //PINB0
+	INPULL, //PINB0
 	OUTPUT, //PINB1
 	OUTPUT, //PINB2//INT2
 	OUTPUT, //PINB3//oc0
-	OUTPUT, //PINB4//ss
-	OUTPUT, //PINB5//mosi
-	INFREE, //PINB6//miso
-	OUTPUT, //PINB7//clk
+	INPULL, //PINB4//ss
+	INPULL, //PINB5//mosi
+	INPULL, //PINB6//miso
+	INPULL, //PINB7//clk
 	OUTPUT, //PINC0
 	OUTPUT, //PINC1
 	OUTPUT, //PINC2

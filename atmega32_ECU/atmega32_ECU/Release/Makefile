@@ -47,6 +47,7 @@ C_SRCS +=  \
 ../application/RC_car.c \
 ../application/RGB.c \
 ../application/Smart_Home.c \
+../application/ALARM_master.c \
 ../application/STOP_Watch.c \
 ../application/ultrasonics_and_servo.c \
 ../HAL/BUTTON.c \
@@ -67,6 +68,7 @@ C_SRCS +=  \
 ../MCAL/ADC.c \
 ../MCAL/DIO.c \
 ../MCAL/DIO_Lcfg.c \
+../MCAL/EEPROM.c \
 ../MCAL/EXI.c \
 ../MCAL/SPI.c \
 ../MCAL/TIMER0.c \
@@ -90,6 +92,7 @@ application/Motors_Dashboard.o \
 application/RC_car.o \
 application/RGB.o \
 application/Smart_Home.o \
+application/ALARM_master.o \
 application/STOP_Watch.o \
 application/ultrasonics_and_servo.o \
 HAL/BUTTON.o \
@@ -110,6 +113,7 @@ main.o \
 MCAL/ADC.o \
 MCAL/DIO.o \
 MCAL/DIO_Lcfg.o \
+MCAL/EEPROM.o \
 MCAL/EXI.o \
 MCAL/SPI.o \
 MCAL/TIMER0.o \
@@ -126,6 +130,7 @@ application/Motors_Dashboard.o \
 application/RC_car.o \
 application/RGB.o \
 application/Smart_Home.o \
+application/ALARM_master.o \
 application/STOP_Watch.o \
 application/ultrasonics_and_servo.o \
 HAL/BUTTON.o \
@@ -146,6 +151,7 @@ main.o \
 MCAL/ADC.o \
 MCAL/DIO.o \
 MCAL/DIO_Lcfg.o \
+MCAL/EEPROM.o \
 MCAL/EXI.o \
 MCAL/SPI.o \
 MCAL/TIMER0.o \
@@ -162,6 +168,7 @@ application/Motors_Dashboard.d \
 application/RC_car.d \
 application/RGB.d \
 application/Smart_Home.d \
+application/ALARM_master.d \
 application/STOP_Watch.d \
 application/ultrasonics_and_servo.d \
 HAL/BUTTON.d \
@@ -182,6 +189,7 @@ main.d \
 MCAL/ADC.d \
 MCAL/DIO.d \
 MCAL/DIO_Lcfg.d \
+MCAL/EEPROM.d \
 MCAL/EXI.d \
 MCAL/SPI.d \
 MCAL/TIMER0.d \
@@ -198,6 +206,7 @@ application/Motors_Dashboard.d \
 application/RC_car.d \
 application/RGB.d \
 application/Smart_Home.d \
+application/ALARM_master.d \
 application/STOP_Watch.d \
 application/ultrasonics_and_servo.d \
 HAL/BUTTON.d \
@@ -218,6 +227,7 @@ main.d \
 MCAL/ADC.d \
 MCAL/DIO.d \
 MCAL/DIO_Lcfg.d \
+MCAL/EEPROM.d \
 MCAL/EXI.d \
 MCAL/SPI.d \
 MCAL/TIMER0.d \
@@ -277,6 +287,13 @@ application/RGB.o: ../application/RGB.c
 	
 
 application/Smart_Home.o: ../application/Smart_Home.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DNDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../MCAL" -I".." -I"../HAL" -I"../SERVICES" -I"../application"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+application/ALARM_master.o: ../application/ALARM_master.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DNDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../MCAL" -I".." -I"../HAL" -I"../SERVICES" -I"../application"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
@@ -417,6 +434,13 @@ MCAL/DIO.o: ../MCAL/DIO.c
 	
 
 MCAL/DIO_Lcfg.o: ../MCAL/DIO_Lcfg.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DNDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../MCAL" -I".." -I"../HAL" -I"../SERVICES" -I"../application"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+MCAL/EEPROM.o: ../MCAL/EEPROM.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DNDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../MCAL" -I".." -I"../HAL" -I"../SERVICES" -I"../application"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

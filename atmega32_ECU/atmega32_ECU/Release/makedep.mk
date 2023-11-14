@@ -14,6 +14,8 @@ application\RGB.c
 
 application\Smart_Home.c
 
+application\ALARM_master.c
+
 application\STOP_Watch.c
 
 application\ultrasonics_and_servo.c
@@ -53,6 +55,8 @@ MCAL\ADC.c
 MCAL\DIO.c
 
 MCAL\DIO_Lcfg.c
+
+MCAL\EEPROM.c
 
 MCAL\EXI.c
 

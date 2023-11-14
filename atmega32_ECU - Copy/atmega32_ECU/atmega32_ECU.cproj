@@ -64,6 +64,7 @@
             <Value>..</Value>
             <Value>../HAL</Value>
             <Value>../SERVICES</Value>
+            <Value>../application</Value>
           </ListValues>
         </avrgcc.compiler.directories.IncludePaths>
         <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
@@ -124,6 +125,15 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="application\ALARM_slave.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="application\ALARM_slave.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="application\ALARM_slave_Private.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="HAL\BUTTON.c">
       <SubType>compile</SubType>
     </Compile>
@@ -317,6 +327,7 @@
   <ItemGroup>
     <Folder Include="MCAL" />
     <Folder Include="HAL" />
+    <Folder Include="application" />
     <Folder Include="SERVICES" />
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />

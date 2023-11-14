@@ -2,6 +2,8 @@
 # Automatically-generated file. Do not edit or delete the file
 ################################################################################
 
+application\ALARM_slave.c
+
 HAL\BUTTON.c
 
 HAL\KEYPAD.c
