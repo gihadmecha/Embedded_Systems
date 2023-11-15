@@ -348,8 +348,8 @@ Discarded input sections
                 0x00000000        0xc HAL/LCD.o
  .text.LCD_createCharacter
                 0x00000000       0x30 HAL/LCD.o
- .text.LCD_WriteString
-                0x00000000       0x26 HAL/LCD.o
+ .text.LCD_WriteChar
+                0x00000000        0x4 HAL/LCD.o
  .text.LCD_WriteNumber
                 0x00000000       0xd4 HAL/LCD.o
  .text.LCD_WriteNumber_4Digit
@@ -519,6 +519,8 @@ Discarded input sections
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
+ .text.EEPROM_passwardRetrieval
+                0x00000000        0xc main.o
  .text          0x00000000        0x0 MCAL/ADC.o
  .data          0x00000000        0x0 MCAL/ADC.o
  .bss           0x00000000        0x0 MCAL/ADC.o
@@ -1324,7 +1326,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0xbd2
+.text           0x00000000      0xd14
  *(.vectors)
  .vectors       0x00000000       0x54 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
                 0x00000000                __vector_default
@@ -1409,74 +1411,79 @@ END GROUP
  .text.LCD_GoTo
                 0x000003cc       0x18 HAL/LCD.o
                 0x000003cc                LCD_GoTo
- .text.LCD_WriteChar
-                0x000003e4        0x4 HAL/LCD.o
-                0x000003e4                LCD_WriteChar
+ .text.LCD_WriteString
+                0x000003e4       0x26 HAL/LCD.o
+                0x000003e4                LCD_WriteString
+ .text.EEPROM_passwardRetrieval.part.0
+                0x0000040a       0x58 main.o
+ .text.EEPROM_KeyPad_passwardSave
+                0x00000462       0xb0 main.o
+                0x00000462                EEPROM_KeyPad_passwardSave
  .text.startup.main
-                0x000003e8       0x48 main.o
-                0x000003e8                main
+                0x00000512       0x60 main.o
+                0x00000512                main
  .text.__vector_16
-                0x00000430       0x52 MCAL/ADC.o
-                0x00000430                __vector_16
+                0x00000572       0x52 MCAL/ADC.o
+                0x00000572                __vector_16
  .text.DIO_Init
-                0x00000482      0x1be MCAL/DIO.o
-                0x00000482                DIO_Init
+                0x000005c4      0x1be MCAL/DIO.o
+                0x000005c4                DIO_Init
  .text.DIO_WritePin
-                0x00000640       0xf6 MCAL/DIO.o
-                0x00000640                DIO_WritePin
+                0x00000782       0xf6 MCAL/DIO.o
+                0x00000782                DIO_WritePin
  .text.DIO_ReadPin
-                0x00000736       0x4a MCAL/DIO.o
-                0x00000736                DIO_ReadPin
+                0x00000878       0x4a MCAL/DIO.o
+                0x00000878                DIO_ReadPin
  .text.EEPROM_write
-                0x00000780       0x14 MCAL/EEPROM.o
-                0x00000780                EEPROM_write
+                0x000008c2       0x14 MCAL/EEPROM.o
+                0x000008c2                EEPROM_write
  .text.EEPROM_read
-                0x00000794       0x10 MCAL/EEPROM.o
-                0x00000794                EEPROM_read
+                0x000008d6       0x10 MCAL/EEPROM.o
+                0x000008d6                EEPROM_read
  .text.__vector_1
-                0x000007a4       0x52 MCAL/EXI.o
-                0x000007a4                __vector_1
+                0x000008e6       0x52 MCAL/EXI.o
+                0x000008e6                __vector_1
  .text.__vector_2
-                0x000007f6       0x52 MCAL/EXI.o
-                0x000007f6                __vector_2
+                0x00000938       0x52 MCAL/EXI.o
+                0x00000938                __vector_2
  .text.__vector_3
-                0x00000848       0x52 MCAL/EXI.o
-                0x00000848                __vector_3
+                0x0000098a       0x52 MCAL/EXI.o
+                0x0000098a                __vector_3
  .text.__vector_12
-                0x0000089a       0x52 MCAL/SPI.o
-                0x0000089a                __vector_12
+                0x000009dc       0x52 MCAL/SPI.o
+                0x000009dc                __vector_12
  .text.__vector_10
-                0x000008ec       0x52 MCAL/TIMER0.o
-                0x000008ec                __vector_10
+                0x00000a2e       0x52 MCAL/TIMER0.o
+                0x00000a2e                __vector_10
  .text.__vector_11
-                0x0000093e       0x52 MCAL/TIMER0.o
-                0x0000093e                __vector_11
+                0x00000a80       0x52 MCAL/TIMER0.o
+                0x00000a80                __vector_11
  .text.__vector_7
-                0x00000990       0x52 MCAL/TIMER1.o
-                0x00000990                __vector_7
+                0x00000ad2       0x52 MCAL/TIMER1.o
+                0x00000ad2                __vector_7
  .text.__vector_8
-                0x000009e2       0x52 MCAL/TIMER1.o
-                0x000009e2                __vector_8
+                0x00000b24       0x52 MCAL/TIMER1.o
+                0x00000b24                __vector_8
  .text.__vector_9
-                0x00000a34       0x52 MCAL/TIMER1.o
-                0x00000a34                __vector_9
+                0x00000b76       0x52 MCAL/TIMER1.o
+                0x00000b76                __vector_9
  .text.__vector_6
-                0x00000a86       0x52 MCAL/TIMER1.o
-                0x00000a86                __vector_6
+                0x00000bc8       0x52 MCAL/TIMER1.o
+                0x00000bc8                __vector_6
  .text.__vector_13
-                0x00000ad8       0x52 MCAL/UART.o
-                0x00000ad8                __vector_13
+                0x00000c1a       0x52 MCAL/UART.o
+                0x00000c1a                __vector_13
  .text.__vector_15
-                0x00000b2a       0x52 MCAL/UART.o
-                0x00000b2a                __vector_15
+                0x00000c6c       0x52 MCAL/UART.o
+                0x00000c6c                __vector_15
  .text.__vector_14
-                0x00000b7c       0x52 MCAL/UART.o
-                0x00000b7c                __vector_14
-                0x00000bce                . = ALIGN (0x2)
+                0x00000cbe       0x52 MCAL/UART.o
+                0x00000cbe                __vector_14
+                0x00000d10                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000bce        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x00000bce                _exit
-                0x00000bce                exit
+ .fini9         0x00000d10        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x00000d10                _exit
+                0x00000d10                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -1495,11 +1502,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000bce        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000d10        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000bd2                _etext = .
+                0x00000d14                _etext = .
 
-.data           0x00800060       0x30 load address 0x00000bd2
+.data           0x00800060       0x42 load address 0x00000d14
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -1508,58 +1515,65 @@ END GROUP
  *(.rodata*)
  .rodata.KEYPAD
                 0x00800060       0x10 HAL/KEYPAD.o
+ .rodata.str1.1
+                0x00800070       0x11 main.o
  .rodata.PinsStatusArray
-                0x00800070       0x20 MCAL/DIO_Lcfg.o
-                0x00800070                PinsStatusArray
+                0x00800081       0x20 MCAL/DIO_Lcfg.o
+                0x00800081                PinsStatusArray
  *(.gnu.linkonce.r*)
-                0x00800090                . = ALIGN (0x2)
-                0x00800090                _edata = .
-                0x00800090                PROVIDE (__data_end, .)
+                0x008000a2                . = ALIGN (0x2)
+ *fill*         0x008000a1        0x1 
+                0x008000a2                _edata = .
+                0x008000a2                PROVIDE (__data_end, .)
 
-.bss            0x00800090       0x2d
-                0x00800090                PROVIDE (__bss_start, .)
+.bss            0x008000a2       0x30
+                0x008000a2                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
  .bss.PressedFlag
-                0x00800090       0x10 HAL/KEYPAD.o
- .bss.key       0x008000a0        0x1 HAL/KEYPAD.o
- .bss.funcptr   0x008000a1        0x2 MCAL/ADC.o
+                0x008000a2       0x10 HAL/KEYPAD.o
+ .bss.key       0x008000b2        0x1 HAL/KEYPAD.o
+ .bss.index.1862
+                0x008000b3        0x2 main.o
+ .bss.changePasswardFlag.1861
+                0x008000b5        0x1 main.o
+ .bss.funcptr   0x008000b6        0x2 MCAL/ADC.o
  .bss.FUNC_PTR2
-                0x008000a3        0x2 MCAL/EXI.o
+                0x008000b8        0x2 MCAL/EXI.o
  .bss.FUNC_PTR1
-                0x008000a5        0x2 MCAL/EXI.o
+                0x008000ba        0x2 MCAL/EXI.o
  .bss.FUNC_PTR0
-                0x008000a7        0x2 MCAL/EXI.o
+                0x008000bc        0x2 MCAL/EXI.o
  .bss.SPI_INTERRUP_PTR
-                0x008000a9        0x2 MCAL/SPI.o
+                0x008000be        0x2 MCAL/SPI.o
  .bss.funcPtrOverflow
-                0x008000ab        0x2 MCAL/TIMER0.o
+                0x008000c0        0x2 MCAL/TIMER0.o
  .bss.funcPtrCompareMatch
-                0x008000ad        0x2 MCAL/TIMER0.o
+                0x008000c2        0x2 MCAL/TIMER0.o
  .bss.funcPtrTimeStamp
-                0x008000af        0x2 MCAL/TIMER1.o
+                0x008000c4        0x2 MCAL/TIMER1.o
  .bss.funcPtrOverflow
-                0x008000b1        0x2 MCAL/TIMER1.o
+                0x008000c6        0x2 MCAL/TIMER1.o
  .bss.funcPtrCompareMatch1B
-                0x008000b3        0x2 MCAL/TIMER1.o
+                0x008000c8        0x2 MCAL/TIMER1.o
  .bss.funcPtrCompareMatch1A
-                0x008000b5        0x2 MCAL/TIMER1.o
+                0x008000ca        0x2 MCAL/TIMER1.o
  .bss.UDRemptyInterruptPTR
-                0x008000b7        0x2 MCAL/UART.o
+                0x008000cc        0x2 MCAL/UART.o
  .bss.TXcomplateInterruptPTR
-                0x008000b9        0x2 MCAL/UART.o
+                0x008000ce        0x2 MCAL/UART.o
  .bss.RXcomplateInterruptPTR
-                0x008000bb        0x2 MCAL/UART.o
+                0x008000d0        0x2 MCAL/UART.o
  *(COMMON)
-                0x008000bd                PROVIDE (__bss_end, .)
-                0x00000bd2                __data_load_start = LOADADDR (.data)
-                0x00000c02                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x008000d2                PROVIDE (__bss_end, .)
+                0x00000d14                __data_load_start = LOADADDR (.data)
+                0x00000d56                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x008000bd        0x0
+.noinit         0x008000d2        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x008000bd                _end = .
+                0x008000d2                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
