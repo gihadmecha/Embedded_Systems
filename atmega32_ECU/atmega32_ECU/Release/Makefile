@@ -42,6 +42,7 @@ SUBDIRS :=  \
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
 ../application/Calculator_Converter.c \
+../application/changePassward.c \
 ../application/Fire_System.c \
 ../application/Motors_Dashboard.c \
 ../application/RC_car.c \
@@ -87,6 +88,7 @@ ASM_SRCS +=
 
 OBJS +=  \
 application/Calculator_Converter.o \
+application/changePassward.o \
 application/Fire_System.o \
 application/Motors_Dashboard.o \
 application/RC_car.o \
@@ -125,6 +127,7 @@ SERVICES/UART_SERVICES.o
 
 OBJS_AS_ARGS +=  \
 application/Calculator_Converter.o \
+application/changePassward.o \
 application/Fire_System.o \
 application/Motors_Dashboard.o \
 application/RC_car.o \
@@ -163,6 +166,7 @@ SERVICES/UART_SERVICES.o
 
 C_DEPS +=  \
 application/Calculator_Converter.d \
+application/changePassward.d \
 application/Fire_System.d \
 application/Motors_Dashboard.d \
 application/RC_car.d \
@@ -201,6 +205,7 @@ SERVICES/UART_SERVICES.d
 
 C_DEPS_AS_ARGS +=  \
 application/Calculator_Converter.d \
+application/changePassward.d \
 application/Fire_System.d \
 application/Motors_Dashboard.d \
 application/RC_car.d \
@@ -252,6 +257,13 @@ LINKER_SCRIPT_DEP+=
 
 # AVR32/GNU C Compiler
 application/Calculator_Converter.o: ../application/Calculator_Converter.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DNDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../MCAL" -I".." -I"../HAL" -I"../SERVICES" -I"../application"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+application/changePassward.o: ../application/changePassward.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DNDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../MCAL" -I".." -I"../HAL" -I"../SERVICES" -I"../application"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

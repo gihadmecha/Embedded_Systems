@@ -22,11 +22,12 @@ int main ()
 	u16 passwardSize = 10;
 	u16 passwardAddress = 3;
 	
-	u8* dataAddressPointer = NULL;
+	u8* dataAddressPointer = &dataAddress;
 	
-	dataAddress = EEPROM_read(addressAddress - 0)<<8 | EEPROM_read(addressAddress);
+	*(dataAddressPointer + 0) = EEPROM_read(addressAddress);
+	*(dataAddressPointer + 1) = EEPROM_read(addressAddress - 1);
 	
-	if (dataAddress > 1023 - passwardSize - 1)
+	if ( (dataAddress > 1023 - passwardSize - 1) || (dataAddress < 2) )
 	{
 		dataAddress = 2;
 		EEPROM_write(addressAddress, *(dataAddressPointer + 0));
@@ -36,7 +37,7 @@ int main ()
 	counterAddress = dataAddress;
 	eepromWriteCounter = EEPROM_read(counterAddress);
 	
-	if (eepromWriteCounter > 3)
+	if (eepromWriteCounter >= 3)
 	{
 		EEPROM_write (counterAddress, 0);
 		eepromWriteCounter = 0;
@@ -70,12 +71,11 @@ int main ()
 		{
 			dataAddress = dataAddress + passwardSize + 1;
 			
-			if (dataAddress > 1023 - passwardSize - 1)
+			if ( (dataAddress > 1023 - passwardSize - 1) || (dataAddress < 2) )
 			{
 				dataAddress = 2;
 			}
 			
-			dataAddressPointer = &dataAddress;
 			EEPROM_write(addressAddress, *(dataAddressPointer + 0));
 			EEPROM_write(addressAddress - 1, *(dataAddressPointer + 1) );
 			
@@ -83,11 +83,15 @@ int main ()
 			EEPROM_write(counterAddress, 0);
 			eepromWriteCounter = 0;
 			
-			for (u8 index = 0; EEPROM_read(passwardAddress + index); index++)
+			u8 index;
+			u8 eeprom_passwardReadChar = EEPROM_read(passwardAddress + 0);
+			for (index = 0; eeprom_passwardReadChar;  )
 			{
-				EEPROM_write(dataAddress + 1 + index, EEPROM_read(passwardAddress + index));
+				EEPROM_write(dataAddress + 1 + index, eeprom_passwardReadChar);
+				index++;
+				eeprom_passwardReadChar = EEPROM_read(passwardAddress + index);
 			}
-			
+			EEPROM_write(dataAddress + 1 + index, NULL);
 			passwardAddress = dataAddress + 1;
 		}
 	}
@@ -104,6 +108,7 @@ void EEPROM_passwardRetrieval (u8 passward[], u16 passwardSize, u16 address)
 		{
 			passward[index] = EEPROM_read(address + index);
 		}
+		passward[index] = NULL;
 	}
 }
 

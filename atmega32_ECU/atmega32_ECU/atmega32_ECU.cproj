@@ -140,6 +140,18 @@
     <Compile Include="application\Calculator_Converter_Private.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="application\changePassward.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="application\changePassward.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="application\changePassward_Lcfg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="application\changePassward_Private.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="application\Fire_System.c">
       <SubType>compile</SubType>
     </Compile>
