@@ -171,6 +171,14 @@
 #define		EEAR    (*(unsigned volatile short*)0x3E)
 #define		EEDR	(*(unsigned volatile short*)0x3D)
 
+/***********************************************EEPROM******************************************/
+#define		WDTCR	(*(unsigned volatile char*)0x41)
+#define		WDP0	0
+#define		WDP1	1
+#define		WDP2	2
+#define		WDE		3
+#define		WDTOE	4
+
 /******************************INTERRUPPT_ATTRRIBUTES****************************************/
 #define		SEI()		    __asm__ __volatile__("SEI"::)
 #define		CLI()		    __asm__ __volatile__("CLI"::)

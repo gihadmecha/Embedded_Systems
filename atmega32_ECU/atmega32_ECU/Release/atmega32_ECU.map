@@ -670,6 +670,8 @@ Discarded input sections
                 0x00000000        0x4 MCAL/SPI.o
  .text.SPI_SendRecieve
                 0x00000000        0xa MCAL/SPI.o
+ .text.SPI_SendRecieve_runTimeOut
+                0x00000000       0x36 MCAL/SPI.o
  .text.SPI_Send
                 0x00000000        0x4 MCAL/SPI.o
  .text.SPI_Recieve_periodicCheck
@@ -773,6 +775,13 @@ Discarded input sections
                 0x00000000        0xa MCAL/UART.o
  .text.UART_UDRemptyInterruptSetFunction
                 0x00000000        0xa MCAL/UART.o
+ .text          0x00000000        0x0 MCAL/WDT.o
+ .data          0x00000000        0x0 MCAL/WDT.o
+ .bss           0x00000000        0x0 MCAL/WDT.o
+ .text.WDT_Set  0x00000000        0xc MCAL/WDT.o
+ .text.WDT_Stop
+                0x00000000        0xa MCAL/WDT.o
+ .comment       0x00000000       0x31 MCAL/WDT.o
  .text          0x00000000        0x0 SERVICES/SPI_SERVICES.o
  .data          0x00000000        0x0 SERVICES/SPI_SERVICES.o
  .bss           0x00000000        0x0 SERVICES/SPI_SERVICES.o
@@ -1272,6 +1281,7 @@ LOAD MCAL/SPI.o
 LOAD MCAL/TIMER0.o
 LOAD MCAL/TIMER1.o
 LOAD MCAL/UART.o
+LOAD MCAL/WDT.o
 LOAD SERVICES/SPI_SERVICES.o
 LOAD SERVICES/TIMER_SERVICES.o
 LOAD SERVICES/UART_SERVICES.o

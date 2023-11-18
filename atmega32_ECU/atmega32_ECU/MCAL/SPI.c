@@ -92,6 +92,26 @@ u8 SPI_SendRecieve (u8 data)
 	return SPDR;
 }
 
+u8 SPI_SendRecieve_runTimeOut (u8 data, u8* pdata_recieved, u8 time)
+{
+	SPDR = data;
+	
+	u8 counter = 0;
+	while (READ_BIT(SPSR, SPIF) == 0 && counter < time)
+	{
+		_delay_ms(1);
+		counter++;
+	}
+	
+	if (counter == time)
+	{
+		return 0;
+	}
+	
+	*pdata_recieved = SPDR;
+	return 1;
+}
+
 void SPI_Send (u8 data)
 {
 	SPDR = data;

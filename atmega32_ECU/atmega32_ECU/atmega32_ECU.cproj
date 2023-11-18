@@ -425,6 +425,15 @@
     <Compile Include="MCAL\UART.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="MCAL\WDT.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\WDT.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="MCAL\WDT_Lcfg.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="MemMap.h">
       <SubType>compile</SubType>
     </Compile>
