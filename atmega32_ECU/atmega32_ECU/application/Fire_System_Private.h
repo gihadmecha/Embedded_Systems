@@ -12,6 +12,12 @@
 #include "STEPPER_MOTOR.h"
 #include "MQ_2.h"
 
+
+
+#define  NORMAL				0
+#define	 CHANGE_PASSWARD	1
+
+
 static void Fire_System_State_Fine ();
 static void Fire_System_State_Heat ();
 static void Fire_System_State_Fire ();
@@ -20,6 +26,7 @@ static u8 Fire_System_CompareString (char* string1, char* string2);
 static void Fire_System_State_WrongPassword ();
 static void Fire_System_CheckPeriodically ();
 static void Fire_System_delay_ms(u32 delay);
+static void Fire_System_changePassward ();
 
 
 

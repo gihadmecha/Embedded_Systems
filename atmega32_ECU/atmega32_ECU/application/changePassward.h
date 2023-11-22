@@ -12,7 +12,7 @@
 #include "changePassward_Lcfg.h"
 
 extern void changePassward_Init ();
-extern void changePassward_Run ();
+extern int changePassward_Run ();
 
 
 

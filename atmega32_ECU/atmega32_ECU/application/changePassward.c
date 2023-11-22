@@ -12,10 +12,14 @@ static u8 passward[PASSWARD_SIZE] = {NULL};
 static u16 passwardAddress = 3;
 static u8* dataAddressPointer = &dataAddress;
 
+static u8 noOfCTriggers = 0;
+
+static u8 key = NULL;
+
 extern void changePassward_Init ()
 {
-	DIO_Init();
-	LCD_Init();
+	//DIO_Init();
+	//LCD_Init();
 	
 	*(dataAddressPointer + 0) = EEPROM_read(addressAddress);
 	*(dataAddressPointer + 1) = EEPROM_read(addressAddress - 1);
@@ -40,8 +44,15 @@ extern void changePassward_Init ()
 	EEPROM_passwardRetrieval ( passward, PASSWARD_SIZE, passwardAddress);
 }
 
-extern void changePassward_Run ()
+extern int changePassward_Run ()
 {
+	EEPROM_KeyPad_Ctrigger ();
+	
+	if (noOfCTriggers == 0)
+	{
+		EEPROM_passwardRetrieval ( passward, PASSWARD_SIZE, passwardAddress);
+	}
+	
 	EEPROM_KeyPad_passwardSave ( passward, PASSWARD_SIZE, passwardAddress);
 		
 	LCD_GoTo(0, 0);
@@ -88,6 +99,14 @@ extern void changePassward_Run ()
 		EEPROM_write(dataAddress + 1 + index, NULL);
 		passwardAddress = dataAddress + 1;
 	}
+	
+	if (noOfCTriggers == 2)
+	{
+		noOfCTriggers = 0;
+		return 0;
+	}
+	
+	return 1;
 }
 
 static void EEPROM_passwardRetrieval (u8 passward[], u16 passwardSize, u16 address)
@@ -105,15 +124,26 @@ static void EEPROM_passwardRetrieval (u8 passward[], u16 passwardSize, u16 addre
 	}
 }
 
-static void EEPROM_KeyPad_passwardSave (u8 passward[], u16 passwardSize, u16 address)
+static void EEPROM_KeyPad_Ctrigger ()
 {
-	static u8 key = NULL;
-	static u8 changePasswardFlag = 0;
-	static u16 index = 0;
+	static lastKey = NULL;
+	
+	lastKey = key;
 	
 	key = KEYPAD_GetKey ();
 	
-	if (key == 'C')
+	if (lastKey != 'C' && key == 'C')
+	{
+		noOfCTriggers++;
+	}
+}
+
+static void EEPROM_KeyPad_passwardSave (u8 passward[], u16 passwardSize, u16 address)
+{
+	static u8 changePasswardFlag = 0;
+	static u16 index = 0;
+	
+	if (noOfCTriggers == 1 && key == 'C')
 	{
 		changePasswardFlag = 1;
 		index = 0;
@@ -140,6 +170,10 @@ static void EEPROM_KeyPad_passwardSave (u8 passward[], u16 passwardSize, u16 add
 		
 		EEPROM_write (counterAddress, ++eepromWriteCounter);
 		
+		changePasswardFlag = 0;
+	}
+	else if (noOfCTriggers == 2)
+	{
 		changePasswardFlag = 0;
 	}
 }
