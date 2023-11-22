@@ -12,19 +12,22 @@ static unsigned int passwordIndex = 0;
 
 static u8 mode = NORMAL;
 
-static u8 changePasswardFlag = 0;
+static double angle = -90;
 
 extern void Fire_System_Init ()
 {
 	DIO_Init();
 	ADC_Init(ADC_VCC, ADC_PRESCALER_64);
+	TIMER1_ICR1_WRITE(TIMER1_TOP_VALUE);
+	SERVO_setAngle(angle);
+	TIMER1_Init(TIMER1_PRESCALER_8, TIMER1_FAST_PWM_ICR1_TOP, TIMER1_OC1A_CLEAR_ON_COMPARE_MATCH, TIMER1_OC1B_DISCONNECTED);
 	LCD_Init();
 	
 	ADC_Enable();
 	
 	Fire_System_State_Fine ();
 	
-	STEPPER1_Stop ();
+	//STEPPER1_Stop ();
 	
 	changePassward_Init ();
 }
@@ -59,10 +62,12 @@ extern void Fire_System_Run ()
 		
 		Fire_System_State_Fire();
 	}
+	
+	Fire_System_changePassward ();
 }
 
 static void Fire_System_changePassward ()
-{	
+{
 	if (mode == NORMAL)
 	{
 		key = KEYPAD_GetKey ();
@@ -89,8 +94,6 @@ static void Fire_System_State_Fine ()
 
 	LED1_Off();
 	LED2_Off();
-	
-	Fire_System_changePassward ();
 	
 	if (mode == NORMAL)
 	{
@@ -125,12 +128,33 @@ static void Fire_System_State_Heat ()
 
 static void Fire_System_State_Fire ()
 {
+	static u8 servoDirection = 0;
+	
 	fireMode = 1;
 	
 	LED1_On();
 	LED2_On();
 	
-	STEPPER1_Forward (Fire_System_GetPassward);
+	//STEPPER1_Forward (Fire_System_GetPassward);
+	
+	if (servoDirection == 0)
+	{
+		angle += 1;
+		if (angle == 90)
+		{
+			servoDirection = 1;
+		}
+		SERVO_setAngle (angle);
+	}
+	else if (servoDirection == 1)
+	{
+		angle -= 1;
+		if (angle == -90)
+		{
+			servoDirection = 0;
+		}
+		SERVO_setAngle (angle);
+	}
 	
 	if (mode == NORMAL)
 	{

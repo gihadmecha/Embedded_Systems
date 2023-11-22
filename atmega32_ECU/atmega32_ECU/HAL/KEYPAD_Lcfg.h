@@ -10,10 +10,10 @@
 #define		C		PINB6
 #define		D		PINB7
 //OUTPUT
-#define		_1		PIND2
-#define		_2		PIND3
-#define		_3		PIND4
-#define		_4		PIND5
+#define		_1		PIND1
+#define		_2		PIND2
+#define		_3		PIND3
+#define		_4		PIND4
 
 #define		NO_KEY		NULL
 

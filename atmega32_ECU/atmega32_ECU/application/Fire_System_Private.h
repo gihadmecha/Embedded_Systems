@@ -10,6 +10,7 @@
 #include "LED.h"
 #include "KEYPAD.h"
 #include "STEPPER_MOTOR.h"
+#include "SERVO.h"
 #include "MQ_2.h"
 
 
