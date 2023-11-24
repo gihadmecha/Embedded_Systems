@@ -8,6 +8,8 @@ application\changePassward.c
 
 application\Fire_System.c
 
+application\getPassward.c
+
 application\Motors_Dashboard.c
 
 application\RC_car.c

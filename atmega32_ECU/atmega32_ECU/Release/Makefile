@@ -44,6 +44,7 @@ C_SRCS +=  \
 ../application/Calculator_Converter.c \
 ../application/changePassward.c \
 ../application/Fire_System.c \
+../application/getPassward.c \
 ../application/Motors_Dashboard.c \
 ../application/RC_car.c \
 ../application/RGB.c \
@@ -91,6 +92,7 @@ OBJS +=  \
 application/Calculator_Converter.o \
 application/changePassward.o \
 application/Fire_System.o \
+application/getPassward.o \
 application/Motors_Dashboard.o \
 application/RC_car.o \
 application/RGB.o \
@@ -131,6 +133,7 @@ OBJS_AS_ARGS +=  \
 application/Calculator_Converter.o \
 application/changePassward.o \
 application/Fire_System.o \
+application/getPassward.o \
 application/Motors_Dashboard.o \
 application/RC_car.o \
 application/RGB.o \
@@ -171,6 +174,7 @@ C_DEPS +=  \
 application/Calculator_Converter.d \
 application/changePassward.d \
 application/Fire_System.d \
+application/getPassward.d \
 application/Motors_Dashboard.d \
 application/RC_car.d \
 application/RGB.d \
@@ -211,6 +215,7 @@ C_DEPS_AS_ARGS +=  \
 application/Calculator_Converter.d \
 application/changePassward.d \
 application/Fire_System.d \
+application/getPassward.d \
 application/Motors_Dashboard.d \
 application/RC_car.d \
 application/RGB.d \
@@ -276,6 +281,13 @@ application/changePassward.o: ../application/changePassward.c
 	
 
 application/Fire_System.o: ../application/Fire_System.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DNDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../MCAL" -I".." -I"../HAL" -I"../SERVICES" -I"../application"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+application/getPassward.o: ../application/getPassward.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -funsigned-char -funsigned-bitfields -DNDEBUG  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../MCAL" -I".." -I"../HAL" -I"../SERVICES" -I"../application"  -Os -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

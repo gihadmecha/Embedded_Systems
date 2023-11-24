@@ -161,6 +161,18 @@
     <Compile Include="application\Fire_System_Private.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="application\getPassward.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="application\getPassward.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="application\getPassward_Lcfg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="application\getPassward_Private.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="application\Motors_Dashboard.c">
       <SubType>compile</SubType>
     </Compile>

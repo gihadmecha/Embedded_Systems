@@ -17,6 +17,7 @@
 
 #define  NORMAL				0
 #define	 CHANGE_PASSWARD	1
+#define  PASSWARD			2
 
 
 static void Fire_System_State_Fine ();
@@ -28,6 +29,8 @@ static void Fire_System_State_WrongPassword ();
 static void Fire_System_CheckPeriodically ();
 static void Fire_System_delay_ms(u32 delay);
 static void Fire_System_changePassward ();
+static void Fire_System_getKey ();
+static void Fire_System_servo ();
 
 
 
