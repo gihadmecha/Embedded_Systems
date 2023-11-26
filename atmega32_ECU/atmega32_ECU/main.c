@@ -1,5 +1,5 @@
 
-#include "getPassward.h"
+//#include "getPassward.h"
 
 //int main ()
 //{
@@ -45,6 +45,6 @@ int main ()
 
 	while (1)
 	{
-	Fire_System_Run ();
+		Fire_System_Run ();
 	}
 }
